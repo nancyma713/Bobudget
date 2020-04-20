@@ -111,4 +111,16 @@ router.post("/login", (req, res) => {
   });
 });
 
+// router.get(
+//   "/logout",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     // console.log("User Id", req.user.id);
+
+//     User.findByIdAndRemove(req.user.id, function (err) {
+//       if (err) res.send(err);
+//       res.json({ message: "User Deleted!" });
+//     });
+//   }
+// );
 module.exports = router;

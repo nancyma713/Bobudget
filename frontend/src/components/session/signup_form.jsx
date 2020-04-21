@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 // import '../../assets/stylesheets/splash.scss';
 
@@ -55,10 +55,9 @@ class SignupForm extends React.Component {
   render() {
     // debugger;
     return (
-      <main className='main-body'>
-        <div>
-          <h2>Sign Up!</h2>
+      <div className="signup margin-auto">
           <form className='session-form' id='signup-form' onSubmit={this.handleSubmit}>
+          <h2>Sign Up!</h2>
             {this.renderErrors()}
 
             <div className='half-width'>
@@ -138,9 +137,9 @@ class SignupForm extends React.Component {
             </label> */}
 
             <button type="submit">Sign up</button>
+          <p className="margin-auto">Already have an account? <Link to="/login">Log in</Link></p>
           </form>
-        </div>
-      </main>
+      </div>
     );
   }
 }

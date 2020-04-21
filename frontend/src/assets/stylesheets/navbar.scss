@@ -1,3 +1,38 @@
+@media screen and (max-width: 995px) {
+  .boba {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    background-color: #41382C;
+    padding: 20px;
+    width: 100%;
+    height: 8vh;
+  }
+}
+
+@media screen and (min-width: 990px) {
+    .nav {
+        display: none;
+    }
+}
+
+.nav h1 {
+    font-size: 120%;
+    color: #F1F1F1;
+}
+
+.nav a {
+    margin-right: 35px;
+    color: #F1F1F1;
+    font-size: 120%;
+}
+
 .menu {
     position: absolute;
     background-color: #C3EAF2;

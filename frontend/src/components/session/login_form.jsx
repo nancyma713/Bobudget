@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/splash.scss';
 
 class LoginForm extends React.Component {
@@ -42,10 +43,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <main className='main-body'>
-        <div>
-          <h2>Log In</h2>
+        <div className="login margin-auto">
           <form className="session-form" onSubmit={this.handleSubmit}>
+          <h2>Log In</h2>
             {this.renderErrors()}
             <label>Username
               <input 
@@ -64,10 +64,10 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             </label>
-            <button className="center" type="submit">Sign in</button>
+            <button className="center" type="submit">Log in</button>
+          {/* <p className="margin-auto">Don't have an account? <Link to="/signup">Sign up</Link></p> */}
           </form>
         </div>
-      </main>
     );
   }
 }

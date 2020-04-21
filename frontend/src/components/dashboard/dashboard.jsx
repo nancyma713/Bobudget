@@ -4,26 +4,112 @@ import '../../assets/stylesheets/dashboard.scss';
 class Dashboard extends React.Component {
   render() {
     return(
-      <div className="green-container margin-auto flex-row space-around">
+      <div className="dashboard-container">
         <div className="d-left">
-          <div className="weather">
-            weather
+          <div className="weather-container">
+            <div className="weather">                   {/* temp */}
+              47
+            </div>
+            we suggest...
+            <div className="suggest">
+              
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="d-middle">
-          <div className="calculator">
-            calc
+          <div className="budget">
+            budget
           </div>
 
-          <div className="budget">
-            budg
+          <div className="calculator">
+            <div className="calc-screen">
+              hello
+            </div>
+            <div className="calc-buttons">
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+              <div className="button" />
+            </div>
           </div>
         </div>
 
         <div className="d-right">
-          <div className="favorites">
-            fav
+          <div className="favorites-container">
+            <div className="favorites">
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+              <div className="item-container">
+                passion fruit
+              </div>
+            </div>
           </div>
         </div>
       </div>

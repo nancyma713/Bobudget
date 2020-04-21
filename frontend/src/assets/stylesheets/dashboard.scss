@@ -1,32 +1,89 @@
-.d-left {
-  width: 33.33%;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
+@media screen and (max-width: 800px) {
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .d-left, .d-middle, .d-right {
+    display: block;
+    width: 90%;
+    margin: 20px;
+  }
+
+  .favorites-container, .weather-container {
+    width: 100%;
+  }
 }
 
-.d-middle {
-  width: 33.33%;
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 800px) {
+  .dashboard-container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .d-left {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+  }
+
+  .d-middle {
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .d-right {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .weather-container {
+    width: 70%;
+  }
 }
 
-.d-right {
-  width: 33.33%;
-  display: flex;
-  justify-content: center;
+.dashboard-container {
+  background-color: #CECCC4;
+  position: fixed;
+  border-radius: 20px 20px 0px 0px;
+  top: 5%;
+  left: 2.5%;
+  width: 95vw;
+  height: 95vh;
+  z-index: -1;
 }
 
-.weather {
+.weather-container {
   background-color: #F1F1F1;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
   height: 57vh;
-  width: 70%;
 }
 
-.calculator {
+.weather {
+  font-size: 90px;
+}
+
+.suggest {
+  height: 60%;
+  overflow: scroll;
+}
+
+.item-container {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #E8DBE6;
+  margin-bottom: 10px;
+}
+
+.budget {
   background-color: #F1F1F1;
   border-radius: 10px;
   margin-top: 38px;
@@ -34,7 +91,7 @@
   height: 20vh;
 }
 
-.budget{
+.calculator {
   background-color: #F1F1F1;
   border-radius: 10px;
   margin-top: 38px;
@@ -42,11 +99,45 @@
   height: 38vh;
 }
 
-.favorites{
+.calc-screen {
+  background-color: #E8DBE6;
+  border-radius: 5px;
+  border-style: solid;
+	border-color:#FCEEFA #EECFEB #D4B9D2 #D7C8D5;
+  border-width: 7px 8px 8px 7px;
+  padding: 10px;
+  height: 38%;
+  box-sizing: border-box;
+}
+
+.calc-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 6vw;
+  height: 6vw;
+  border-radius: 5px;
+  background-color: #C3EAF2;
+  margin-top: 15px;
+  border-style: solid;
+	border-color:#E7F1F3 #ACC1C6 #75A1AB #8C9DA0;
+  border-width: 7px 8px 8px 7px;
+  box-sizing: border-box;
+}
+
+.favorites-container {
   background-color: #F1F1F1;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
   height: 57vh;
   width: 70%;
+}
+
+.favorites {
+  overflow: scroll;
+  height: 100%;
 }

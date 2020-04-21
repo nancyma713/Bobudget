@@ -10,17 +10,19 @@ class MainPage extends React.Component {
         return (
             <div className='main-page'>
                 <h1>Bobudget</h1>
-                <ul>
-                    <li>Jasmine Milk Tea</li>
-                    <li>Bubble Milk Tea</li>
-                    <li>Taro Milk Tea</li>
-                    <li>Lychee Green Tea</li>
-                    <li>Passion Fruit Green Tea</li>
-                    <li>Matcha Latte</li>
-                </ul>
-                <section>
-                    <SignUpFormContainer />
-                </section>
+                <main className='main-body'>
+                    <ul>
+                        <li>Jasmine Milk Tea</li>
+                        <li>Bubble Milk Tea</li>
+                        <li>Taro Milk Tea</li>
+                        <li>Lychee Green Tea</li>
+                        <li>Passion Fruit Green Tea</li>
+                        <li>Matcha Latte</li>
+                    </ul>
+                    <section>
+                        <SignUpFormContainer />
+                    </section>
+                </main>
                 <footer>
                     Copyright &copy; 2020 Bobudget
                 </footer>

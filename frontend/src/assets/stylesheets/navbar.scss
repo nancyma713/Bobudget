@@ -1,12 +1,19 @@
-.main h1 {
-    font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
-}
-
 .navbar {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid gray;
+    background-color: lightgray;
+}
+
+.navbar > a {
+    text-decoration: none;
+    color: black;
+}
+
+.link-to-main h1 {
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .links {

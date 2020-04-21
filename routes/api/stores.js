@@ -29,4 +29,12 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:id", (req, res) => {
+  Store.findById(req.params.id)
+    .then((store) => res.json(store))
+    .catch((error) =>
+      res.status(404).json({ noStoreFound: "No Store found with that ID" })
+    );
+});
+
 module.exports = router;

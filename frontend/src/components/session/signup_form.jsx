@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 import '../../assets/stylesheets/signup_form.scss';
 
@@ -37,8 +38,8 @@ class SignupForm extends React.Component {
       password2: this.state.password2,
     };
 
-    this.props.signup(user);
-    // .then(() => this.props.history.push("/dashboard"));
+    this.props.signup(user)
+    .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {

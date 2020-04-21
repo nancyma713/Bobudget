@@ -4,8 +4,7 @@ import '../../assets/stylesheets/splash.scss';
 
 class MainPage extends React.Component {
     
-    // will need logic for not showing the sign up form when logged in
-
+    
     render() {
         return (
             <div className='main-page'>
@@ -20,7 +19,7 @@ class MainPage extends React.Component {
                         <li>Matcha Latte</li>
                     </ul>
                     <section>
-                        <SignUpFormContainer />
+                    
                     </section>
                 </main>
                 <footer>

@@ -1,11 +1,26 @@
 import React from 'react';
+import SignUpFormContainer from '../session/signup_form_container';
+import '../../assets/stylesheets/splash.scss';
 
 class MainPage extends React.Component {
     
+    // will need logic for not showing the sign up form when logged in
+
     render() {
         return (
-            <div>
+            <div className='main-page'>
                 <h1>Bobudget</h1>
+                <ul>
+                    <li>Jasmine Milk Tea</li>
+                    <li>Bubble Milk Tea</li>
+                    <li>Taro Milk Tea</li>
+                    <li>Lychee Green Tea</li>
+                    <li>Passion Fruit Green Tea</li>
+                    <li>Matcha Latte</li>
+                </ul>
+                <section>
+                    <SignUpFormContainer />
+                </section>
                 <footer>
                     Copyright &copy; 2020 Bobudget
                 </footer>

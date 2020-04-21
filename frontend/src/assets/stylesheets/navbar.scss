@@ -1,0 +1,25 @@
+.main h1 {
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.links a {
+    padding: 20px 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    color: blanchedalmond;
+    background-color: black;
+}

@@ -7,11 +7,11 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
-      username: "",
+      firstName: this.props.firstName,
+      lastName: this.props.lastName,
+      username: this.props.username,
       zipcode: "",
-      budget: "",
+      // budget: "",
       password: "",
       errors: {},
     };
@@ -33,7 +33,7 @@ class SignupForm extends React.Component {
       lastName: this.state.lastName,
       username: this.state.username,
       zipcode: this.state.zipcode.toString(),
-      budget: this.state.budget,
+      // budget: this.state.budget,
       password: this.state.password,
       password2: this.state.password2,
     };
@@ -53,6 +53,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <div className='signup-form'>
         <form onSubmit={this.handleSubmit}>
@@ -117,7 +118,7 @@ class SignupForm extends React.Component {
             />
           </label>
 
-          <label>
+          {/* <label>
             Budget 
             <input
               type="number"
@@ -127,7 +128,7 @@ class SignupForm extends React.Component {
               onChange={this.update("budget")}
               placeholder="Budget"
             />
-          </label>
+          </label> */}
 
           <button type="submit">Sign up</button>
         </form>

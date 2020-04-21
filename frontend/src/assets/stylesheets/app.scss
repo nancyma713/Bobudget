@@ -4,3 +4,24 @@ body {
   font-family: 'Baloo Chettan 2', cursive;
   background-color: #F0E9E5;
 }
+
+.flex-row {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}

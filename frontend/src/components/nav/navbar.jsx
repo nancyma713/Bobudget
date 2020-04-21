@@ -32,10 +32,26 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className='navbar'>
-        <Link to="/" className='link-to-main'><h1>BoBudget!</h1></Link>
-        <div className='links'>{this.getLinks()}</div>
-      </nav>
+      <>
+      {/*   <Link to="/" className='link-to-main'><h1>BoBudget!</h1></Link>
+         <div className='links'>{this.getLinks()}</div> */}
+        <div className="first boba">
+          <div className="menu">
+            menu
+            <Link to="/">home</Link>
+            <Link to="/signup">signup</Link>
+          </div>
+        </div>
+        <div className="tenth boba" />
+        <div className="second boba">B</div>
+        <div className="third boba">O</div>
+        <div className="fourth boba">B</div>
+        <div className="fifth boba">U</div>
+        <div className="sixth boba">D</div>
+        <div className="seventh boba">G</div>
+        <div className="eighth boba">E</div>
+        <div className="ninth boba">T</div>
+      </>
     );
   }
 }

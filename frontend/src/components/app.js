@@ -9,6 +9,8 @@ import SignupFormContainer from "./session/signup_form_container";
 import DashboardContainer from "./dashboard/dashboard_container";
 import Dashboard from "./dashboard/dashboard";
 
+
+
 const App = () => (
   <div>
     <NavBarContainer />
@@ -16,7 +18,9 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+
       <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+
     </Switch>
   </div>
 );

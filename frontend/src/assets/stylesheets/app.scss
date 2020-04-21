@@ -14,8 +14,24 @@ body {
   flex-direction: column;
 }
 
+.jus-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
 
 .margin-auto {
@@ -24,4 +40,15 @@ body {
 
 .center {
   text-align: center;
+}
+
+.green-container {
+  background-color: #CECCC4;
+  position: fixed;
+  border-radius: 20px 20px 0px 0px;
+  top: 5%;
+  left: 2.5%;
+  width: 95vw;
+  height: 95vh;
+  z-index: -1;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../assets/stylesheets/login_form.scss';
+// import { Link } from 'react-router-dom';
+import '../../assets/stylesheets/splash.scss';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -42,29 +43,31 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-form'>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <label>Username
-            <input 
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            />
-          </label>
+        <div className="login margin-auto">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+          <h2>Log In</h2>
+            {this.renderErrors()}
+            <label>Username
+              <input 
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="Username"
+              />
+            </label>
 
-          <label>Password
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-          </label>
-          <button type="submit">Sign in</button>
-        </form>
-      </div>
+            <label>Password
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+            </label>
+            <button className="center" type="submit">Log in</button>
+          {/* <p className="margin-auto">Don't have an account? <Link to="/signup">Sign up</Link></p> */}
+          </form>
+        </div>
     );
   }
 }

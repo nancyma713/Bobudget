@@ -1,13 +1,38 @@
-// .navbar {
-//     padding: 10px;
-//     display: flex;
-//     justify-content: space-between;
-//     background-color: #41382C;
-//     color: #F1F1F1;
-//     position: fixed; 
-//     bottom: 0;
-//     width: 100%;
-// }
+@media screen and (max-width: 995px) {
+  .boba {
+    display: none;
+  }
+
+  .nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    background-color: #41382C;
+    padding: 20px;
+    width: 100%;
+    height: 8vh;
+  }
+}
+
+@media screen and (min-width: 990px) {
+    .nav {
+        display: none;
+    }
+}
+
+.nav h1 {
+    font-size: 120%;
+    color: #F1F1F1;
+}
+
+.nav a {
+    margin-right: 35px;
+    color: #F1F1F1;
+    font-size: 120%;
+}
+
 .menu {
     position: absolute;
     background-color: #C3EAF2;
@@ -18,7 +43,6 @@
     font-size: 1vw;
     color: #070707;
     overflow: hidden;
-    padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -27,14 +51,6 @@
 .menu a {
     color: #C3EAF2;
 }
-
-// .nav-links {
-//     position: absolute;
-//     left: 50%;
-//     bottom: 100%;
-//     display: none;
-//     font-size: 14px;
-// }
 
 .menu:hover {
     transition: height 1s;
@@ -46,9 +62,14 @@
     color: #070707;
 }
 
-// .menu:hover + .nav-links {
-//     display: block;
-// }
+.menu:hover a:hover {
+    font-size: 15px;
+}
+
+.menu:hover .menu-title {
+    transition: color 0.5s;
+    color: #C3EAF2;
+}
 
 .navbar > a {
     color: #F1F1F1;
@@ -86,22 +107,22 @@
 }
 
 .first {
-    bottom: -4%;
+    bottom: -6%;
     left: -5%;
 }
 
 .second {
-    bottom: -7%;
+    bottom: -8%;
     left: 4%;
 }
 
 .third {
-    bottom: -4%;
+    bottom: -5%;
     left: 15%;
 }
 
 .fourth {
-    bottom: -6%;
+    bottom: -8%;
     left: 26%;
 }
 
@@ -111,17 +132,17 @@
 }
 
 .sixth {
-    bottom: -3.5%;
+    bottom: -5%;
     right: 36%;
 }
 
 .seventh {
-    bottom: -7%;
+    bottom: -8%;
     right: 25%;
 }
 
 .eighth {
-    bottom: -4%;
+    bottom: -5%;
     right: 14%;
 }
 
@@ -131,6 +152,6 @@
 }
 
 .tenth {
-    bottom: -5%;
-    right: -4%;
+    bottom: -6%;
+    right: -5%;
 }

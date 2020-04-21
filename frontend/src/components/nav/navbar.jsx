@@ -37,9 +37,10 @@ class NavBar extends React.Component {
          <div className='links'>{this.getLinks()}</div> */}
         <div className="first boba">
           <div className="menu">
-            menu
+            <span className="menu-title">menu</span>
             <Link to="/">home</Link>
-            <Link to="/signup">signup</Link>
+            <Link to="/dashboard">dashboard</Link>
+            {this.getLinks()}
           </div>
         </div>
         <div className="tenth boba" />
@@ -51,6 +52,10 @@ class NavBar extends React.Component {
         <div className="seventh boba">G</div>
         <div className="eighth boba">E</div>
         <div className="ninth boba">T</div>
+        <div className="nav">
+          <Link to="/"><h1>BoBudget</h1></Link>
+          <Link to="/dashboard">dashboard</Link>
+        </div>
       </>
     );
   }

@@ -1,5 +1,7 @@
 import React from "react";
+import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
+import '../../assets/stylesheets/signup_form.scss';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -36,8 +38,8 @@ class SignupForm extends React.Component {
       password2: this.state.password2,
     };
 
-    this.props.signup(user);
-    // .then(() => this.props.history.push("/dashboard"));
+    this.props.signup(user)
+    .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {
@@ -52,11 +54,11 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='signup-form'>
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           <label>
-            First Name
+            First Name 
             <input
               type="text"
               value={this.state.firstName}
@@ -66,7 +68,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Last Name
+            Last Name 
             <input
               type="text"
               value={this.state.lastName}
@@ -76,7 +78,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Username
+            Username 
             <input
               type="text"
               value={this.state.username}
@@ -86,7 +88,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Password
+            Password 
             <input
               type="password"
               value={this.state.password}
@@ -96,7 +98,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Confirm Password
+            Confirm Password 
             <input
               type="password"
               value={this.state.password2}
@@ -106,7 +108,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Zipcode
+            Zipcode 
             <input
               type="number"
               value={this.state.zipcode}
@@ -116,7 +118,7 @@ class SignupForm extends React.Component {
           </label>
 
           <label>
-            Budget
+            Budget 
             <input
               type="number"
               min="5.00"

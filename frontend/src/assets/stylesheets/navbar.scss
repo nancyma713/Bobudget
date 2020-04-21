@@ -1,0 +1,34 @@
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #41382C;
+    color: #F1F1F1;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar > a {
+    color: #F1F1F1;
+    text-decoration: none;
+}
+
+.link-to-main h1 {
+    font-size: 40px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.links a {
+    padding: 20px 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    color: blanchedalmond;
+    background-color: black;
+}

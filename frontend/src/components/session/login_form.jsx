@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/stylesheets/login_form.scss';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='login-form'>
         <form onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           <label>Username

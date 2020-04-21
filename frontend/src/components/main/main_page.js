@@ -1,15 +1,26 @@
 import React from 'react';
+import SignUpFormContainer from '../session/signup_form_container';
+import '../../assets/stylesheets/splash.scss';
 
 class MainPage extends React.Component {
     
+    
     render() {
         return (
-            <div>
-                <h1>Bobudget</h1>
-                <footer>
+            <>
+                <main className='main-body'>
+                    <section className="main-left">
+
+                    </section>
+
+                    <section className="main-right">
+                    
+                    </section>
+                </main>
+                {/* <footer>
                     Copyright &copy; 2020 Bobudget
-                </footer>
-            </div>
+                </footer> */}
+            </>
         )
     }
 }

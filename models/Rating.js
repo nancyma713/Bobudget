@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const RatingSchema = new Schema({
   bobaItemId: {
     type: Schema.Types.ObjectId,
-    ref: "storeBobaItems",
+    ref: "StoreBobaItems",
   },
   userId: {
     type: Schema.Types.ObjectId,
-    ref: "users",
+    ref: "User",
   },
 });
 

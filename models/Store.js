@@ -10,10 +10,6 @@ const StoreSchema = new Schema({
     type: String,
     required: true,
   },
-  ownerId: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
-  }
 });
 
-module.exports = Store = mongoose.model("Stores", StoreSchema);
+module.exports = Store = mongoose.model("Store", StoreSchema);

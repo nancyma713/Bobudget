@@ -2,13 +2,16 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;
-    background-color: lightgray;
+    background-color: #41382C;
+    color: #F1F1F1;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
 }
 
 .navbar > a {
+    color: #F1F1F1;
     text-decoration: none;
-    color: black;
 }
 
 .link-to-main h1 {

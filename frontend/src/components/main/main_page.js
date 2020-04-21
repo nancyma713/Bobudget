@@ -8,7 +8,6 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className='main-page'>
-                <h1>Bobudget</h1>
                 <main className='main-body'>
                     <ul>
                         <li>Jasmine Milk Tea</li>

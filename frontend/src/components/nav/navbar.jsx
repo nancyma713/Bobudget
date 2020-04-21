@@ -1,30 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../../assets/stylesheets/navbar.scss';
+import React from "react";
+import { Link, Redirect } from "react-router-dom";
+import "../../assets/stylesheets/navbar.scss";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+    this.getLinks = this.getLinks.bind(this);
   }
 
   logoutUser(e) {
+    debugger;
     e.preventDefault();
     this.props.logout();
+    // return <Redirect to="/" />;
   }
 
   getLinks() {
     if (this.props.loggedIn) {
       return (
         <>
-          <button onClick={this.logoutUser} className='logout'>Logout</button>
+          <button onClick={this.logoutUser} className="logout">
+            Logout
+          </button>
         </>
-      )
+      );
     } else {
       return (
         <>
-          <Link to="/signup" className='signup'>Signup</Link>
-          <Link to="/login" className='login'>Login</Link>
+          <Link to="/signup" className="signup">
+            Signup
+          </Link>
+          <Link to="/login" className="login">
+            Login
+          </Link>
         </>
       );
     }
@@ -33,14 +42,16 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-      {/*   <Link to="/" className='link-to-main'><h1>BoBudget!</h1></Link>
+        {/*   <Link to="/" className='link-to-main'><h1>BoBudget!</h1></Link>
          <div className='links'>{this.getLinks()}</div> */}
         <div className="first boba">
           <div className="menu">
             <span className="menu-title">menu</span>
             <Link to="/">home</Link>
+
             <Link to="/dashboard">dashboard</Link>
             {this.getLinks()}
+
           </div>
         </div>
         <div className="tenth boba" />

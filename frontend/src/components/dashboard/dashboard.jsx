@@ -1,3 +1,4 @@
+
 import React from 'react';
 import '../../assets/stylesheets/dashboard.scss';
 
@@ -118,3 +119,4 @@ class Dashboard extends React.Component {
 }
 
 export default Dashboard;
+

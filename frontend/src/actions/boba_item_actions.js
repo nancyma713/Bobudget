@@ -4,7 +4,7 @@ export const RECEIVE_BOBA_ITEMS = 'RECEIVE_BOBA_ITEMS';
 export const RECEIVE_BOBA_ITEM = 'RECEIVE_BOBA_ITEM';
 
 const receiveBobaItems = bobas => ({
-  type: RECEIVE_ALL_BOBA_ITEMS,
+  type: RECEIVE_BOBA_ITEMS,
   bobas
 });
 

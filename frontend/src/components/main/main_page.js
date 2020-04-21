@@ -7,24 +7,20 @@ class MainPage extends React.Component {
     
     render() {
         return (
-            <div className='main-page'>
+            <>
                 <main className='main-body'>
-                    <ul>
-                        <li>Jasmine Milk Tea</li>
-                        <li>Bubble Milk Tea</li>
-                        <li>Taro Milk Tea</li>
-                        <li>Lychee Green Tea</li>
-                        <li>Passion Fruit Green Tea</li>
-                        <li>Matcha Latte</li>
-                    </ul>
-                    <section>
+                    <section className="main-left">
+
+                    </section>
+
+                    <section className="main-right">
                     
                     </section>
                 </main>
-                <footer>
+                {/* <footer>
                     Copyright &copy; 2020 Bobudget
-                </footer>
-            </div>
+                </footer> */}
+            </>
         )
     }
 }

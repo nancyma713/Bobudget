@@ -1,6 +1,6 @@
 import { RECEIVE_BOBA_ITEMS, RECEIVE_BOBA_ITEM } from '../actions/boba_item_actions';
 
-const bobaItemReducer = (state = {}, action) => {
+const bobaItemsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch (action.type) {
@@ -13,4 +13,4 @@ const bobaItemReducer = (state = {}, action) => {
   };
 }
 
-export default bobaItemReducer;
+export default bobaItemsReducer;

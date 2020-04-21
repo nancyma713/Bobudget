@@ -1,13 +1,54 @@
-.navbar {
-    padding: 10px;
+// .navbar {
+//     padding: 10px;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: #41382C;
+//     color: #F1F1F1;
+//     position: fixed; 
+//     bottom: 0;
+//     width: 100%;
+// }
+.menu {
+    position: absolute;
+    background-color: #C3EAF2;
+    width: 5vw;
+    height: 5vw;
+    bottom: 85%;
+    left: 40%;
+    font-size: 1vw;
+    color: #070707;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    background-color: #41382C;
-    color: #F1F1F1;
-    position: fixed; 
-    bottom: 0;
-    width: 100%;
+    flex-direction: column;
 }
+
+.menu a {
+    color: #C3EAF2;
+}
+
+// .nav-links {
+//     position: absolute;
+//     left: 50%;
+//     bottom: 100%;
+//     display: none;
+//     font-size: 14px;
+// }
+
+.menu:hover {
+    transition: height 1s;
+    height: 18vw;
+}
+
+.menu:hover a {
+    transition: color 0.5s;
+    color: #070707;
+}
+
+// .menu:hover + .nav-links {
+//     display: block;
+// }
 
 .navbar > a {
     color: #F1F1F1;
@@ -31,4 +72,65 @@
     border-radius: 50%;
     color: blanchedalmond;
     background-color: black;
+}
+
+.boba {
+    position: fixed;
+    background-color: #41382C;
+    border-radius: 50%;
+    width: 15vw;
+    height: 15vw;
+    text-align: center;
+    color: #F1F1F1;
+    font-size: 9vw;
+}
+
+.first {
+    bottom: -4%;
+    left: -5%;
+}
+
+.second {
+    bottom: -7%;
+    left: 4%;
+}
+
+.third {
+    bottom: -4%;
+    left: 15%;
+}
+
+.fourth {
+    bottom: -6%;
+    left: 26%;
+}
+
+.fifth {
+    bottom: -7%;
+    left: 38%;
+}
+
+.sixth {
+    bottom: -3.5%;
+    right: 36%;
+}
+
+.seventh {
+    bottom: -7%;
+    right: 25%;
+}
+
+.eighth {
+    bottom: -4%;
+    right: 14%;
+}
+
+.ninth {
+    bottom: -8%;
+    right: 4%;
+}
+
+.tenth {
+    bottom: -5%;
+    right: -4%;
 }

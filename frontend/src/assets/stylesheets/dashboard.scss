@@ -1,0 +1,52 @@
+.d-left {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+.d-middle {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-right {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+}
+
+.weather {
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  margin-top: 38px;
+  padding: 20px;
+  height: 57vh;
+  width: 70%;
+}
+
+.calculator {
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  margin-top: 38px;
+  padding: 20px;
+  height: 20vh;
+}
+
+.budget{
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  margin-top: 38px;
+  padding: 20px;
+  height: 38vh;
+}
+
+.favorites{
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  margin-top: 38px;
+  padding: 20px;
+  height: 57vh;
+  width: 70%;
+}

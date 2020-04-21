@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
-import '../../assets/stylesheets/signup_form.scss';
+// import '../../assets/stylesheets/splash.scss';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -53,86 +53,94 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     return (
-      <div className='signup-form'>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <label>
-            First Name 
-            <input
-              type="text"
-              value={this.state.firstName}
-              onChange={this.update("firstName")}
-              placeholder="First Name"
-            />
-          </label>
+      <main className='main-body'>
+        <div>
+          <h2>Sign Up!</h2>
+          <form className='session-form' id='signup-form' onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
 
-          <label>
-            Last Name 
-            <input
-              type="text"
-              value={this.state.lastName}
-              onChange={this.update("lastName")}
-              placeholder="Last Name"
-            />
-          </label>
+            <div className='half-width'>
+              <label className='split'>
+                First Name 
+                <input
+                  type="text"
+                  value={this.state.firstName}
+                  onChange={this.update("firstName")}
+                  placeholder="First Name"
+                />
+              </label>
 
-          <label>
-            Username 
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
-          </label>
+              <label className='split'>
+                Last Name 
+                <input
+                  type="text"
+                  value={this.state.lastName}
+                  onChange={this.update("lastName")}
+                  placeholder="Last Name"
+                />
+              </label>
+            </div>
 
-          <label>
-            Password 
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-          </label>
+            <label>
+              Username 
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
+            </label>
 
-          <label>
-            Confirm Password 
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-          </label>
+            <div className='half-width'>
+              <label className='split'>
+                Password 
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </label>
 
-          <label>
-            Zipcode 
-            <input
-              type="number"
-              value={this.state.zipcode}
-              onChange={this.update("zipcode")}
-              placeholder="Zipcode"
-            />
-          </label>
+              <label className='split'>
+                Confirm Password 
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                />
+              </label>
+            </div>
 
-          {/* <label>
-            Budget 
-            <input
-              type="number"
-              min="5.00"
-              step="0.01"
-              value={this.state.budget}
-              onChange={this.update("budget")}
-              placeholder="Budget"
-            />
-          </label> */}
+            <label>
+              Zipcode 
+              <input
+                type="number"
+                value={this.state.zipcode}
+                onChange={this.update("zipcode")}
+                placeholder="Zipcode"
+              />
+            </label>
 
-          <button type="submit">Sign up</button>
-        </form>
-      </div>
+            {/* <label>
+              Budget 
+              <input
+                type="number"
+                min="5.00"
+                step="0.01"
+                value={this.state.budget}
+                onChange={this.update("budget")}
+                placeholder="Budget"
+              />
+            </label> */}
+
+            <button type="submit">Sign up</button>
+          </form>
+        </div>
+      </main>
     );
   }
 }

@@ -6,6 +6,7 @@ import '../assets/stylesheets/app.scss';
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
+import Dashboard from './dashboard/dashboard'; // temporary, remove later
 // import DashboardContainer from "./dashboard/dashboard_container";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/dashboard" component={Dashboard} /> {/* temporary, remove later */}
       {/* <AuthRoute exact path="/dashboard" component={DashboardContainer} /> */}
     </Switch>
   </div>

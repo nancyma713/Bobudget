@@ -18,10 +18,25 @@ body {
   justify-content: space-between;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
 .margin-auto {
   margin: auto;
 }
 
 .center {
   text-align: center;
+}
+
+.green-container {
+  background-color: #CECCC4;
+  position: fixed;
+  border-radius: 20px 20px 0px 0px;
+  top: 5%;
+  left: 2.5%;
+  width: 95vw;
+  height: 95vh;
+  z-index: -1;
 }

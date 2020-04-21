@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/stylesheets/login_form.scss';
+import '../../assets/stylesheets/splash.scss';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -42,29 +42,32 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className='login-form'>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <label>Username
-            <input 
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              placeholder="Username"
-            />
-          </label>
+      <main className='main-body'>
+        <div>
+          <h2>Log In</h2>
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
+            <label>Username
+              <input 
+                type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                placeholder="Username"
+              />
+            </label>
 
-          <label>Password
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder="Password"
-            />
-          </label>
-          <button type="submit">Sign in</button>
-        </form>
-      </div>
+            <label>Password
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+            </label>
+            <button className="center" type="submit">Sign in</button>
+          </form>
+        </div>
+      </main>
     );
   }
 }

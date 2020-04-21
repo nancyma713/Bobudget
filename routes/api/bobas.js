@@ -8,6 +8,14 @@ const validateBobaInput = require("../../validation/boba");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boba route" }));
 
+router.get("/", (req, res) => {
+  BobaItem.find((error, bobas) => {
+    if (error) return res.status(404).json({ NoBobas: "No Bobas found." });
+
+    res.json(bobas.map((boba) => boba.name));
+  });
+});
+
 router.post(
   "/new",
   passport.authenticate("jwt", { session: false }),
@@ -20,7 +28,6 @@ router.post(
     // debugger;
     const newBoba = new BobaItem({
       name: req.body.name,
-      user: req.user.id,
     });
 
     newBoba.save().then((boba) => res.json(boba));

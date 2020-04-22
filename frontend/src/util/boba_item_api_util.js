@@ -1,13 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const fetchBobaItems = () => {
-    return axios.get('/api/bobaitems')
+  return axios.get("/api/bobas/");
 };
 
 export const fetchBobaItem = (bobaItemId) => {
-    return axios.get(`/api/bobaitems/${bobaItemId}`)
+  return axios.get(`/api/bobas/${bobaItemId}`);
 };
 
 export const createBobaItem = (data) => {
-    return axios.post(`/api/bobaitems`, data)
+  return axios.post(`/api/bobas`, data);
+};
+
+export const fetchStoreBobaItems = () => {
+  return axios.get("/api/storebobaitems/");
 };

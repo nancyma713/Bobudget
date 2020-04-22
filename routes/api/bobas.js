@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 
 const BobaItem = require("../../models/BobaItem");
+const StoreBobaItem = require("../../models/StoreBobaItem");
+const Store = require("../../models/Store");
 const validateBobaInput = require("../../validation/boba");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boba route" }));
@@ -12,7 +14,7 @@ router.get("/", (req, res) => {
   BobaItem.find((error, bobas) => {
     if (error) return res.status(404).json({ NoBobas: "No Bobas found." });
 
-    res.json(bobas.map((boba) => boba.name));
+    res.json(bobas.map((boba) => boba));
   });
 });
 
@@ -39,6 +41,7 @@ router.get(
 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    debugger;
     BobaItem.findById(req.params.id)
       .then((boba) => res.json(boba))
       .catch((error) =>
@@ -46,6 +49,14 @@ router.get(
       );
   }
 );
+
+router.get("/search/:boba_name", (req, res) => {
+  const regex = new RegExp(["^", req.params.boba_name, "$"].join(""), "i");
+  BobaItem.find({ name: regex })
+    .populate("store")
+    .then((bobaItems) => res.json(bobaItems))
+    .catch((err) => res.json(err));
+});
 
 module.exports = router;
 

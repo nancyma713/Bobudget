@@ -1,7 +1,6 @@
 import React from "react";
-// import SignUpFormContainer from '../session/signup_form_container';
 import "../../assets/stylesheets/splash.scss";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -11,23 +10,16 @@ class MainPage extends React.Component {
       lastName: "",
       username: "",
     };
-
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
-  // handleSubmit(e) {
-  //     e.preventDefault();
-  //     return <Link to="/signup" />
-  // }
-
   render() {
     return (
       <>
-        <ul class="bubbles">
+        <ul className="bubbles">
           <li></li>
           <li></li>
           <li></li>

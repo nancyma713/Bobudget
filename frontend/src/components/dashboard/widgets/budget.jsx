@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Budget = () => {
-  return (
-    <div className="budget">
-      budget
-    </div>
-  );
+class Budget extends React.Component {
+  render() {
+    return (
+      <div className="budget">
+        budget
+      </div>
+    );
+  }
 }
 
 export default Budget;

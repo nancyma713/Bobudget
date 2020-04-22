@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
     return (
       <div className="signup margin-auto">
           <form className='session-form' id='signup-form' onSubmit={this.handleSubmit}>
-          <h2>Sign Up!</h2>
+          <h2>Sign Up</h2>
             {this.renderErrors()}
 
             <div className='half-width'>

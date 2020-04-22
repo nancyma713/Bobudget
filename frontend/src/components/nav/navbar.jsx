@@ -10,7 +10,6 @@ class NavBar extends React.Component {
   }
 
   logoutUser(e) {
-    debugger;
     e.preventDefault();
     this.props.logout();
     // return <Redirect to="/" />;
@@ -20,6 +19,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <>
+          <Link to="/dashboard">Dashboard</Link>
           <button onClick={this.logoutUser} className="logout">
             Logout
           </button>
@@ -47,11 +47,8 @@ class NavBar extends React.Component {
         <div className="first boba">
           <div className="menu">
             <span className="menu-title">menu</span>
-            <Link to="/">home</Link>
-
-            <Link to="/dashboard">dashboard</Link>
+            <Link to="/">Home</Link>
             {this.getLinks()}
-
           </div>
         </div>
         <div className="tenth boba" />
@@ -65,7 +62,9 @@ class NavBar extends React.Component {
         <div className="ninth boba">T</div>
         <div className="nav">
           <Link to="/"><h1>BoBudget</h1></Link>
-          <Link to="/dashboard">dashboard</Link>
+          <div className="nav-links">
+            {this.getLinks()}
+          </div>
         </div>
       </>
     );

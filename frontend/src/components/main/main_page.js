@@ -34,59 +34,14 @@ class MainPage extends React.Component {
           <li></li>
           <li></li>
         </ul>
-
-        <main className="main-body">
-          <section className="main-left"></section>
-
-          <section className="main-right">
-            <h2>Get started</h2>
-            <form className="session-form">
-              <label>
-                first name
-                <input
-                  type="text"
-                  value={this.state.firstName}
-                  onChange={this.update("firstName")}
-                  placeholder="first name"
-                />
-              </label>
-
-              <label>
-                last name
-                <input
-                  type="text"
-                  value={this.state.lastName}
-                  onChange={this.update("lastName")}
-                  placeholder="last name"
-                />
-              </label>
-
-              <label>
-                username
-                <input
-                  type="text"
-                  value={this.state.username}
-                  onChange={this.update("username")}
-                  placeholder="username"
-                />
-              </label>
-
-              <Link
-                className="center"
-                username={this.state.username}
-                to="/signup"
-              >
-                <button>Continue</button>
-              </Link>
-              <p className="margin-auto">
-                Already have an account? <Link to="/login">Sign in</Link>
-              </p>
-            </form>
-          </section>
-        </main>
-        {/* <footer>
-                    Copyright &copy; 2020 Bobudget
-                </footer> */}
+        <div className="center welcome-form">
+            <div className="flex-column">
+                <h1>Welcome, Boba Enthusiasts!</h1>
+                <h2>Get poppin' below:</h2>
+                <Link to="/signup" className="splash-link">Signup</Link>
+                <Link to="/login" className="splash-link">Login</Link>
+            </div>
+        </div>
       </>
     );
   }

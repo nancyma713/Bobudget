@@ -5,6 +5,10 @@ body {
   background-color: #F0E9E5;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .flex-row {
   display: flex;
 }

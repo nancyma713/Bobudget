@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/splash.scss';
 
 class LoginForm extends React.Component {
@@ -65,7 +65,7 @@ class LoginForm extends React.Component {
               />
             </label>
             <button className="center" type="submit">Log in</button>
-          {/* <p className="margin-auto">Don't have an account? <Link to="/signup">Sign up</Link></p> */}
+          <p className="margin-auto">Don't have an account? <Link to="/signup">Sign up</Link></p>
           </form>
         </div>
     );

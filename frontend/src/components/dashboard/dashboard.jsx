@@ -46,7 +46,7 @@ class Dashboard extends React.Component {
 
           <div className="calculator">
             <div className="calc-screen">
-              hello
+              you are spending too much on boba
             </div>
             <div className="calc-buttons">
               <div className="button" />

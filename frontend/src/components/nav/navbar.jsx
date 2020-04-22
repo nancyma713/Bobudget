@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../assets/stylesheets/navbar.scss";
 
 class NavBar extends React.Component {
@@ -20,6 +20,7 @@ class NavBar extends React.Component {
       return (
         <>
           <Link to="/dashboard">Dashboard</Link>
+          <Link to="/purchases">Purchases</Link>
           <button onClick={this.logoutUser} className="logout">
             Logout
           </button>

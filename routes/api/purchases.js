@@ -9,7 +9,13 @@ router.get("/", (req, res) => {
     Purchase.find((error, purchases) => {
       if (error) return res.status(404).json({ NoPurchases: "No record of any purchases." });
   
-      res.json(purchases.map((purchase) => purchase.name));
+      res.json(purchases.map((purchase) => {
+        return ({
+          price: purchase.price,
+          date: purchase.date,
+          id: purchase.id
+        })
+      }));
     });
   });
 
@@ -26,7 +32,6 @@ router.post('/',
             price: req.body.price,
             userId: req.user.id
         })
-
         newPurchase.save().then((purchase) => res.json(purchase));
 })
 

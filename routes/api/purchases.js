@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
       }));
     });
   });
-});
+
 
 router.post(
   "/new",

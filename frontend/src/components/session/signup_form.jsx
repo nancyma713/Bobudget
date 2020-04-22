@@ -33,20 +33,20 @@ class SignupForm extends React.Component {
       lastName: this.state.lastName,
       username: this.state.username,
       zipcode: this.state.zipcode.toString(),
-      // budget: this.state.budget,
+      budget: 5,
       password: this.state.password,
       password2: this.state.password2,
     };
 
     this.props.signup(user)
-    .then(() => this.props.history.push("/dashboard"));
+      // .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.state.errors).map((err, i) => (
-          <li key={`err-${i}`}>{this.state.errors[err]}</li>
+        {Object.keys(this.props.errors).map((err, i) => (
+          <li key={`err-${i}`}>{this.props.errors[err]}</li>
         ))}
       </ul>
     );

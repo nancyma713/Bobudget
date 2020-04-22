@@ -25,9 +25,10 @@ export const logoutUser = () => ({
 });
 
 export const signup = (user) => (dispatch) => {
-  return APIUtil.signup(user).then(
-    () => dispatch(receiveUserSignIn()),
+  return APIUtil.signup(user)
+    .then(() => dispatch(receiveUserSignIn()),
     (err) => dispatch(receiveErrors(err.response.data))
+    // err => console.log(err.response)
   );
 };
 
@@ -43,6 +44,7 @@ export const login = (user) => (dispatch) => {
     })
     .catch((err) => {
       dispatch(receiveErrors(err.response.data));
+      // console.log(err.response)
     });
 };
 

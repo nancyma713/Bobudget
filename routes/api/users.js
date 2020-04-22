@@ -23,7 +23,7 @@ router.get(
   }
 );
 
-router.post("/signup", (req, res) => {
+router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   if (!isValid) {

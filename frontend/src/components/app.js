@@ -9,8 +9,7 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import DashboardContainer from "./dashboard/dashboard_container";
 import Dashboard from "./dashboard/dashboard";
-
-
+import Search from './search/search';
 
 const App = () => (
   <div>
@@ -20,7 +19,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-      <AuthRoute exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/search" component={Search} />
 
     </Switch>
   </div>

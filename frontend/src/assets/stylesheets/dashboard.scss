@@ -1,21 +1,28 @@
+// WHEN SCREEN IS LESS THANK 800PX
 @media screen and (max-width: 800px) {
   .dashboard-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow: scroll;
   }
 
   .d-left, .d-middle, .d-right {
     display: block;
-    width: 90%;
-    margin: 20px;
+    width: 85%;
+    // margin: auto;
   }
 
-  .favorites-container, .weather-container {
+  .favorites-container, .weather-container, .budget, .calculator {
     width: 100%;
+  }
+
+  .button {
+    display: none;
   }
 }
 
+// SCREEN @ FULL WIDTH
 @media screen and (min-width: 800px) {
   .dashboard-container {
     margin: auto;
@@ -24,11 +31,10 @@
     justify-content: space-around;
   }
 
-  .d-left {
+  .d-left, .d-right {
     width: 33.33%;
     display: flex;
     justify-content: center;
-    // align-items: center;
   }
 
   .d-middle {
@@ -37,14 +43,8 @@
     flex-direction: column;
   }
 
-  .d-right {
-    width: 33.33%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .weather-container {
-    width: 70%;
+  .weather-container, .favorites-container {
+    width: 80%;
   }
 }
 
@@ -61,10 +61,11 @@
 
 .weather-container {
   background-color: #F1F1F1;
+  box-sizing: border-box;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
-  height: 57vh;
+  height: 63vh;
 }
 
 .weather {
@@ -80,23 +81,26 @@
   padding: 10px;
   border-radius: 5px;
   background-color: #E8DBE6;
+  box-sizing: border-box;
   margin-bottom: 10px;
 }
 
 .budget {
   background-color: #F1F1F1;
+  box-sizing: border-box;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
-  height: 20vh;
+  height: 26vh;
 }
 
 .calculator {
+  box-sizing: border-box;
   background-color: #F1F1F1;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
-  height: 38vh;
+  height: 44vh;
 }
 
 .calc-screen {
@@ -130,11 +134,11 @@
 
 .favorites-container {
   background-color: #F1F1F1;
+  box-sizing: border-box;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
-  height: 57vh;
-  width: 70%;
+  height: 63vh;
 }
 
 .favorites {

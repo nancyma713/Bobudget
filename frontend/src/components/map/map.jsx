@@ -194,7 +194,7 @@ class Map extends React.Component {
     addMarker() {
         if (this.props.storeLi) {
             this.props.storeLi.map(store => {
-                debugger
+
                 const pos = {
                     lat: store.lat,
                     lng: store.lng

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Budget from './budget';
+import BudgetCalc from './budget_calc';
 import { createPurchase, fetchPurchases } from '../../../actions/purchase_actions';
 import { fetchUser } from '../../../actions/session_actions';
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Budget);
+)(BudgetCalc);

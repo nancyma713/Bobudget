@@ -19,22 +19,28 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/purchases">Purchases</Link>
-          <button onClick={this.logoutUser} className="logout">
-            Logout
+          <Link className="nav-icon" to="/dashboard">
+            <i className=" fas fa-columns" />
+            <span className="nav-text">Dashboard</span>
+          </Link>
+          <Link className="nav-icon" to="/purchases">
+            <i className="fas fa-money-check-alt" />
+            <span className="nav-text">Purchases</span>
+          </Link>
+          <Link className="nav-icon" to="/search">
+            <i className="fas fa-search" />
+            <span className="nav-text">Search</span>
+          </Link>
+          <button onClick={this.logoutUser} className="logout nav-icon">
+            <i class="fas fa-sign-out-alt" />
+            <span className="nav-text">Logout</span>
           </button>
         </>
       );
     } else {
       return (
         <>
-          <Link to="/signup" className="signup">
-            Signup
-          </Link>
-          <Link to="/login" className="login">
-            Login
-          </Link>
+          
         </>
       );
     }
@@ -48,7 +54,6 @@ class NavBar extends React.Component {
         <div className="first boba">
           <div className="menu">
             <span className="menu-title">menu</span>
-            <Link to="/">Home</Link>
             {this.getLinks()}
           </div>
         </div>

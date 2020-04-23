@@ -16,7 +16,7 @@
   }
 
   .bubbles-container,
-  .weather-container,
+  .favorites-container,
   .budget,
   .calculator {
     width: 100%;
@@ -49,7 +49,7 @@
     flex-direction: column;
   }
 
-  .weather-container,
+  .favorites-container,
   .bubbles-container {
     width: 80%;
   }
@@ -66,21 +66,13 @@
   z-index: -1;
 }
 
-.weather-container {
+.favorites-container {
   background-color: #f1f1f1;
   box-sizing: border-box;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
   height: 63vh;
-}
-
-.weather {
-  font-size: 90px;
-}
-
-.suggest {
-  height: 60%;
   overflow: scroll;
 }
 
@@ -134,7 +126,7 @@
   width: 14vw;
   background-color: #c3eaf2;
   font-size: 1.5vw;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .budget-input {
@@ -178,6 +170,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.calc-msg {
+  font-size: 1.6vw;
 }
 
 .button {

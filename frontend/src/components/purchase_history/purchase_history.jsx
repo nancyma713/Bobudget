@@ -39,11 +39,9 @@ class PurchaseHistory extends React.Component {
 
   render() {
     const { purchases } = this.props;
-    console.log(this.props);
-    console.log(this.state);
 
     if (!purchases) return null;
-    // debugger
+
     const newDate = new Date();
     const monthNum = newDate.getMonth();
     const year = newDate.getFullYear();
@@ -131,7 +129,7 @@ class PurchaseHistory extends React.Component {
                 onChange={this.update("budget")}
               />
             </label>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </section>
         <section className='monthly-budget jus-center flex-row'>

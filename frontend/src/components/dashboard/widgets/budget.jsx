@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Budget extends React.Component {
   constructor(props) {
@@ -50,7 +50,23 @@ class Budget extends React.Component {
     return (
       <div className="budget flex-row space-around">
         <div className="flex-column">
-
+          <form className="flex-row" onSubmit={this.handleSubmit}>
+            <div className="pos-relative">
+              <input
+                className="budget-input"
+                type="number"
+                step="0.01"
+                onChange={this.update("price")}
+                value={this.state.price}
+              />
+              <button
+                className="budget-button flex-row jus-center align-center"
+                // onSubmit={this.handleSubmit}
+              >
+                <i className="fas fa-plus-circle" />
+              </button>
+            </div>
+          </form>
           <div className="flex-row align-center">
             <h1>Monthly budget: </h1>
             <div className="price">$ {currentUser.user.budget}</div>
@@ -64,35 +80,11 @@ class Budget extends React.Component {
             <div className="price">$ {moneyLeft}</div>
           </div>
         </div>
-        <div className="flex-column jus-center">
-          Add a purchase: {date}
+        <div className="flex-column jus-center">{date}</div>
 
-          <form className="flex-row" onSubmit={this.handleSubmit}>
-            <div className="pos-relative">
-              <input
-                className="budget-input"
-                type="number"
-                step="0.01"
-                onChange={this.update("price")}
-                value={this.state.price}
-              />
-              <button
-                className="budget-button flex-row jus-center align-center"
-              // onSubmit={this.handleSubmit}
-              >
-                <i className="fas fa-plus-circle" />
-              </button>
-            </div>
-          </form>
-        
-        </div>
-        <div className="flex-column jus-center">
-          {date}
-        </div>
-
-        {/* <div className="budget-bottom-right">
+        <div className="budget-bottom-right">
           <Link to="/purchases">Purchase History</Link>
-        </div> */}
+        </div>
       </div>
     );
   }

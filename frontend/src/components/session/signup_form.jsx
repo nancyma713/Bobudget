@@ -7,16 +7,25 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      username: '',
+      firstName: "",
+      lastName: "",
+      username: "",
       zipcode: "",
       // budget: "",
       password: "",
+      password2: "",
       errors: {},
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn === true) {
+      this.props.history.push('/login');
+    }
+
+    this.setState({ errors: nextProps.errors })
   }
 
   componentWillUnmount() {
@@ -42,7 +51,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2,
     };
 
-    this.props.signup(user)
+    this.props.signup(user, this.props.history);
       // .then(() => this.props.history.push("/dashboard"));
   }
 

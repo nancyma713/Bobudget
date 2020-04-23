@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchPurchases: () => dispatch(fetchPurchases()),
+  fetchPurchases: userId => dispatch(fetchPurchases(userId)),
   fetchUser: () => dispatch(fetchUser()),
   removePurchase: (purchaseId) => dispatch(removePurchase(purchaseId)),
 });

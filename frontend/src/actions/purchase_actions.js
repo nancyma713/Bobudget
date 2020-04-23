@@ -19,8 +19,8 @@ const deletePurchase = purchaseId => ({
   purchaseId
 })
 
-export const fetchPurchases = () => dispatch => {
-  return PurchaseAPIUtil.fetchPurchases()
+export const fetchPurchases = userId => dispatch => {
+  return PurchaseAPIUtil.fetchPurchases(userId)
     .then(purchases => dispatch(receivePurchases(purchases)))
 }
 

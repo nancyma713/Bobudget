@@ -11,6 +11,11 @@ import DashboardContainer from "./dashboard/dashboard_container";
 import Dashboard from "./dashboard/dashboard";
 import Search from './search/search';
 
+
+// Testing for maps- START
+import MapContainer from "./map/map_container";
+//END
+
 const App = () => (
   <div>
     <NavBarContainer />
@@ -22,6 +27,12 @@ const App = () => (
       <ProtectedRoute exact path="/dashboard" component={Dashboard} />
       <ProtectedRoute exact path="/search" component={Search} />
 
+
+
+      {/* testing for map-START */}
+        <Route exact path='/map' component={MapContainer}/>
+      {/* END */}
+      
     </Switch>
   </div>
 );

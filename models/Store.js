@@ -10,6 +10,7 @@ const StoreSchema = new Schema({
     type: String,
     required: true,
   },
+
 });
 
 module.exports = Store = mongoose.model("Store", StoreSchema);

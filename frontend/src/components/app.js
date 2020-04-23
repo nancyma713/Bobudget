@@ -16,6 +16,11 @@ import Search from "./search/search_container";
 import PurchaseHistoryContainer from './purchase_history/purchase_history_container';
 
 
+
+// Testing for maps- START
+import MapContainer from "./map/map_container";
+//END
+
 const App = () => (
   <div>
     <NavBarContainer />
@@ -27,8 +32,14 @@ const App = () => (
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
       <ProtectedRoute exact path="/search" component={Search} />
 
-      <ProtectedRoute exact path="/purchases" component={PurchaseHistoryContainer} />
 
+
+      {/* testing for map-START */}
+        <Route exact path='/map' component={MapContainer}/>
+      {/* END */}
+      
+
+      <ProtectedRoute exact path="/purchases" component={PurchaseHistoryContainer} />
     </Switch>
   </div>
 );

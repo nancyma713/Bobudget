@@ -54,8 +54,8 @@ class Bubbles extends React.Component {
             </div>
           </div>
         ) : (
-          <></>
-        )}
+            <></>
+          )}
       </>
     );
   }

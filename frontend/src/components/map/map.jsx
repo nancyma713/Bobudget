@@ -15,8 +15,7 @@ class Map extends React.Component {
     }
 
 
-    initMap(){
-        // debugger
+    initMap() {
         const mapOptions = {
             center: { lat: 40.732321, lng: -73.992837 },
             zoom: 14,
@@ -190,21 +189,17 @@ class Map extends React.Component {
 
     componentDidMount() {
         this.initMap();
-        this.props.fetchStores()
-            .then(() => this.addMarker())
-            .then(() => this.listenForClick())   
-       
     }
 
-    
-    addMarker(){
-        if (this.props.stores) {
-            this.props.stores.map(store => {
+    addMarker() {
+        if (this.props.storeLi) {
+            this.props.storeLi.map(store => {
+                debugger
                 const pos = {
-                        lat: store.lat,
-                        lng: store.lng
-                    }
-            
+                    lat: store.lat,
+                    lng: store.lng
+                }
+
                 const marker = new google.maps.Marker({
                     position: pos,
                     map: this.map
@@ -218,20 +213,20 @@ class Map extends React.Component {
     listenForClick() {
         const popUp = [];
 
-        this.props.stores.map(store => {
+        this.props.storeLi.map(store => {
             let url = store.mapUrl
             popUp.push(new google.maps.InfoWindow({
-            content: `<div>
+                content: `<div>
                     <h1>${store.name}</h1>
 
                     <a href=${url}>Get Directions!</a>
             </div> `
             }))
-             
+
         })
 
         this.marker_arr.map((marker, i) => {
-                marker.addListener('click', (e) => {
+            marker.addListener('click', (e) => {
                 popUp[i].open(this.map, marker)
             })
         })
@@ -240,12 +235,16 @@ class Map extends React.Component {
 
 
     render() {
-        console.log(this.props.stores)
-        console.log(this.pos_arr)
+        // this.initMap();
+        this.marker_arr.map(marker => {
+            marker.setMap(null)
+        })
+        this.addMarker()
+        this.listenForClick()
         return (
-          <>
-            <div id="map" ref={(map) => (this.mapNode = map)}></div>
-          </>
+            <>
+                <div id="map" ref={(map) => (this.mapNode = map)}></div>
+            </>
         );
     }
 }

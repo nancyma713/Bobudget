@@ -23,7 +23,8 @@ class PurchaseHistory extends React.Component {
     e.preventDefault();
     let user = this.props.currentUser.data.user;
     user.budget = this.state.budget;
-    this.props.updateUser(user);
+    this.props.updateUser(user)
+      .then( () => window.location.reload());
   }
 
   handleDelete(e) {

@@ -14,7 +14,7 @@ router.post('/new',
     });
 
     newFavorite.save().then(favorite => res.json(favorite));
-});
+  });
 
 router.get("/:userId", (req, res) => {
   Favorite.find((error, favorites) => {

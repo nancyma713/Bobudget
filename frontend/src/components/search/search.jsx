@@ -36,7 +36,7 @@ class Search extends React.Component {
         </li>
       ));
     }
-    debugger;
+
     return (
       <div className="green-container">
         <div className="search-bar-container">

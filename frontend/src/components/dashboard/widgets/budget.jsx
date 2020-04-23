@@ -1,11 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 class Budget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: ''
+      price: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,30 +17,29 @@ class Budget extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     let purchase = {
-      price: this.state.price
-    }
-    debugger;
+      price: this.state.price,
+    };
+
     this.props.createPurchase(purchase);
-      // .then(() => this.props.history.push("/dashboard"))
+    // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
-    return e => this.setState({['price']: e.currentTarget.value})
+    return (e) => this.setState({ ["price"]: e.currentTarget.value });
   }
 
   render() {
-    const { currentUser, purchases} = this.props;
-    
+    const { currentUser, purchases } = this.props;
+
     if (!currentUser) return null;
     if (!purchases) return null;
 
     let moneySpent = 0;
 
-    for(let i = 0; i < purchases.length; i++) {
-      moneySpent += purchases[i].price
+    for (let i = 0; i < purchases.length; i++) {
+      moneySpent += purchases[i].price;
     }
 
     let date = new Date();
@@ -57,10 +56,10 @@ class Budget extends React.Component {
             <h1>Money spent: </h1>
             <div className="price">$ {moneySpent}</div>
           </div>
-        <div className="flex-row align-center">
-          <h1>Amount left: </h1>
-          <div className="price">$ {currentUser.user.budget}</div>
-        </div>
+          <div className="flex-row align-center">
+            <h1>Amount left: </h1>
+            <div className="price">$ {currentUser.user.budget}</div>
+          </div>
         </div>
         <div className="flex-column jus-center">
           Add a purchase: {date}

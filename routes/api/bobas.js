@@ -41,7 +41,6 @@ router.get(
 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    debugger;
     BobaItem.findById(req.params.id)
       .then((boba) => res.json(boba))
       .catch((error) =>

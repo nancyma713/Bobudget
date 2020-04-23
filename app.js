@@ -21,6 +21,8 @@ mongoose
 const users = require("./routes/api/users");
 const bobas = require("./routes/api/bobas");
 const stores = require("./routes/api/stores");
+const purchases = require("./routes/api/purchases");
+const storebobaitems = require("./routes/api/storebobaitems");
 
 app.get("/", (req, res) => res.send("Hello World!!!"));
 
@@ -33,6 +35,8 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/bobas", bobas);
 app.use("/api/stores", stores);
+app.use("/api/purchases", purchases);
+app.use("/api/storebobaitems", storebobaitems);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

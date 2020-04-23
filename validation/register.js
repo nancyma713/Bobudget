@@ -9,8 +9,8 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = validText(data.password2) ? data.password2 : "";
 
   ///
-  data.first_name = validText(data.first_name) ? data.first_name : "";
-  data.last_name = validText(data.last_name) ? data.last_name : "";
+  data.firstName = validText(data.firstName) ? data.firstName : "";
+  data.lastName = validText(data.lastName) ? data.lastName : "";
   data.zipcode = validText(data.zipcode) ? data.zipcode : "";
   data.budget = validText(data.budget) ? data.budget : "";
   ///
@@ -29,7 +29,7 @@ module.exports = function validateRegisterInput(data) {
   }
 
   if (Validator.isEmpty(data.lastName)) {
-    errors.lastNname = "Last name field is required";
+    errors.lastName = "Last name field is required";
   }
 
   if (Validator.isEmpty(data.zipcode)) {

@@ -7,9 +7,9 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: this.props.firstName,
-      lastName: this.props.lastName,
-      username: this.props.username,
+      firstName: '',
+      lastName: '',
+      username: '',
       zipcode: "",
       // budget: "",
       password: "",
@@ -17,6 +17,10 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -33,20 +37,20 @@ class SignupForm extends React.Component {
       lastName: this.state.lastName,
       username: this.state.username,
       zipcode: this.state.zipcode.toString(),
-      // budget: this.state.budget,
+      budget: '5.00',
       password: this.state.password,
       password2: this.state.password2,
     };
 
     this.props.signup(user)
-    .then(() => this.props.history.push("/dashboard"));
+      // .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.state.errors).map((err, i) => (
-          <li key={`err-${i}`}>{this.state.errors[err]}</li>
+        {Object.keys(this.props.errors).map((err, i) => (
+          <li key={`err-${i}`}>{this.props.errors[err]}</li>
         ))}
       </ul>
     );
@@ -56,75 +60,79 @@ class SignupForm extends React.Component {
     // debugger;
     return (
       <div className="signup margin-auto">
-          <form className='session-form' id='signup-form' onSubmit={this.handleSubmit}>
+        <form
+          className="session-form"
+          id="signup-form"
+          onSubmit={this.handleSubmit}
+        >
           <h2>Sign Up</h2>
-            {this.renderErrors()}
+          {this.renderErrors()}
 
-            <div className='half-width'>
-              <label className='split'>
-                First Name 
-                <input
-                  type="text"
-                  value={this.state.firstName}
-                  onChange={this.update("firstName")}
-                  placeholder="First Name"
-                />
-              </label>
-
-              <label className='split'>
-                Last Name 
-                <input
-                  type="text"
-                  value={this.state.lastName}
-                  onChange={this.update("lastName")}
-                  placeholder="Last Name"
-                />
-              </label>
-            </div>
-
-            <label>
-              Username 
+          <div className="half-width">
+            <label className="split">
+              First Name
               <input
                 type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username"
+                value={this.state.firstName}
+                onChange={this.update("firstName")}
+                placeholder="First Name"
               />
             </label>
 
-            <div className='half-width'>
-              <label className='split'>
-                Password 
-                <input
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  placeholder="Password"
-                />
-              </label>
-
-              <label className='split'>
-                Confirm Password 
-                <input
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.update("password2")}
-                  placeholder="Confirm Password"
-                />
-              </label>
-            </div>
-
-            <label>
-              Zipcode 
+            <label className="split">
+              Last Name
               <input
-                type="number"
-                value={this.state.zipcode}
-                onChange={this.update("zipcode")}
-                placeholder="Zipcode"
+                type="text"
+                value={this.state.lastName}
+                onChange={this.update("lastName")}
+                placeholder="Last Name"
+              />
+            </label>
+          </div>
+
+          <label>
+            Username
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+              placeholder="Username"
+            />
+          </label>
+
+          <div className="half-width">
+            <label className="split">
+              Password
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
               />
             </label>
 
-            {/* <label>
+            <label className="split">
+              Confirm Password
+              <input
+                type="password"
+                value={this.state.password2}
+                onChange={this.update("password2")}
+                placeholder="Confirm Password"
+              />
+            </label>
+          </div>
+
+          <label>
+            Zipcode
+            <input
+              type="number"
+              value={this.state.zipcode}
+              onChange={this.update("zipcode")}
+              placeholder="Zipcode"
+            />
+          </label>
+
+          {/* <label>
               Budget 
               <input
                 type="number"
@@ -136,9 +144,11 @@ class SignupForm extends React.Component {
               />
             </label> */}
 
-            <button type="submit">Sign up</button>
-          <p className="margin-auto">Already have an account? <Link to="/login">Log in</Link></p>
-          </form>
+          <button type="submit">Sign up</button>
+          <p className="margin-auto">
+            Already have an account? <Link to="/login">Log in</Link>
+          </p>
+        </form>
       </div>
     );
   }

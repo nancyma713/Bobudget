@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Dashboard from './dashboard';
-import { createPurchase, fetchPurchases } from '../../actions/purchase_actions';
-import { fetchUser } from '../../actions/session_actions';
+import Budget from './budget';
+import { createPurchase, fetchPurchases } from '../../../actions/purchase_actions';
+import { fetchUser } from '../../../actions/session_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.user.data,
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Dashboard);
+)(Budget);

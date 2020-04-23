@@ -1,0 +1,76 @@
+.purchased-items {
+    margin: auto;
+    margin-top: 5%;
+    background-color: #E1D3BF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    height: 500px;
+}
+
+.purchased-items h1 {
+    color: #F1F1F1;
+    background-color: #8C9DA0;
+    border-radius: 10px;
+    width: 100%;
+    align-self: center;
+}
+
+.budget-updates {
+    margin-top: 2%;
+}
+
+.update-budget {
+    padding: 1%;
+    font-size: 16px;
+}
+
+.update-budget input {
+    width: 60px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    height: 30px;
+    padding: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.purchased-items button {
+    margin: 5px 10px;
+    width: 50px;
+    background-color: #B3BA9E;
+    color: #F1F1F1;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.monthly-budget h3 {
+    font-size: 26px;
+    margin: 10px;
+}
+
+.monthly-budget span {
+    color: #75A1AB;
+    padding-left: 5px;
+}
+
+.spends h3{
+    font-size: 30px;
+    color: #F1F1F1;
+    background-color: #8C9DA0;
+    border-radius: 10px;
+    width: 100%;
+    align-self: center;
+}
+
+.purchase-list {
+    list-style: none;
+}
+
+#purchase-price {
+    color: #75A1AB;
+    padding-left: 10px;
+}

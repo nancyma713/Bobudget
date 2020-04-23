@@ -38,6 +38,7 @@
   height: 40px;
   padding: 10px;
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 .session-form label {
@@ -159,12 +160,6 @@
   }
 }
 
-body {
-  z-index: 1;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
 
 #signup-form {
     width: 350px;
@@ -180,38 +175,39 @@ body {
 }
 
 .welcome-form {
-    margin: auto;
-    margin-top: 10%;
-    background-color: #E1D3BF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 500px;
+  margin: auto;
+  margin-top: 10%;
+  background-color: #E1D3BF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
 }
 
 .welcome-form h1 {
-    font-size: 36px;
-    padding: 10px;
+  font-size: 35px;
+  padding: 10px;
 }
 
 .welcome-form h2 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .splash-link {
-    width: 50%;
-    align-self: center;
-    margin: 10px;
-    background-color: #B3BA9E;
-    color: #F1F1F1;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  background-color: #B3BA9E;
+  color: #F1F1F1;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .splash-link:hover {
+  cursor: pointer;
   background-color: #9ea48c;
 }

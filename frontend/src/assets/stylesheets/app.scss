@@ -3,6 +3,9 @@
 body {
   font-family: 'Baloo Chettan 2', cursive;
   background-color: #F0E9E5;
+  z-index: 1;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 button:hover {
@@ -34,6 +37,10 @@ button:hover {
   justify-content: space-around;
 }
 
+.space-evenly {
+  justify-content: space-evenly;
+}
+
 .wrap {
   flex-wrap: wrap;
 }
@@ -44,6 +51,10 @@ button:hover {
 
 .center {
   text-align: center;
+}
+
+.pos-relative {
+  position: relative;
 }
 
 .green-container {

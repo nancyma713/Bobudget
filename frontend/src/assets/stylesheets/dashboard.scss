@@ -86,12 +86,61 @@
 }
 
 .budget {
+  position: relative;
   background-color: #F1F1F1;
   box-sizing: border-box;
   border-radius: 10px;
   margin-top: 38px;
   padding: 20px;
   height: 26vh;
+}
+
+.budget-input {
+  background-color: #E8DBE6;
+  border-radius: 5px;
+  padding: 10px;
+  height: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.budget-button {
+  position: absolute;
+  top: -8%;
+  right: -15%;
+  font-size: 35px;
+  color: #41382C;
+  box-sizing: border-box;
+}
+
+.budget .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.4vw;
+  height: 3.4vw;
+  background-color: #41382C;
+  border-radius: 50%;
+  color: #F1F1F1;
+  font-size: 1vw;
+  margin-left: -10%;
+  margin-top: -5%;
+}
+
+.budget h1 {
+  padding: 7px 7px 7px 14px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 14vw;
+  background-color: #C3EAF2;
+  font-size: 1.5vw;
+  margin-bottom: 8px;
+}
+
+.budget-bottom-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .calculator {

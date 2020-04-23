@@ -9,9 +9,8 @@ module.exports = function validatePurchaseInput(data) {
   if (Validator.isEmpty(data.price)) {
     errors.price = "Price is required";
   }
-
-  return {
-    errors,
-    isValid: Object.keys(errors).length === 0,
-  };
+    return {
+        errors,
+        isValid: Object.keys(errors).length === 0,
+    };
 };

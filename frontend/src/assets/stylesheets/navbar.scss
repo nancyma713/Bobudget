@@ -48,7 +48,7 @@
     flex-direction: column;
 }
 
-.menu a, button {
+.menu a, .menu button {
     font-size: 13px;
     color: #C3EAF2;
 }
@@ -63,7 +63,7 @@
     color: #070707;
 }
 
-.menu:hover a:hover, button:hover {
+.menu:hover a:hover, .menu:hover button:hover {
     font-size: 14px;
 }
 

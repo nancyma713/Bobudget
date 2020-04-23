@@ -19,7 +19,7 @@ class PurchaseHistory extends React.Component {
         budget: this.props.currentUser.data.user.budget,
       })
     );
-    this.props.fetchPurchases();
+    this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {

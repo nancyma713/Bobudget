@@ -37,13 +37,13 @@ class SignupForm extends React.Component {
       lastName: this.state.lastName,
       username: this.state.username,
       zipcode: this.state.zipcode.toString(),
-      budget: 5,
+      budget: '5.00',
       password: this.state.password,
       password2: this.state.password2,
     };
 
-    this.props.signup(user);
-    // .then(() => this.props.history.push("/dashboard"));
+    this.props.signup(user)
+      .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {

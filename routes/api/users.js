@@ -108,6 +108,16 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.put("/:id/update", (req, res) => {
+    // const { errors, isValid } = validateRegisterInput(req.body);
+
+    // if (!isValid) {
+    //   return res.status(400).json(errors);
+    // }
+
+    User.findOneAndUpdate(req.user.budget, {$set: req.body});
+});
+
 // router.get(
 //   "/logout",
 //   passport.authenticate("jwt", { session: false }),

@@ -12,15 +12,15 @@ class Budget extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser();
-    this.props.fetchPurchases();
+    // this.props.fetchUser();
+    // this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let purchase = {
-      price: this.state.price,
-    };
+      price: this.state.price
+    }
 
     this.props.createPurchase(purchase);
     // .then(() => this.props.history.push("/dashboard"))
@@ -32,7 +32,7 @@ class Budget extends React.Component {
 
   render() {
     const { currentUser, purchases } = this.props;
-
+    
     if (!currentUser) return null;
     if (!purchases) return null;
 
@@ -50,6 +50,7 @@ class Budget extends React.Component {
     return (
       <div className="budget flex-row space-around">
         <div className="flex-column">
+
           <div className="flex-row align-center">
             <h1>Monthly budget: </h1>
             <div className="price">$ {currentUser.user.budget}</div>
@@ -65,6 +66,7 @@ class Budget extends React.Component {
         </div>
         <div className="flex-column jus-center">
           Add a purchase: {date}
+
           <form className="flex-row" onSubmit={this.handleSubmit}>
             <div className="pos-relative">
               <input
@@ -76,12 +78,16 @@ class Budget extends React.Component {
               />
               <button
                 className="budget-button flex-row jus-center align-center"
-                // onSubmit={this.handleSubmit}
+              // onSubmit={this.handleSubmit}
               >
                 <i className="fas fa-plus-circle" />
               </button>
             </div>
           </form>
+        
+        </div>
+        <div className="flex-column jus-center">
+          {date}
         </div>
 
         {/* <div className="budget-bottom-right">

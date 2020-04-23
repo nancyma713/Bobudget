@@ -29,12 +29,16 @@ class Search extends React.Component {
   render() {
     let bobaLi;
     if (this.props.bobas.data) {
-      bobaLi = Object.keys(this.props.bobas.data).map((key) => (
-        <li key={key}>
-          {this.props.bobas.data[key].name} is available at{" "}
-          {this.props.bobas.data[key].store.name}
-        </li>
-      ));
+      bobaLi = Object.keys(this.props.bobas.data).map((key) => {
+        if (this.props.bobas.data[key].store) {
+          return (
+            <li key={key}>
+              {this.props.bobas.data[key].name} is available at{" "}
+              {this.props.bobas.data[key].store.name}
+            </li>
+          );
+        }
+      });
     }
 
     return (

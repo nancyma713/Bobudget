@@ -1,0 +1,150 @@
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.bubbles li {
+  position: absolute;
+  list-style: none;
+  display: block;
+  border-radius: 50%;
+  background-color: rgba(60, 52, 42, 0.85);
+  bottom: -100px;
+  -webkit-animation: square 20s infinite;
+  animation: square 20s infinite;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.bubbles li:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  //   left: 20%;
+}
+.bubbles li:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  //   left: 40%;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-duration: 26s;
+  animation-duration: 26s;
+}
+
+.bubbles li:nth-child(3) {
+  width: 45px;
+  height: 45px;
+  //   left: 60%;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+}
+
+.bubbles li:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  //   left: 80%;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 22s;
+  animation-duration: 22s;
+}
+
+.bubbles li:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  //   left: 50%;
+  -webkit-animation-delay: 7s;
+  animation-delay: 7s;
+  -webkit-animation-duration: 23s;
+  animation-duration: 23s;
+}
+
+.bubbles li:nth-child(6) {
+  width: 40px;
+  height: 40px;
+  //   left: 50%;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+  -webkit-animation-duration: 19s;
+  animation-duration: 19s;
+}
+
+@-webkit-keyframes square {
+  0% {
+    -webkit-transform: translateY(-1080px) rotate(630deg);
+    transform: translateY(-1080px) rotate(630deg);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes square {
+  0% {
+    -webkit-transform: translateY(-1080px) rotate(630deg);
+    transform: translateY(-1080px) rotate(630deg);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+//-----------MODAL--------------------
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(112, 111, 111, 0.8);
+  z-index: 10;
+  animation-name: modal-background-fade-in;
+  animation-duration: 0.5s;
+}
+
+.modal-child {
+  position: relative;
+  margin: 0 auto;
+  top: 15%;
+  color: black;
+  background: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 3px;
+  animation-name: modal-swoop-in;
+  animation-duration: 0.5s;
+  border-radius: 5px;
+}
+
+@keyframes modal-background-fade-in {
+  from {
+    background: transparent;
+  }
+  to {
+    background: rgba(112, 111, 111, 0.8);
+  }
+}
+
+@keyframes modal-swoop-in {
+  from {
+    top: 0%;
+    bottom: -60%;
+    right: -35%;
+  }
+  to {
+    top: 15%;
+    bottom: 0%;
+    right: 0%;
+  }
+}

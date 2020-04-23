@@ -50,8 +50,8 @@ router.get(
 );
 
 router.get("/search/:boba_name", (req, res) => {
-  const regex = new RegExp(["^", req.params.boba_name, "$"].join(""), "i");
-  debugger;
+  const regex = new RegExp(["^.*", req.params.boba_name, ".*$"].join(""), "i");
+  // debugger;
   BobaItem.find({ name: regex })
     .populate("store")
     .then((bobaItems) => res.json(bobaItems))

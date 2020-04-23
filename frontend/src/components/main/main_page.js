@@ -1,6 +1,7 @@
 import React from "react";
 import "../../assets/stylesheets/splash.scss";
 import { Link } from "react-router-dom";
+import Bubbles from "../bubbles/bubbles_container";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -19,20 +20,24 @@ class MainPage extends React.Component {
   render() {
     return (
       <>
-        <ul className="bubbles">
+        {/* <ul className="bubbles">
           <li></li>
           <li></li>
           <li></li>
           <li></li>
           <li></li>
-        </ul>
+        </ul> */}
         <div className="center welcome-form">
-            <div className="flex-column">
-                <h1>Welcome, Boba Enthusiasts!</h1>
-                <h2>Get poppin' below:</h2>
-                <Link to="/signup" className="splash-link">Signup</Link>
-                <Link to="/login" className="splash-link">Login</Link>
-            </div>
+          <div className="flex-column">
+            <h1>Welcome, Boba Enthusiasts!</h1>
+            <h2>Get poppin' below:</h2>
+            <Link to="/signup" className="splash-link">
+              Signup
+            </Link>
+            <Link to="/login" className="splash-link">
+              Login
+            </Link>
+          </div>
         </div>
       </>
     );

@@ -1,11 +1,13 @@
-import React from 'react';
-import '../../assets/stylesheets/dashboard.scss';
+import React from "react";
+import "../../assets/stylesheets/dashboard.scss";
 
 // WIDGETS
+
 import Calculator from './widgets/calculator';
 import Weather from './widgets/weather';
 import BudgetContainer from './widgets/budget_container';
-import Favorites from './widgets/favorites';
+import Bubbles from "../bubbles/bubbles_container";
+
 
 class Dashboard extends React.Component {
   componentDidMount() {
@@ -14,6 +16,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
+
     return (
       <div className="dashboard-container">
         <div className="d-left">
@@ -21,12 +24,17 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="d-middle">
+
           <BudgetContainer />
+
           <Calculator />
         </div>
 
         <div className="d-right">
-          <Favorites />
+          <div className="bubbles-container">
+            <Bubbles />
+            <p>CLICK ME!</p>
+          </div>
         </div>
       </div>
     );
@@ -34,4 +42,3 @@ class Dashboard extends React.Component {
 }
 
 export default Dashboard;
-

@@ -18,8 +18,8 @@ class Map extends React.Component {
     initMap(){
         // debugger
         const mapOptions = {
-            center: { lat: 40.7831, lng: -73.9712 },
-            zoom: 12,
+            center: { lat: 40.732321, lng: -73.992837 },
+            zoom: 14,
             styles: [
                 {
                     "featureType": "water",
@@ -190,8 +190,10 @@ class Map extends React.Component {
 
     componentDidMount() {
         this.initMap();
-        this.props.fetchStores().then(() => this.addMarker());   
-        this.listenForClick();
+        this.props.fetchStores()
+            .then(() => this.addMarker())
+            .then(() => this.listenForClick())   
+       
     }
 
     
@@ -214,28 +216,30 @@ class Map extends React.Component {
 
 
     listenForClick() {
-        // const infowindow = new google.maps.InfoWindow({
-        //     content: '<a href="https://www.facebook.com/ShinyTea.NewYork/">Visit Website</a>'
-        // });
+        const popUp = [];
 
-        // this.marker_arr.map((marker) => {
-        //         marker.addListener('click', (e) => {
-        //     infowindow.open(this.map, marker);
-        //     })
-        // })
+        this.props.stores.map(store => {
+            let url = store.mapUrl
+            popUp.push(new google.maps.InfoWindow({
+            content: `<div>
+                    <h1>${store.name}</h1>
 
+                    <a href=${url}>Get Directions!</a>
+            </div> `
+            }))
+             
+        })
 
-        // this.marker.addListener('click', (e) => {
-        //     infowindow.open(this.map, this.marker);
-        // })
-        // this.marker.addListener('click', (e) => {
-        //     infowindow.open(this.map, this.marker);
-        // })
+        this.marker_arr.map((marker, i) => {
+                marker.addListener('click', (e) => {
+                popUp[i].open(this.map, marker)
+            })
+        })
+
     }
 
 
     render() {
-        debugger
         console.log(this.props.stores)
         console.log(this.pos_arr)
         return (

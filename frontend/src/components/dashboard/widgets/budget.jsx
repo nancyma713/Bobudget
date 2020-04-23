@@ -12,8 +12,8 @@ class Budget extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchUser();
-    // this.props.fetchPurchases(this.props.currentUser.id);
+    this.props.fetchUser();
+    this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {
@@ -22,8 +22,9 @@ class Budget extends React.Component {
       price: this.state.price
     }
 
-    this.props.createPurchase(purchase);
-    // .then(() => this.props.history.push("/dashboard"))
+    this.props.createPurchase(purchase)
+      .then(() => window.location.reload());
+      // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
@@ -33,7 +34,7 @@ class Budget extends React.Component {
   render() {
     const { currentUser, purchases } = this.props;
     
-    if (!currentUser) return null;
+    if (!currentUser.data) return null;
     if (!purchases) return null;
 
     let moneySpent = 0;
@@ -42,10 +43,12 @@ class Budget extends React.Component {
       moneySpent += purchases[i].price;
     }
 
-    let moneyLeft = currentUser.user.budget - moneySpent;
+    let moneyLeft = currentUser.data.user.budget - moneySpent;
 
     let date = new Date();
     date = date.toDateString();
+
+    let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
 
     return (
       <div className="budget flex-row space-around">
@@ -69,15 +72,15 @@ class Budget extends React.Component {
           </form>
           <div className="flex-row align-center">
             <h1>Monthly budget: </h1>
-            <div className="price">$ {currentUser.user.budget}</div>
+            <div className="price">$ {currentUser.data.user.budget}</div>
           </div>
           <div className="flex-row align-center">
             <h1>Money spent: </h1>
             <div className="price">$ {moneySpent}</div>
           </div>
-          <div className="flex-row align-center">
+          <div className='flex-row align-center'>
             <h1>Amount left: </h1>
-            <div className="price">$ {moneyLeft}</div>
+            <div className={`price ${red}`}>$ {moneyLeft}</div>
           </div>
         </div>
         <div className="flex-column jus-center">{date}</div>

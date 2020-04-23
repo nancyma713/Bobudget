@@ -10,10 +10,11 @@ import Favorites from './widgets/favorites';
 class Dashboard extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
+    // this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   render() {
-    return(
+    return (
       <div className="dashboard-container">
         <div className="d-left">
           <Weather />
@@ -28,7 +29,7 @@ class Dashboard extends React.Component {
           <Favorites />
         </div>
       </div>
-    )
+    );
   }
 }
 

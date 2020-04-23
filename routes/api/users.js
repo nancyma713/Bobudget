@@ -108,15 +108,25 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.put("/:id/update", (req, res) => {
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
     // const { errors, isValid } = validateRegisterInput(req.body);
-
     // if (!isValid) {
     //   return res.status(400).json(errors);
     // }
-
-    User.findOneAndUpdate(req.user.budget, {$set: req.body});
-});
+    User.findOneAndUpdate(
+      { _id: req.user.id },
+      { $set: { budget: parseInt(req.body.budget) } },
+      { upsert: true },
+      (err, data) => {
+        if (err) res.json(err);
+        res.json(req.user.budget);
+      }
+    );
+  }
+);
 
 // router.get(
 //   "/logout",

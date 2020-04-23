@@ -10,7 +10,7 @@ class PurchaseHistory extends React.Component {
     };
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleSubmit = this.handleDelete.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     // this.deleteButton = this.deleteButton.bind(this);
   }
 
@@ -21,11 +21,16 @@ class PurchaseHistory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let newBudget = this.state.budget;
-    this.props.updateUser({ budget: newBudget });
+    debugger;
+    let user = this.props.currentUser.data.user;
+    debugger;
+    user.budget = this.state.budget;
+    debugger;
+    this.props.updateUser(user);
   }
 
   handleDelete(e) {
+    debugger;
     e.preventDefault();
     this.props.removePurchase(e.currentTarget.value)
       .then(() => window.location.reload());
@@ -129,7 +134,7 @@ class PurchaseHistory extends React.Component {
                 onChange={this.update("budget")}
               />
             </label>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </section>
         <section className='monthly-budget jus-center flex-row'>

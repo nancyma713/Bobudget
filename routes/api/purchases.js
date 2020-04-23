@@ -5,13 +5,22 @@ const passport = require("passport");
 const Purchase = require("../../models/Purchase");
 const validatePurchaseInput = require("../../validation/purchase");
 
-router.get("/", (req, res) => {
-  Purchase.find((error, purchases) => {
-    if (error)
-      return res
-        .status(404)
-        .json({ NoPurchases: "No record of any purchases." });
+// router.get("/", (req, res) => {
+//   Purchase.find((error, purchases) => {
+//     if (error) return res.status(404).json({ NoPurchases: "No record of any purchases." });
 
+//     res.json(purchases.map((purchase) => {
+//       return ({
+//         price: purchase.price,
+//         date: purchase.date,
+//         id: purchase.id
+//       })
+//     }));
+//   });
+// });
+
+router.get("/:userId", (req, res) => {
+  Purchase.find({ userId: req.params.userId }).then((purchases) =>
     res.json(
       purchases.map((purchase) => {
         return {
@@ -20,8 +29,8 @@ router.get("/", (req, res) => {
           id: purchase.id,
         };
       })
-    );
-  });
+    )
+  );
 });
 
 router.post(

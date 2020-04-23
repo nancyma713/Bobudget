@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchPurchases = () => {
-  return axios.get('/api/purchases')
+export const fetchPurchases = userId => {
+  return axios.get(`/api/purchases/${userId}`)
 };
 
 export const createPurchase = data => {

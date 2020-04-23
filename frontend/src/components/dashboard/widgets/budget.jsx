@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from 'react-router-dom';
 
 class Budget extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Budget extends React.Component {
   }
 
   update() {
-    return (e) => this.setState({ ["price"]: e.currentTarget.value });
+    return (e) => this.setState({ price: e.currentTarget.value });
   }
 
   render() {
@@ -41,6 +41,8 @@ class Budget extends React.Component {
     for (let i = 0; i < purchases.length; i++) {
       moneySpent += purchases[i].price;
     }
+
+    let moneyLeft = currentUser.user.budget - moneySpent;
 
     let date = new Date();
     date = date.toDateString();
@@ -58,7 +60,7 @@ class Budget extends React.Component {
           </div>
           <div className="flex-row align-center">
             <h1>Amount left: </h1>
-            <div className="price">$ {currentUser.user.budget}</div>
+            <div className="price">$ {moneyLeft}</div>
           </div>
         </div>
         <div className="flex-column jus-center">
@@ -69,12 +71,12 @@ class Budget extends React.Component {
                 className="budget-input"
                 type="number"
                 step="0.01"
-                onChange={this.update()}
+                onChange={this.update("price")}
                 value={this.state.price}
               />
               <button
                 className="budget-button flex-row jus-center align-center"
-                onSubmit={this.handleSubmit}
+                // onSubmit={this.handleSubmit}
               >
                 <i className="fas fa-plus-circle" />
               </button>

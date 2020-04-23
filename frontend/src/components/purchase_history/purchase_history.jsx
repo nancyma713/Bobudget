@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/stylesheets/purchases.scss';
 
 class PurchaseHistory extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class PurchaseHistory extends React.Component {
     };
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleSubmit = this.handleDelete.bind(this);
     // this.deleteButton = this.deleteButton.bind(this);
   }
 
@@ -17,7 +19,7 @@ class PurchaseHistory extends React.Component {
         budget: this.props.currentUser.data.user.budget,
       })
     );
-    this.props.fetchPurchases();
+    this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {
@@ -98,7 +100,7 @@ class PurchaseHistory extends React.Component {
       totalSpend += purchase.price;
       return (
         <li key={`p-${purchase.date}-${purchase.price}`}>
-          <span>{newDateString}</span>: $<span>{purchase.price}</span>
+          <span>{newDateString}</span>: <span id='purchase-price'>${purchase.price}</span>
           <button value={purchase.id} onClick={this.handleDelete}>
           DELETE
         </button>
@@ -107,13 +109,13 @@ class PurchaseHistory extends React.Component {
     });
 
     return (
-      <div>
+      <div className="purchased-items center">
         <h1>
           Purchase History for {month} {year}
         </h1>
-        <section>
-          <form>
-            <label>
+        <section className='budget-updates'>
+          <form onSubmit={this.handleSubmit}>
+            <label className='update-budget'>
               Update your budget: $
               <input
                 type="number"
@@ -123,15 +125,18 @@ class PurchaseHistory extends React.Component {
                 onChange={this.update("budget")}
               />
             </label>
+            <button>Submit</button>
           </form>
         </section>
-        <section>
-          <h3>Monthly Budget: ${this.state.budget}</h3>
+        <section className='monthly-budget jus-center flex-row'>
+          <h3>Monthly Budget: <span>${this.state.budget}</span></h3>
+          <h3>Total Monthly Spend: <span>${totalSpend}</span></h3>
         </section>
-        <section>
-          <h3>Total Spend This Month: ${totalSpend}</h3>
-          <h3>Current Purchases:</h3>
-          {purchaseItems}
+        <section className='spends flex-column'>
+          <h3>Current Purchases</h3>
+          <ul className='purchase-list'>
+            {purchaseItems}
+          </ul>
         </section>
       </div>
     );

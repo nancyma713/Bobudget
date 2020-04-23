@@ -7,9 +7,9 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: this.props.firstName,
-      lastName: this.props.lastName,
-      username: this.props.username,
+      firstName: '',
+      lastName: '',
+      username: '',
       zipcode: "",
       // budget: "",
       password: "",
@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-      .then(() => this.props.history.push("/dashboard"));
+      // .then(() => this.props.history.push("/dashboard"));
   }
 
   renderErrors() {

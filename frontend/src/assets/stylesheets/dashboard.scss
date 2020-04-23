@@ -95,20 +95,13 @@
   height: 33vh;
 }
 
-.budget-input {
-  background-color: #E8DBE6;
-  border-radius: 5px;
-  padding: 10px;
-  height: 30px;
-  box-sizing: border-box;
-  position: relative;
-}
-
 .budget-button {
+  width: 3.4vw;
+  height: 3.4vw;
   position: absolute;
   top: -8%;
-  right: -15%;
-  font-size: 35px;
+  right: -12%;
+  font-size: 3.4vw;
   color: #41382C;
   box-sizing: border-box;
 }
@@ -134,6 +127,17 @@
   width: 14vw;
   background-color: #C3EAF2;
   font-size: 1.5vw;
+  margin-bottom: 8px;
+}
+
+.budget-input {
+  background-color: #E8DBE6;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 7px 7px 7px 14px;
+  width: 14vw;
+  font-size: 1.5vw;
+  position: relative;
   margin-bottom: 8px;
 }
 

@@ -4,7 +4,7 @@ import { fetchStores } from '../../actions/store_actions';
 import Map from './map';
 
 const mapStateToProps = state => ({
-    stores: state.entities.store
+    stores: state.entities.stores.data
 });
 
 const mapDispatchToProps = dispatch => ({

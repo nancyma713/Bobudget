@@ -7,7 +7,8 @@ class Map extends React.Component {
         super(props);
 
 
-        this.marker_arr = []
+        this.marker_arr = [];
+        this.pos_arr = [];
         this.initMap = this.initMap.bind(this);
         this.addMarker = this.addMarker.bind(this);
         this.listenForClick = this.listenForClick.bind(this);
@@ -189,64 +190,39 @@ class Map extends React.Component {
 
     componentDidMount() {
         this.initMap();
-        this.addMarker();
+        this.props.fetchStores().then(() => this.addMarker());   
         this.listenForClick();
-        this.props.fetchStores();
     }
 
     
     addMarker(){
-        const arr = [
-            {
-            lat: 40.798249,
-            lng: -73.969304
-                            }, 
-            {
-                lat: 40.752216,
-                lng: -73.985701
-                                }
-        ]
-        // const position1 = {
-        //     lat: 40.798249,
-        //     lng: -73.969304
-        // }
-        // const position2 = {
-        //     lat: 40.752216,
-        //     lng: -73.985701
-        // }
-
-        arr.map((pos, i) => {
-            const marker =  this.marker = new google.maps.Marker({
-                position: pos,
-                map: this.map
-            });
-            this.marker_arr.push(marker);
-        })
-
-        // console.log(marker_arr);
-// debugger
-        // this.marker = new google.maps.Marker({
-        //     position: position1,
-        //     map: this.map
-        // });
-
-        // this.marker = new google.maps.Marker({
-        //     position: position2,
-        //     map: this.map
-        // });
+        if (this.props.stores) {
+            this.props.stores.map(store => {
+                const pos = {
+                        lat: store.lat,
+                        lng: store.lng
+                    }
+            
+                const marker = new google.maps.Marker({
+                    position: pos,
+                    map: this.map
+                })
+                this.marker_arr.push(marker);
+            })
+        }
     }
 
 
     listenForClick() {
-        const infowindow = new google.maps.InfoWindow({
-            content: '<a href="https://www.facebook.com/ShinyTea.NewYork/">Visit Website</a>'
-        });
+        // const infowindow = new google.maps.InfoWindow({
+        //     content: '<a href="https://www.facebook.com/ShinyTea.NewYork/">Visit Website</a>'
+        // });
 
-        this.marker_arr.map((marker) => {
-                marker.addListener('click', (e) => {
-            infowindow.open(this.map, marker);
-            })
-        })
+        // this.marker_arr.map((marker) => {
+        //         marker.addListener('click', (e) => {
+        //     infowindow.open(this.map, marker);
+        //     })
+        // })
 
 
         // this.marker.addListener('click', (e) => {
@@ -259,6 +235,9 @@ class Map extends React.Component {
 
 
     render() {
+        debugger
+        console.log(this.props.stores)
+        console.log(this.pos_arr)
         return (
           <>
             <div id="map" ref={(map) => (this.mapNode = map)}></div>

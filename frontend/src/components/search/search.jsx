@@ -1,4 +1,5 @@
 import React from "react";
+import Map from '../map/map_container';
 
 class Search extends React.Component {
   constructor(props) {
@@ -58,6 +59,8 @@ class Search extends React.Component {
 
           <div className="search-results">{bobaLi}</div>
         </div>
+
+         <Map />
       </div>
     );
   }

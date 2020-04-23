@@ -4,7 +4,7 @@ import { createPurchase, fetchPurchases } from '../../actions/purchase_actions';
 import { fetchUser } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
-  currentUser: state.session.user.data,
+  currentUser: state.session.user,
   purchases: state.entities.purchases.data
 });
 

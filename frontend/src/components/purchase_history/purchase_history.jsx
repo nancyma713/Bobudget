@@ -5,7 +5,7 @@ class PurchaseHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budget: "",
+      budget: ''
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -14,11 +14,7 @@ class PurchaseHistory extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser().then(() =>
-      this.setState({
-        budget: this.props.currentUser.data.user.budget,
-      })
-    );
+    this.props.fetchUser().then(() => this.setState({budget: this.props.currentUser.data.user.budget }))
     this.props.fetchPurchases(this.props.currentUser.id);
   }
 
@@ -29,8 +25,13 @@ class PurchaseHistory extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.removePurchase(e.currentTarget.value);
+    this.props.removePurchase(e.currentTarget.value)
+      .then(() => window.location.reload());
   }
+
+  // updateSpend() {
+  //   this.setState({ state: this.state });
+  // }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -38,6 +39,10 @@ class PurchaseHistory extends React.Component {
 
   render() {
     const { purchases } = this.props;
+    console.log(this.props);
+    console.log(this.state);
+
+    if (!purchases) return null;
     // debugger
     const newDate = new Date();
     const monthNum = newDate.getMonth();

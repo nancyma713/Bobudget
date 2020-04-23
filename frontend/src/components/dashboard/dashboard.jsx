@@ -4,24 +4,24 @@ import '../../assets/stylesheets/dashboard.scss';
 // WIDGETS
 import Calculator from './widgets/calculator';
 import Weather from './widgets/weather';
-import Budget from './widgets/budget';
+import BudgetContainer from './widgets/budget_container';
 import Favorites from './widgets/favorites';
 
 class Dashboard extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
+    // this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   render() {
-    const { currentUser, purchases, createPurchase, fetchPurchases } = this.props;
-    return(
+    return (
       <div className="dashboard-container">
         <div className="d-left">
           <Weather />
         </div>
 
         <div className="d-middle">
-          <Budget currentUser={currentUser} purchases={purchases} createPurchase={createPurchase} fetchPurchases={fetchPurchases}/>
+          <BudgetContainer />
           <Calculator />
         </div>
 
@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
           <Favorites />
         </div>
       </div>
-    )
+    );
   }
 }
 

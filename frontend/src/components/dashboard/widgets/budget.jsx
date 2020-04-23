@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Budget extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class Budget extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchUser();
-    // this.props.fetchPurchases(this.props.currentUser.id);
+    this.props.fetchUser();
+    this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {
@@ -22,8 +22,9 @@ class Budget extends React.Component {
       price: this.state.price
     }
 
-    this.props.createPurchase(purchase);
-    // .then(() => this.props.history.push("/dashboard"))
+    this.props.createPurchase(purchase)
+      .then(() => window.location.reload());
+      // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
@@ -33,7 +34,7 @@ class Budget extends React.Component {
   render() {
     const { currentUser, purchases } = this.props;
     
-    if (!currentUser) return null;
+    if (!currentUser.data) return null;
     if (!purchases) return null;
 
     let moneySpent = 0;
@@ -42,31 +43,16 @@ class Budget extends React.Component {
       moneySpent += purchases[i].price;
     }
 
-    let moneyLeft = currentUser.user.budget - moneySpent;
+    let moneyLeft = currentUser.data.user.budget - moneySpent;
 
     let date = new Date();
     date = date.toDateString();
 
+    let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
+
     return (
       <div className="budget flex-row space-around">
         <div className="flex-column">
-
-          <div className="flex-row align-center">
-            <h1>Monthly budget: </h1>
-            <div className="price">$ {currentUser.user.budget}</div>
-          </div>
-          <div className="flex-row align-center">
-            <h1>Money spent: </h1>
-            <div className="price">$ {moneySpent}</div>
-          </div>
-          <div className="flex-row align-center">
-            <h1>Amount left: </h1>
-            <div className="price">$ {moneyLeft}</div>
-          </div>
-        </div>
-        <div className="flex-column jus-center">
-          Add a purchase: {date}
-
           <form className="flex-row" onSubmit={this.handleSubmit}>
             <div className="pos-relative">
               <input
@@ -78,21 +64,30 @@ class Budget extends React.Component {
               />
               <button
                 className="budget-button flex-row jus-center align-center"
-              // onSubmit={this.handleSubmit}
+                // onSubmit={this.handleSubmit}
               >
                 <i className="fas fa-plus-circle" />
               </button>
             </div>
           </form>
-        
+          <div className="flex-row align-center">
+            <h1>Monthly budget: </h1>
+            <div className="price">$ {currentUser.data.user.budget}</div>
+          </div>
+          <div className="flex-row align-center">
+            <h1>Money spent: </h1>
+            <div className="price">$ {moneySpent}</div>
+          </div>
+          <div className='flex-row align-center'>
+            <h1>Amount left: </h1>
+            <div className={`price ${red}`}>$ {moneyLeft}</div>
+          </div>
         </div>
-        <div className="flex-column jus-center">
-          {date}
-        </div>
+        <div className="flex-column jus-center">{date}</div>
 
-        {/* <div className="budget-bottom-right">
+        <div className="budget-bottom-right">
           <Link to="/purchases">Purchase History</Link>
-        </div> */}
+        </div>
       </div>
     );
   }

@@ -21,11 +21,11 @@ router.get("/", (req, res) => {
 
 
 router.post(
-  "/new",
+  "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validatePurchaseInput(req.body);
-    debugger;
+    // debugger;
     if (!isValid) {
       return res.status(400).json(errors);
     }

@@ -19,32 +19,34 @@ const validatePurchaseInput = require("../../validation/purchase");
 //   });
 // });
 
-router.get('/:userId', (req, res) => {
-  Purchase.find({userId: req.params.userId})
-    .then(purchases => res.json(purchases.map(purchase => {
-      return ({
-        price: purchase.price,
-        date: purchase.date,
-        id: purchase.id
+router.get("/:userId", (req, res) => {
+  Purchase.find({ userId: req.params.userId }).then((purchases) =>
+    res.json(
+      purchases.map((purchase) => {
+        return {
+          price: purchase.price,
+          date: purchase.date,
+          id: purchase.id,
+        };
       })
-    })))
-})
-
+    )
+  );
+});
 
 router.post(
   "/new",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validatePurchaseInput(req.body);
-    debugger;
+
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    
+
     const newPurchase = new Purchase({
       price: req.body.price,
-      userId: req.user.id
-    })
+      userId: req.user.id,
+    });
     newPurchase.save().then((purchase) => res.json(purchase));
   }
 );

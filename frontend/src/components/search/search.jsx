@@ -9,14 +9,11 @@ class Search extends React.Component {
       location: "",
       name: "",
     };
+    // this.bobaLi = [];
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.fetchBobaItems();
-  // }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -24,24 +21,35 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchBobas(this.state.name);
+
+
+    this.props.searchBobas(this.state.name)
+      .then((list) => this.setState({
+        searchResult: list
+      }))
   }
 
   render() {
     let bobaLi;
-    if (this.props.bobas.data) {
-      bobaLi = Object.keys(this.props.bobas.data).map((key) => {
-        if (this.props.bobas.data[key].store) {
+    let storeLi = [];
+    // debugger
+    if (this.state.searchResult.items) {
+
+      bobaLi = this.state.searchResult.items.data.map((item) => {
+        // debugger
+        if (item.store) {
+          storeLi.push(item.store)
+
           return (
-            <li key={key}>
-              {this.props.bobas.data[key].name} is available at{" "}
-              {this.props.bobas.data[key].store.name}
-            </li>
+            <li key={item._id}>{item.name} is available at{" "}{item.store.name}</li>
           );
         }
-      });
+
+
+      })
     }
 
+    // debugger
     return (
       <div className="green-container">
         <div className="search-bar-container">
@@ -57,10 +65,10 @@ class Search extends React.Component {
             </form>
           </div>
 
-          <div className="search-results">{bobaLi}</div>
+          <div className="search-results">{bobaLi ? bobaLi : null}</div>
         </div>
 
-         <Map />
+        <Map storeLi={storeLi} />
       </div>
     );
   }

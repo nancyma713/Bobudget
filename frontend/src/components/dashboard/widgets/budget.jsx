@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
 
 class Budget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: ''
+      price: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,24 +23,23 @@ class Budget extends React.Component {
     }
 
     this.props.createPurchase(purchase);
-      // .then(() => this.props.history.push("/dashboard"))
+    // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
-    return e => this.setState({price: e.currentTarget.value})
+    return (e) => this.setState({ price: e.currentTarget.value });
   }
 
   render() {
-    debugger;
-    const { currentUser, purchases} = this.props;
+    const { currentUser, purchases } = this.props;
     
     if (!currentUser) return null;
     if (!purchases) return null;
 
     let moneySpent = 0;
 
-    for(let i = 0; i < purchases.length; i++) {
-      moneySpent += purchases[i].price
+    for (let i = 0; i < purchases.length; i++) {
+      moneySpent += purchases[i].price;
     }
 
     let moneyLeft = currentUser.user.budget - moneySpent;
@@ -51,13 +50,30 @@ class Budget extends React.Component {
     return (
       <div className="budget flex-row space-around">
         <div className="flex-column">
+
+          <div className="flex-row align-center">
+            <h1>Monthly budget: </h1>
+            <div className="price">$ {currentUser.user.budget}</div>
+          </div>
+          <div className="flex-row align-center">
+            <h1>Money spent: </h1>
+            <div className="price">$ {moneySpent}</div>
+          </div>
+          <div className="flex-row align-center">
+            <h1>Amount left: </h1>
+            <div className="price">$ {moneyLeft}</div>
+          </div>
+        </div>
+        <div className="flex-column jus-center">
+          Add a purchase: {date}
+
           <form className="flex-row" onSubmit={this.handleSubmit}>
             <div className="pos-relative">
               <input
                 className="budget-input"
                 type="number"
                 step="0.01"
-                onChange={this.update('price')}
+                onChange={this.update("price")}
                 value={this.state.price}
               />
               <button
@@ -68,18 +84,6 @@ class Budget extends React.Component {
               </button>
             </div>
           </form>
-          <div className="flex-row align-center">
-            <h1>Monthly budget: </h1>
-            <div className="price">$ {currentUser.user.budget}</div>
-          </div>
-          <div className="flex-row align-center">
-            <h1>Money spent: </h1>
-            <div className="price">$ {moneySpent}</div>
-          </div>
-        <div className="flex-row align-center">
-          <h1>Amount left: </h1>
-            <div className="price">$ {moneyLeft}</div>
-        </div>
         
         </div>
         <div className="flex-column jus-center">

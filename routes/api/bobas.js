@@ -41,7 +41,6 @@ router.get(
 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    debugger;
     BobaItem.findById(req.params.id)
       .then((boba) => res.json(boba))
       .catch((error) =>
@@ -52,6 +51,7 @@ router.get(
 
 router.get("/search/:boba_name", (req, res) => {
   const regex = new RegExp(["^", req.params.boba_name, "$"].join(""), "i");
+  debugger;
   BobaItem.find({ name: regex })
     .populate("store")
     .then((bobaItems) => res.json(bobaItems))

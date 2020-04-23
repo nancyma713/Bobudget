@@ -10,6 +10,10 @@ const BobaItemSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Store",
   },
+  temp: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = BobaItem = mongoose.model("BobaItems", BobaItemSchema);

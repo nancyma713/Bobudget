@@ -2,7 +2,7 @@ import * as BobaItemAPIUtil from "../util/boba_item_api_util";
 
 export const RECEIVE_BOBA_ITEMS = "RECEIVE_BOBA_ITEMS";
 export const RECEIVE_BOBA_ITEM = "RECEIVE_BOBA_ITEM";
-export const RECEIVE_STORE_BOBA_ITEMS = "RECEIVE_STORE_BOBA_ITEMS";
+export const SEARCH_BOBA_ITEMS = "SEARCH_BOBA_ITEMS";
 
 const receiveBobaItems = (bobas) => ({
   type: RECEIVE_BOBA_ITEMS,
@@ -14,8 +14,8 @@ const receiveBobaItem = (boba) => ({
   boba,
 });
 
-const receiveStoreBobaItems = (items) => ({
-  type: RECEIVE_STORE_BOBA_ITEMS,
+const receiveSearchBobas = (items) => ({
+  type: SEARCH_BOBA_ITEMS,
   items,
 });
 
@@ -37,8 +37,8 @@ export const createBobaItem = (bobaItem) => (dispatch) => {
   );
 };
 
-export const fetchStoreBobaItems = () => (dispatch) => {
-  return BobaItemAPIUtil.fetchStoreBobaItems().then((items) =>
-    dispatch(receiveStoreBobaItems(items))
+export const searchBobas = (bobaName) => (dispatch) => {
+  return BobaItemAPIUtil.searchBobas(bobaName).then((results) =>
+    dispatch(receiveSearchBobas(results))
   );
 };

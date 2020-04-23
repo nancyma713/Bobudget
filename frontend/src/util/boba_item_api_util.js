@@ -12,6 +12,6 @@ export const createBobaItem = (data) => {
   return axios.post(`/api/bobas`, data);
 };
 
-export const fetchStoreBobaItems = () => {
-  return axios.get("/api/storebobaitems/");
+export const searchBobas = (bobaName) => {
+  return axios.get(`/api/bobas/search/${bobaName}`);
 };

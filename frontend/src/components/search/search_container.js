@@ -1,9 +1,6 @@
 import { connect } from "react-redux";
 import Search from "./search";
-import {
-  fetchBobaItems,
-  fetchStoreBobaItems,
-} from "../../actions/boba_item_actions";
+import { fetchBobaItems, searchBobas } from "../../actions/boba_item_actions";
 
 const msp = (state) => {
   return {
@@ -14,7 +11,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
   fetchBobaItems: () => dispatch(fetchBobaItems()),
-  fetchStoreBobaItems: () => dispatch(fetchStoreBobaItems()),
+  searchBobas: (bobaName) => dispatch(searchBobas(bobaName)),
 });
 
 export default connect(msp, mdp)(Search);

@@ -19,3 +19,7 @@ export const login = (userData) => {
 export const fetchUser = () => {
     return axios.get('/api/users/current');
 }
+
+export const updateUser = (userData) => {
+    return axios.put('/api/users/update', userData);
+}

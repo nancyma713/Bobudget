@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/purchases.scss';
 
 class PurchaseHistory extends React.Component {
@@ -20,7 +21,8 @@ class PurchaseHistory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.update('budget')
+    let newBudget = this.state.budget;
+    this.props.updateUser({ budget: newBudget });
   }
 
   handleDelete(e) {
@@ -28,10 +30,6 @@ class PurchaseHistory extends React.Component {
     this.props.removePurchase(e.currentTarget.value)
       .then(() => window.location.reload());
   }
-
-  // updateSpend() {
-  //   this.setState({ state: this.state });
-  // }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -115,6 +113,7 @@ class PurchaseHistory extends React.Component {
 
     return (
       <div className="purchased-items center">
+        <Link to="/dashboard"><i className="fas fa-chevron-left"></i> Back to Dashboard</Link>
         <h1>
           Purchase History for {month} {year}
         </h1>

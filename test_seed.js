@@ -8,30 +8,39 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
-// const store = new Store({
-//   name: "Famous Scott's",
-//   zipcode: "10520",
-// });
+const store = new Store({
+  name: "Bar Pa Tea",
+  zipcode: "10012",
+});
 
-// const bobaItem = new BobaItem({
-//   name: "Taro",
-//   store: store,
-// });
+const bobaItem = new BobaItem({
+  name: "Lemon Green Tea",
+  store: store,
+  temp: "Cold",
+});
 
-// const bobaItem2 = new BobaItem({
-//   name: "Chai",
-//   store: store,
-// });
+const bobaItem2 = new BobaItem({
+  name: "Taro",
+  store: store,
+  temp: "Both",
+});
 
-// store.bobaItems.push(bobaItem, bobaItem2);
+const bobaItem3 = new BobaItem({
+  name: "Jasmine",
+  store: store,
+  temp: "Both",
+});
 
-// store.save().then((store) => console.log(store));
-// bobaItem.save().then((boba) => console.log(boba));
-// bobaItem2.save().then((boba) => console.log(boba));
+store.bobaItems.push(bobaItem, bobaItem2, bobaItem3);
+
+store.save();
+bobaItem.save();
+bobaItem2.save();
+bobaItem3.save();
 // Store.find({ ["bobaItems.name"]: "Taro" })
 // Store.find({ bobaItems: { name: "Taro" } });
 // Store.find({ "bobaItems.name": "Taro" }).then((store) => console.log(store));
 
-BobaItem.find({ name: "Taro" })
-  .populate("store")
-  .then((bobaItems) => console.log(bobaItems));
+// BobaItem.find({ name: "Taro" })
+//   .populate("store")
+//   .then((bobaItems) => console.log(bobaItems));

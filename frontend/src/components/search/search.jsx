@@ -13,9 +13,9 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchBobaItems();
-  }
+  // componentDidMount() {
+  //   this.props.fetchBobaItems();
+  // }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -23,46 +23,36 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let searchLi = [];
-
-    let bobaArr = this.props.bobas.data;
-
-    for (let i = 0; i < bobaArr.length; i++) {
-      if (bobaArr[i].name === this.state.name) {
-        searchLi.push(bobaArr[i]);
-      }
-    }
-
-    this.props.fetchStoreBobaItems().then((items) =>
-      items.items.data.forEach((item) => {
-        console.log(item);
-        console.log(searchLi);
-        debugger;
-        let temp = searchLi.find(({ _id }) => _id === item.bobaItemId);
-        console.log(temp);
-      })
-    );
+    this.props.searchBobas(this.state.name);
   }
 
   render() {
+    let bobaLi;
     if (this.props.bobas.data) {
-      const bobaLi = Object.keys(this.props.bobas.data).map((key) => (
-        <li key={key}>{this.props.bobas.data[key]}</li>
+      bobaLi = Object.keys(this.props.bobas.data).map((key) => (
+        <li key={key}>
+          {this.props.bobas.data[key].name} is available at{" "}
+          {this.props.bobas.data[key].store.name}
+        </li>
       ));
     }
-
+    debugger;
     return (
       <div className="green-container">
         <div className="search-bar-container">
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.update("name")}
-              placeholder="Search Bobas"
-            />
-            <button type="submit">Submit</button>
-          </form>
+          <div className="search-bar">
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                value={this.state.name}
+                onChange={this.update("name")}
+                placeholder="Search Bobas"
+              />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div className="search-results">{bobaLi}</div>
         </div>
       </div>
     );

@@ -24,7 +24,6 @@ const stores = require("./routes/api/stores");
 const purchases = require("./routes/api/purchases");
 const favorites = require("./routes/api/favorites");
 const storebobaitems = require("./routes/api/storebobaitems");
-const favorites = require("./routes/api/favorites");
 
 app.get("/", (req, res) => res.send("Hello World!!!"));
 

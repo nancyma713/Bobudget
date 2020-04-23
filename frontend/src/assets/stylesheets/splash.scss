@@ -9,26 +9,26 @@
 }
 
 .signup {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 .login {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .session-form {
-    margin: auto;
-    background-color: #E1D3BF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+  margin: auto;
+  background-color: #e1d3bf;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 .session-form h2 {
-    align-self: center;
+  align-self: center;
 }
 
 .session-form input {
@@ -46,14 +46,14 @@
 }
 
 .session-form button {
-    margin: 10px auto;
-    width: 70%;
-    background-color: #B3BA9E;
-    color: #F1F1F1;
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 10px auto;
+  width: 70%;
+  background-color: #b3ba9e;
+  color: #f1f1f1;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .session-form button:hover {
@@ -160,24 +160,23 @@
   }
 }
 
-
 #signup-form {
-    width: 350px;
+  width: 350px;
 }
 
 .half-width {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .split {
-    width: 48%;
+  width: 48%;
 }
 
 .welcome-form {
   margin: auto;
   margin-top: 10%;
-  background-color: #E1D3BF;
+  background-color: #e1d3bf;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 20px;
@@ -199,8 +198,8 @@
   width: 50%;
   align-self: center;
   margin: 10px;
-  background-color: #B3BA9E;
-  color: #F1F1F1;
+  background-color: #b3ba9e;
+  color: #f1f1f1;
   font-size: 20px;
   border-radius: 10px;
   padding: 10px;

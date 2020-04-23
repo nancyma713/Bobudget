@@ -5,7 +5,7 @@ export const fetchPurchases = userId => {
 };
 
 export const createPurchase = data => {
-  return axios.post('/api/purchases', data)
+  return axios.post('/api/purchases/new', data)
 };
 
 export const removePurchase = purchaseId => {

@@ -1,12 +1,12 @@
 .purchased-items {
     margin: auto;
-    margin-top: 5%;
+    margin-top: 0%;
     background-color: #E1D3BF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 20px;
     width: 70%;
-    height: 500px;
+    height: 80vh;
 }
 
 .purchased-items h1 {
@@ -68,6 +68,8 @@
 
 .purchase-list {
     list-style: none;
+    height: 22vw;
+    overflow: scroll;
 }
 
 #purchase-price {

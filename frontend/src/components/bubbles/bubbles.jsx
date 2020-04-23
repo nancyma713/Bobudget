@@ -30,14 +30,11 @@ class Bubbles extends React.Component {
 
   render() {
     let bobaSample;
-    // debugger;
+
     if (this.props.bobas.data) {
-      debugger;
       bobaSample = this.props.bobas.data[
         Math.floor(Math.random() * this.props.bobas.data.length)
       ];
-
-      debugger;
     }
 
     return (

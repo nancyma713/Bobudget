@@ -111,11 +111,7 @@ router.post("/login", (req, res) => {
 });
 
 router.put(
-<<<<<<< HEAD
-  "/:id/update",
-=======
   "/:id",
->>>>>>> 478e4aeac621fb174468280919dc8358978552f6
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     // const { errors, isValid } = validateRegisterInput(req.body);

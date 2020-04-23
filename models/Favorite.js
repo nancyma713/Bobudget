@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const FavoriteSchema = new Schema({
+const FavoritesSchema = new Schema({
   bobaItemId: {
     type: Schema.Types.ObjectId,
     ref: "BobaItem",
@@ -12,4 +12,4 @@ const FavoriteSchema = new Schema({
   }
 });
 
-module.exports = Rating = mongoose.model("Ratings", RatingSchema);
+module.exports = Favorite = mongoose.model("Favorite", FavoritesSchema);

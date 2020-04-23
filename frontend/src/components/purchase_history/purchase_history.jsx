@@ -21,16 +21,12 @@ class PurchaseHistory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     let user = this.props.currentUser.data.user;
-    debugger;
     user.budget = this.state.budget;
-    debugger;
     this.props.updateUser(user);
   }
 
   handleDelete(e) {
-    debugger;
     e.preventDefault();
     this.props.removePurchase(e.currentTarget.value)
       .then(() => window.location.reload());
@@ -42,11 +38,9 @@ class PurchaseHistory extends React.Component {
 
   render() {
     const { purchases } = this.props;
-    console.log(this.props);
-    console.log(this.state);
 
     if (!purchases) return null;
-    // debugger
+
     const newDate = new Date();
     const monthNum = newDate.getMonth();
     const year = newDate.getFullYear();

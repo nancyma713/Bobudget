@@ -42,34 +42,66 @@
     left: 40%;
     font-size: 1vw;
     color: #070707;
-    overflow: hidden;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
-.menu a, .menu button {
-    font-size: 13px;
+.nav-icon {
+    width: 4.5vw;
+    height: 4.5vw;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-icon .nav-text {
+    background-color: white;
+    color: black;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.nav-icon:hover .nav-text {
+    visibility: visible;
+}
+
+.menu i {
+    font-size: 230%;
+    color: #C3EAF2;
+}
+
+.menu button {
+    font-size: 100%;
     color: #C3EAF2;
 }
 
 .menu:hover {
     transition: height 1s;
-    height: 18vw;
+    justify-content: space-evenly;
+    height: 30vw;
+    overflow: visible;
+    opacity: 0.8;
 }
 
-.menu:hover a, .menu:hover button {
+.menu:hover i, .menu:hover button {
     transition: color 0.5s;
-    color: #070707;
-}
-
-.menu:hover a:hover, .menu:hover button:hover {
-    font-size: 14px;
+    color: #F1F1F1;
 }
 
 .menu:hover .menu-title {
     transition: color 0.5s;
     color: #C3EAF2;
+}
+
+.menu:hover .nav-icon {
+    background-color: #41382C;
+    border-radius: 50%;
 }
 
 .nav {

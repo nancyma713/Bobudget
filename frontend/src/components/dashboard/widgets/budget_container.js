@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: () => dispatch(fetchUser()),
   createPurchase: purchase => dispatch(createPurchase(purchase)),
-  fetchPurchases: () => dispatch(fetchPurchases())
+  fetchPurchases: userId => dispatch(fetchPurchases(userId))
 });
 
 export default connect(

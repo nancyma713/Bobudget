@@ -12,17 +12,16 @@ class Budget extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser();
-    this.props.fetchPurchases();
+    // this.props.fetchUser();
+    // this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     let purchase = {
       price: this.state.price
     }
-    debugger;
+
     this.props.createPurchase(purchase);
       // .then(() => this.props.history.push("/dashboard"))
   }
@@ -32,6 +31,7 @@ class Budget extends React.Component {
   }
 
   render() {
+    debugger;
     const { currentUser, purchases} = this.props;
     
     if (!currentUser) return null;

@@ -10,13 +10,15 @@ const mongoose = require("mongoose");
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
+mongoose.set("useFindAndModify", false);
+
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({['user']: req.user});
+    res.json({ ["user"]: req.user });
   }
 );
 
@@ -108,15 +110,26 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.put("/:id/update", (req, res) => {
+router.put(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
     // const { errors, isValid } = validateRegisterInput(req.body);
 
     // if (!isValid) {
     //   return res.status(400).json(errors);
     // }
-
-    User.findOneAndUpdate(req.user.budget, {$set: req.body});
-});
+    User.findOneAndUpdate(
+      { _id: req.user.id },
+      { $set: { budget: parseInt(req.body.budget) } },
+      { upsert: true },
+      (err, data) => {
+        if (err) res.json(err);
+        res.json(req.user.budget);
+      }
+    );
+  }
+);
 
 // router.get(
 //   "/logout",

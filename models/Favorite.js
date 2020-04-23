@@ -12,4 +12,4 @@ const FavoriteSchema = new Schema({
   }
 });
 
-module.exports = Rating = mongoose.model("Ratings", RatingSchema);
+module.exports = Favorite = mongoose.model("Favorite", FavoriteSchema);

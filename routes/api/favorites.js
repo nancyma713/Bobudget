@@ -5,15 +5,15 @@ const passport = require('passport');
 const Favorite = require('../../models/Favorite');
 
 router.post('/new',
-  password.authenticate('jwt', { session: false }),
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
 
     const newFavorite = new Favorite({
       bobaItemId: req.body.bobaItemId,
-      userId: req.user.id
+      userId: req.body.userId
     });
 
     newFavorite.save().then(favorite => res.json(favorite));
-});
+  });
 
 module.exports = router;

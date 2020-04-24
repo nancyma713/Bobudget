@@ -25,22 +25,25 @@ router.get("/:userId", (req, res) => {
 });
 
 
-router.delete("/:favoriteId", (req, res) => {
-  Favorite.findByIdAndRemove(req.params.favoriteId)
-    .then((favorite) => {
-      if (!favorite) {
-        return res.status(404).send({
-          message: "Favorite not found",
-        });
-      }
-      return res.send({ message: "Removed from favorites" });
-    })
-    .catch((err) => {
-      res.status(400).send({ message: "Could not remove favorite" });
-    });
+router.delete("/:favoriteId",
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
 
-  // Favorite.findByIdAndRemove(req.params.favoriteId);
-});
+    Favorite.findByIdAndRemove(req.params.favoriteId)
+      .then((favorite) => {
+        if (!favorite) {
+          return res.status(404).send({
+            message: "Favorite not found",
+          });
+        }
+        return res.send({ message: "Removed from favorites" });
+      })
+      .catch((err) => {
+        res.status(400).send({ message: "Could not remove favorite" });
+      });
+
+    // Favorite.findByIdAndRemove(req.params.favoriteId);
+  });
 
 
 module.exports = router;

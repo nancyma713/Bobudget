@@ -31,6 +31,8 @@ export const createFavorite = favorite => dispatch => {
 }
 
 export const removeFavorite = favoriteId => dispatch => {
+
+
   return FavoriteAPIUTil.removeFavorite(favoriteId).then(() =>
     dispatch(deleteFavorite(favoriteId))
   );

@@ -6,15 +6,15 @@ class Favorites extends React.Component {
     this.state = {
       bobaId: ''
     }
-    
+
     this.handleFavorite = this.handleFavorite.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
-  
+
   componentDidMount() {
     this.props.fetchBobaItems();
     this.props.fetchUser()
-      .then(() => this.setState({ bobaId: ' '}));
+      .then(() => this.setState({ bobaId: ' ' }));
     this.props.fetchFavorites(this.props.currentUser.id);
   }
 
@@ -24,10 +24,12 @@ class Favorites extends React.Component {
     //   userId: this.props.currentUser.data.user._id,
     //   bobaItemId: this.state.bobaId
     // }
-    this.props.removeFavorite(this.state.bobaId);
+
+    this.props.removeFavorite(this.state.bobaId)
+      .then(() => window.location.reload());
 
     // this.props.createFavorite(favorite)
-      // .then( () => this.setState({ bobaId: '' }));
+    // .then( () => this.setState({ bobaId: '' }));
   }
 
   // handleClick(id) {
@@ -54,7 +56,7 @@ class Favorites extends React.Component {
     // console.log(this.state);
 
     // if (!bobas.data) return null;
-    
+
     // const bobaList = bobas.data.map(boba => {
     //   return (
     //     <li key={`fav-${boba.name}-${boba.store}`}>
@@ -69,6 +71,7 @@ class Favorites extends React.Component {
     if (!favorites) return null;
     if (!bobas.data) return null;
 
+
     const favoritesList = favorites.map(fav => {
       if (bobas.data) {
         for (let i = 0; i < bobas.data.length; i++) {
@@ -76,7 +79,7 @@ class Favorites extends React.Component {
           if (fav.bobaItemId === boba._id) {
             return <li key={`fav-${boba._id}`}>
               {boba.name}
-              <button onClick={() => this.handleDelete(boba._id)}><i className="far fa-heart" /></button>
+              <button onClick={() => this.handleDelete(fav._id)}><i className="far fa-heart" /></button>
             </li>
           }
         }

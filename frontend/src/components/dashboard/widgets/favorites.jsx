@@ -77,10 +77,14 @@ class Favorites extends React.Component {
         for (let i = 0; i < bobas.data.length; i++) {
           let boba = bobas.data[i];
           if (fav.bobaItemId === boba._id) {
-            return <li key={`fav-${boba._id}`}>
-              {boba.name}
-              <button onClick={() => this.handleDelete(fav._id)}><i className="far fa-heart" /></button>
-            </li>
+            return (
+              <li className="fav" key={`fav-${boba._id}`}>
+                {boba.name}
+                <button onClick={() => this.handleDelete(fav._id)}>
+                  <i class="fas fa-trash-alt" />
+                </button>
+              </li>
+            );
           }
         }
       }

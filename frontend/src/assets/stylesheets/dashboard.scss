@@ -29,6 +29,16 @@
 
 // SCREEN @ FULL WIDTH
 @media screen and (min-width: 800px) {
+  #welcome-msg {
+    font-size: 25px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #41382c;
+    display: inline-block;
+    border-radius: 25px;
+    color: #ceccc4;
+  }
+
   .dashboard-container {
     margin: auto;
     display: flex;
@@ -146,6 +156,22 @@
   right: 10px;
 }
 
+.budget-bottom-right a {
+  color: #41382c;
+  background-color: #c3eaf2;
+  padding: 3px 8px;
+  border-radius: 15px;
+  box-shadow: 0px 1px 1px;
+}
+
+.budget-bottom-right a:hover {
+  box-shadow: 0px 1px 2px;
+}
+
+.budget-bottom-right a:focus {
+  box-shadow: 0px 1px 2px inset;
+}
+
 .calculator {
   box-sizing: border-box;
   background-color: #f1f1f1;
@@ -173,7 +199,7 @@
 }
 
 .calc-msg {
-  font-size: 1.6vw;
+  font-size: 1.4vw;
 }
 
 .button {

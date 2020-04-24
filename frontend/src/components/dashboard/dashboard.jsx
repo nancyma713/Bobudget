@@ -3,32 +3,43 @@ import "../../assets/stylesheets/dashboard.scss";
 
 // WIDGETS
 
-import Calculator from './widgets/calculator';
 import FavoritesContainer from './widgets/favorites_container';
 import BudgetCalcContainer from './widgets/budget_calc_container';
 import BubblesContainer from '../bubbles/bubbles_container';
 
 
 class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      username: ''
+    }
+  }
   componentDidMount() {
-    this.props.fetchUser();
-    // this.props.fetchPurchases(this.props.currentUser.id);
+    this.props.fetchUser()
+      .then(() => this.setState({ firstName: this.props.currentUser.data.user.firstName, lastName: this.props.currentUser.data.user.lastName, username: this.props.currentUser.data.user.username}));
   }
 
   render() {
+    const firstName = this.state.firstName;
 
     return (
-      <div className="dashboard-container">
-        <div className="d-left">
-          <FavoritesContainer />
-        </div>
+      <div>
+        <h1 id='welcome-msg'>Welcome, {firstName}</h1>
+        <div className="dashboard-container">
+          <div className="d-left">
+            <FavoritesContainer />
+          </div>
 
-          <BudgetCalcContainer />
+            <BudgetCalcContainer />
 
-        <div className="d-right">
-          <div className="bubbles-container">
-            <BubblesContainer />
-            <p>CLICK A BOBA FOR BOBA SUGGESTION!</p>
+          <div className="d-right">
+            <div className="bubbles-container">
+              <BubblesContainer />
+              <p>CLICK A BOBA FOR BOBA SUGGESTION!</p>
+            </div>
           </div>
         </div>
       </div>

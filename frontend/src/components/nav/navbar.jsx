@@ -12,7 +12,6 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
-    // return <Redirect to="/" />;
   }
 
   getLinks() {
@@ -31,7 +30,7 @@ class NavBar extends React.Component {
             <i className="fas fa-search" />
             <span className="nav-text">Search</span>
           </Link>
-          <button onClick={this.logoutUser} className="logout nav-icon">
+          <button className="nav-icon" onClick={this.logoutUser} className="logout nav-icon">
             <i class="fas fa-sign-out-alt" />
             <span className="nav-text">Logout</span>
           </button>
@@ -40,7 +39,10 @@ class NavBar extends React.Component {
     } else {
       return (
         <>
-          
+          <Link className="nav-icon" to="/">
+            <i className="fas fa-home" />
+            <span className="nav-text">Home</span>
+          </Link>
         </>
       );
     }
@@ -49,14 +51,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        {/*   <Link to="/" className='link-to-main'><h1>BoBudget!</h1></Link>
-         <div className='links'>{this.getLinks()}</div> */}
-        <div className="first boba">
-          <div className="menu">
-            <span className="menu-title">menu</span>
-            {this.getLinks()}
-          </div>
+        <div className="straw">
+          <span className="straw-title">menu</span>
+          {this.getLinks()}
         </div>
+        <div className="first boba" />
         <div className="tenth boba" />
         <div className="second boba">B</div>
         <div className="third boba">O</div>
@@ -66,6 +65,7 @@ class NavBar extends React.Component {
         <div className="seventh boba">G</div>
         <div className="eighth boba">E</div>
         <div className="ninth boba">T</div>
+
         <div className="nav">
           <Link to="/"><h1>BoBudget</h1></Link>
           <div className="nav-links">

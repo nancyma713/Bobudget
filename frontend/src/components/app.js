@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 
 import { Switch } from "react-router-dom";
 import NavBarContainer from "./nav/navbar_container";
+import "../assets/stylesheets/colors.scss";
 import "../assets/stylesheets/app.scss";
 import MainPage from "./main/main_page";
 import LoginFormContainer from "./session/login_form_container";

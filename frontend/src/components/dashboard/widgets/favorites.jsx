@@ -8,7 +8,7 @@ class Favorites extends React.Component {
     }
     
     this.handleFavorite = this.handleFavorite.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   
   componentDidMount() {
@@ -20,20 +20,21 @@ class Favorites extends React.Component {
 
   handleFavorite() {
     // e.preventDefault();
-    let favorite = {
-      userId: this.props.currentUser.data.user._id,
-      bobaItemId: this.state.bobaId
-    }
+    // let favorite = {
+    //   userId: this.props.currentUser.data.user._id,
+    //   bobaItemId: this.state.bobaId
+    // }
+    this.props.removeFavorite(this.state.bobaId);
 
-    this.props.createFavorite(favorite)
+    // this.props.createFavorite(favorite)
       // .then( () => this.setState({ bobaId: '' }));
   }
 
-  handleClick(id) {
-    this.setState({bobaId: id}, 
-      () => this.handleFavorite());
-    // this.handleFavorite();
-  }
+  // handleClick(id) {
+  //   this.setState({bobaId: id}, 
+  //     () => this.handleFavorite());
+  //   // this.handleFavorite();
+  // }
 
   // favoriteButton(id) {
   //   return (
@@ -42,6 +43,11 @@ class Favorites extends React.Component {
   //     </button>
   //   );
   // }
+
+  handleDelete(id) {
+    this.setState({ bobaId: id },
+      () => this.handleFavorite());
+  }
 
   render() {
     // const { bobas } = this.props;
@@ -68,7 +74,10 @@ class Favorites extends React.Component {
         for (let i = 0; i < bobas.data.length; i++) {
           let boba = bobas.data[i];
           if (fav.bobaItemId === boba._id) {
-            return <li key={`fav-${boba._id}`}>{boba.name}</li>
+            return <li key={`fav-${boba._id}`}>
+              {boba.name}
+              <button onClick={() => this.handleDelete(boba._id)}><i className="far fa-heart" /></button>
+            </li>
           }
         }
       }

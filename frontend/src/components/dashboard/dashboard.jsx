@@ -6,7 +6,7 @@ import "../../assets/stylesheets/dashboard.scss";
 import Calculator from './widgets/calculator';
 import FavoritesContainer from './widgets/favorites_container';
 import BudgetCalcContainer from './widgets/budget_calc_container';
-import Bubbles from "../bubbles/bubbles_container";
+import BubblesContainer from '../bubbles/bubbles_container';
 
 
 class Dashboard extends React.Component {
@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
 
         <div className="d-right">
           <div className="bubbles-container">
-            <Bubbles />
+            <BubblesContainer />
             <p>CLICK A BOBA FOR BOBA SUGGESTION!</p>
           </div>
         </div>

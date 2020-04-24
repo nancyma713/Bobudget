@@ -1,0 +1,149 @@
+@import './colors.scss';
+
+.signup {
+  margin-top: 2%;
+}
+
+.login {
+  margin-top: 8%;
+}
+
+.session-form {
+  margin: auto;
+  background-color: $milktea;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+  min-width: 330px;
+}
+
+.session-form h2 {
+  font-size: 190%;
+  text-align: center;
+}
+
+.session-form input {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  width: 100%;
+  height: 10%;
+  min-height: 47px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 115%;
+}
+
+.session-form input:focus {
+  transition: border 0.2s ease-in;
+  border: 2px solid $darkmatcha;
+}
+
+.session-form label {
+  margin: 7px 0px;
+  position: relative;
+}
+
+.session-form button {
+  margin: 10px auto;
+  width: 70%;
+  background-color: $matcha;
+  color: $white;
+  font-size: 130%;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.session-form button:hover {
+  background-color: $darkmatcha;
+  cursor: pointer;
+}
+
+.session-form p {
+  font-size: 110%;
+}
+
+.session-form a {
+  color: $darkmatcha;
+}
+
+.session-form a:hover {
+  text-decoration: underline;
+}
+
+.session-form label .error-right {
+  background-color: rgb(158, 27, 27, .8);
+  color: $white;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  left: 105%;
+  text-align: center;
+  font-size: 85%;
+  z-index: 1;
+}
+
+.session-form label .error-right::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; 
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgb(158, 27, 27) transparent transparent;
+}
+
+.session-form label .error-left {
+  background-color: rgb(158, 27, 27, .8);
+  color: $white;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  right: 105%;
+  text-align: center;
+  font-size: 85%;
+  z-index: 1;
+}
+
+.session-form label .error-left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 103%; 
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(158, 27, 27);
+}
+
+.red {
+  transition: border 0.2s ease-in;
+  border: 2px solid rgb(158, 27, 27);;
+}
+
+.none {
+  border: 2px solid transparent;
+}
+
+.no-error {
+  display: none;
+}
+
+.half-width {
+  display: flex;
+  justify-content: space-between;
+}
+
+.split {
+  width: 48%;
+}

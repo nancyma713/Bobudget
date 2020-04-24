@@ -1,5 +1,4 @@
 import React from 'react';
-import "../../assets/stylesheets/map.scss";
 /*global google*/
 
 class Map extends React.Component {

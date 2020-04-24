@@ -1,0 +1,65 @@
+@import './colors.scss';
+
+.search-container {
+  background-color: $lightmatcha;
+  position: fixed;
+  border-radius: 20px 20px 0px 0px;
+  top: 5%;
+  left: 2.5%;
+  width: 95vw;
+  height: 95vh;
+  z-index: -1;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.s-left {
+  width: 70%;
+  margin-right: 30px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 150%;
+  background-color: $white;
+}
+
+.search button {
+  font-size: 2vw;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 10%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: $darkmatcha;
+  color: $white;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.search-results {
+  border-radius: 10px;
+  margin-top: 5%;
+  background-color: $white;
+  height: 60%;
+}
+
+.search-results p {
+  text-align: center;
+  padding-top: 25%;
+}
+
+#map {
+  width: 70%;
+  height: 80%;
+  border-radius: 10px;
+}

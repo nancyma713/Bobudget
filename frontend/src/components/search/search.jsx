@@ -1,5 +1,6 @@
 import React from "react";
 import Map from '../map/map_container';
+import '../../assets/stylesheets/search.scss';
 
 class Search extends React.Component {
   constructor(props) {
@@ -75,23 +76,22 @@ class Search extends React.Component {
 
     // debugger
     return (
-      <div className="green-container">
-        <div className="search-bar-container">
-          <div className="search-bar">
-            <form onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                value={this.state.name}
-                onChange={this.update("name")}
-                placeholder="Search Bobas"
-              />
-              <button type="submit">Submit</button>
-            </form>
+      <div className="search-container">
+        <div className="s-left">
+          <form className="search" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}
+              placeholder="Search Bobas..."
+            />
+            <button type="submit"><i className="fas fa-search-location" /></button>
+          </form>
+
+          <div className="search-results">
+            {bobaLi ? bobaLi : <p>No search results <i className="far fa-frown" /></p>}
           </div>
-
-          <div className="search-results">{bobaLi ? bobaLi : null}</div>
         </div>
-
         <Map storeLi={storeLi} />
       </div>
     );

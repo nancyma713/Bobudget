@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 // WHEN SCREEN IS LESS THAN 800PX
 @media screen and (max-width: 800px) {
   .dashboard-container {
@@ -84,6 +86,30 @@
   padding: 20px;
   height: 63vh;
   overflow: scroll;
+  font-size: 19px;
+}
+
+.favorites h3 {
+  font-size: 40px;
+}
+
+.fav {
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  justify-content: space-between;
+  background-color: $pink;
+  margin-bottom: 10px;
+}
+
+.fav button i {
+  color: $white;
+  font-size: 20px;
+}
+
+.fav button i:hover {
+  color: $darkmatcha;
 }
 
 .item-container {

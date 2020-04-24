@@ -61,23 +61,17 @@ class Favorites extends React.Component {
     const { favorites, bobas } = this.props;
 
     if (!favorites) return null;
+    if (!bobas.data) return null;
 
-    debugger
-    let favoritesList = favorites.map(fav => {
-      let favorite;
-      if (fav.userId === this.props.currentUser.id) {
-        debugger
-        (bobas.data).forEach((boba) => {
-          debugger
+    const favoritesList = favorites.map(fav => {
+      if (bobas.data) {
+        for (let i = 0; i < bobas.data.length; i++) {
+          let boba = bobas.data[i];
           if (fav.bobaItemId === boba._id) {
-            debugger
-            favorite = boba.name;
+            return <li key={`fav-${boba._id}`}>{boba.name}</li>
           }
-        })
+        }
       }
-      return (
-        <li key={`fav-${fav._id}`}>{favorite}</li>
-        )
     });
 
     return (
@@ -85,7 +79,6 @@ class Favorites extends React.Component {
         <div className="favorites">
           <h3>My Favorites</h3>
           <ul>
-            {/* {bobaList} */}
             {favoritesList}
           </ul>
         </div>

@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUser: () => dispatch(fetchUser()),
   fetchBobaItems: () => dispatch(fetchBobaItems()),
   createFavorite: (favorite) => dispatch(createFavorite(favorite)),
-  fetchFavorites: () => dispatch(fetchFavorites()),
+  fetchFavorites: (userId) => dispatch(fetchFavorites(userId)),
   removeFavorite: (favoriteId) => dispatch(removeFavorite(favoriteId)),
 });
 

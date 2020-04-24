@@ -9,5 +9,8 @@ export const createFavorite = data => {
 };
 
 export const removeFavorite = favoriteId => {
+
+
+
   return axios.delete(`/api/favorites/${favoriteId}`)
 };

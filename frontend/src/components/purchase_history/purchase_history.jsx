@@ -15,7 +15,7 @@ class PurchaseHistory extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser().then(() => this.setState({budget: this.props.currentUser.data.user.budget }))
+    this.props.fetchUser().then(() => this.setState({ budget: this.props.currentUser.data.user.budget }))
     this.props.fetchPurchases(this.props.currentUser.id);
   }
 
@@ -24,7 +24,7 @@ class PurchaseHistory extends React.Component {
     let user = this.props.currentUser.data.user;
     user.budget = this.state.budget;
     this.props.updateUser(user)
-      .then( () => window.location.reload());
+      .then(() => window.location.reload());
   }
 
   handleDelete(e) {
@@ -103,7 +103,7 @@ class PurchaseHistory extends React.Component {
         <li key={`p-${purchase.date}-${purchase.price}`}>
           <span>{newDateString}</span>: <span id='purchase-price'>${purchase.price}</span>
           <button value={purchase.id} onClick={this.handleDelete}>
-          DELETE
+            DELETE
         </button>
         </li>
       );

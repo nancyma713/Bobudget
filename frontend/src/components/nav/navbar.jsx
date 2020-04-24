@@ -34,6 +34,10 @@ class NavBar extends React.Component {
             <i className="fas fa-sign-out-alt" />
             <span className="nav-text">Logout</span>
           </button>
+          <Link className="nav-icon" to="/creators">
+            <i className="fas fa-users"></i>
+            <span className="nav-text">Site Developers</span>
+          </Link>
         </>
       );
     } else {
@@ -42,6 +46,10 @@ class NavBar extends React.Component {
           <Link className="nav-icon" to="/">
             <i className="fas fa-home" />
             <span className="nav-text">Home</span>
+          </Link>
+          <Link className="nav-icon" to="/creators">
+            <i className="fas fa-users"></i>
+            <span className="nav-text">Site Developers</span>
           </Link>
         </>
       );

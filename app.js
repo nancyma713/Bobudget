@@ -24,7 +24,6 @@ const stores = require("./routes/api/stores");
 const purchases = require("./routes/api/purchases");
 const favorites = require("./routes/api/favorites");
 
-
 app.get("/", (req, res) => res.send("Hello World!!!"));
 
 app.use(passport.initialize());
@@ -38,8 +37,6 @@ app.use("/api/bobas", bobas);
 app.use("/api/stores", stores);
 app.use("/api/purchases", purchases);
 app.use("/api/favorites", favorites);
-
-
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

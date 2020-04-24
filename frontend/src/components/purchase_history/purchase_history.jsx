@@ -40,8 +40,6 @@ class PurchaseHistory extends React.Component {
   render() {
     const { purchases } = this.props;
 
-    if (!purchases) return null;
-
     const newDate = new Date();
     const monthNum = newDate.getMonth();
     const year = newDate.getFullYear();

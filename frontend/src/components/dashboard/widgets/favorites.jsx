@@ -13,7 +13,9 @@ class Favorites extends React.Component {
   
   componentDidMount() {
     this.props.fetchBobaItems();
-    this.props.fetchFavorites();
+    this.props.fetchUser()
+      .then(() => this.setState({ bobaId: ' '}));
+    this.props.fetchFavorites(this.props.currentUser.id);
   }
 
   handleFavorite() {
@@ -42,25 +44,49 @@ class Favorites extends React.Component {
   // }
 
   render() {
-    const { bobas } = this.props;
-    console.log(this.state);
+    // const { bobas } = this.props;
+    // console.log(this.state);
 
-    if (!bobas.data) return null;
+    // if (!bobas.data) return null;
     
-    const bobaList = bobas.data.map(boba => {
+    // const bobaList = bobas.data.map(boba => {
+    //   return (
+    //     <li key={`fav-${boba.name}-${boba.store}`}>
+    //       {boba.name}
+    //       <button onClick={() => this.handleClick(boba._id)}><i className="far fa-heart" /></button>
+    //     </li>
+    //   )
+    // })
+
+    const { favorites, bobas } = this.props;
+
+    if (!favorites) return null;
+
+    debugger
+    let favoritesList = favorites.map(fav => {
+      let favorite;
+      if (fav.userId === this.props.currentUser.id) {
+        debugger
+        (bobas.data).forEach((boba) => {
+          debugger
+          if (fav.bobaItemId === boba._id) {
+            debugger
+            favorite = boba.name;
+          }
+        })
+      }
       return (
-        <li key={`fav-${boba.name}-${boba.store}`}>
-          {boba.name}
-          <button onClick={() => this.handleClick(boba._id)}><i className="far fa-heart" /></button>
-        </li>
-      )
-    })
+        <li key={`fav-${fav._id}`}>{favorite}</li>
+        )
+    });
 
     return (
       <div className="favorites-container">
         <div className="favorites">
+          <h3>My Favorites</h3>
           <ul>
-            {bobaList}
+            {/* {bobaList} */}
+            {favoritesList}
           </ul>
         </div>
       </div>);

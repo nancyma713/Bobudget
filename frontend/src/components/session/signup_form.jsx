@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
-// import '../../assets/stylesheets/splash.scss';
+import '../../assets/stylesheets/session-forms.scss';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class SignupForm extends React.Component {
       lastName: "",
       username: "",
       zipcode: "",
-      // budget: "",
       password: "",
       password2: "",
       errors: {},
@@ -19,14 +18,6 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push('/login');
-  //   }
-
-  //   this.setState({ errors: nextProps.errors })
-  // }
 
   componentWillUnmount() {
     this.props.clearErrors();
@@ -52,108 +43,101 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-    .then( () => this.props.login({ username: this.state.username, password: this.state.password }));
-      // .then(() => this.props.history.push("/dashboard"));
+      .then(() => this.props.login({ username: this.state.username, password: this.state.password }));
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.props.errors).map((err, i) => (
-          <li key={`err-${i}`}>{this.props.errors[err]}</li>
-        ))}
-      </ul>
-    );
+  renderErrors(field) {
+    if (this.props.errors) {
+      return (
+        <>{this.props.errors[field]}</>
+      )
+    } else {
+      return null;
+    }
   }
 
   render() {
-    // debugger;
+    console.log(this.props.errors);
     return (
       <div className="signup margin-auto">
-        <form
-          className="session-form"
-          id="signup-form"
-          onSubmit={this.handleSubmit}
-        >
+        <form className="session-form" onSubmit={this.handleSubmit}>
           <h2>Sign Up</h2>
-          {this.renderErrors()}
 
           <div className="half-width">
             <label className="split">
               First Name
               <input
+                className={this.props.errors['firstName'] ? 'red' : 'none'}
                 type="text"
                 value={this.state.firstName}
                 onChange={this.update("firstName")}
                 placeholder="First Name"
               />
+              <span className={this.props.errors['firstName'] ? 'error-left' : 'no-error'}>{this.renderErrors('firstName')}</span>
             </label>
 
             <label className="split">
               Last Name
               <input
+                className={this.props.errors['lastName'] ? 'red' : 'none'}
                 type="text"
                 value={this.state.lastName}
                 onChange={this.update("lastName")}
                 placeholder="Last Name"
               />
+              <span className={this.props.errors['lastName'] ? 'error-right' : 'no-error'}>{this.renderErrors('lastName')}</span>
             </label>
           </div>
 
           <label>
             Username
             <input
+              className={this.props.errors['username'] ? 'red' : 'none'}
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
               placeholder="Username"
             />
+            <span className={this.props.errors['username'] ? 'error-right' : 'no-error'}>{this.renderErrors('username')}</span>
           </label>
 
           <div className="half-width">
             <label className="split">
               Password
               <input
+                className={this.props.errors['password'] ? 'red' : 'none'}
                 type="password"
                 value={this.state.password}
                 onChange={this.update("password")}
                 placeholder="Password"
               />
+              <span className={this.props.errors['password'] ? 'error-left' : 'no-error'}>{this.renderErrors('password')}</span>
             </label>
 
             <label className="split">
               Confirm Password
               <input
+                className={this.props.errors['password2'] ? 'red' : 'none'}
                 type="password"
                 value={this.state.password2}
                 onChange={this.update("password2")}
                 placeholder="Confirm Password"
               />
+              <span className={this.props.errors['password'] ? 'error-right' : 'no-error'}>{this.renderErrors('password')}</span>
             </label>
           </div>
 
           <label>
             Zipcode
             <input
+              className={this.props.errors['zipcode'] ? 'red' : 'none'}
               type="number"
               value={this.state.zipcode}
               onChange={this.update("zipcode")}
               placeholder="Zipcode"
             />
+            <span className={this.props.errors['zipcode'] ? 'error-right' : 'no-error'}>{this.renderErrors('zipcode')}</span>
           </label>
-
-          {/* <label>
-              Budget 
-              <input
-                type="number"
-                min="5.00"
-                step="0.01"
-                value={this.state.budget}
-                onChange={this.update("budget")}
-                placeholder="Budget"
-              />
-            </label> */}
-
           <button type="submit">Sign up</button>
           <p className="margin-auto">
             Already have an account? <Link to="/login">Log in</Link>

@@ -1,47 +1,22 @@
 import React from "react";
-import "../../assets/stylesheets/splash.scss";
 import { Link } from "react-router-dom";
+import "../../assets/stylesheets/splash.scss";
 import Bubbles from "../bubbles/bubbles_container";
 
-class MainPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      username: "",
-    };
-  }
+const MainPage = () => (
+  <div className="welcome-form center">
+    <section>
+      <h1>Welcome, 
+        <br />Boba Enthusiasts!&nbsp;&nbsp;
+        <i className="far fa-laugh-wink" /></h1>
+      <h2>Get poppin' below:</h2>
+    </section>
 
-  update(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value });
-  }
-
-  render() {
-    return (
-      <>
-        {/* <ul className="bubbles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul> */}
-        <div className="center welcome-form">
-          <div className="flex-column">
-            <h1>Welcome, Boba Enthusiasts!</h1>
-            <h2>Get poppin' below:</h2>
-            <Link to="/signup" className="splash-link">
-              Signup
-            </Link>
-            <Link to="/login" className="splash-link">
-              Login
-            </Link>
-          </div>
-        </div>
-      </>
-    );
-  }
-}
+    <section className="flex-column">
+      <Link to="/signup">Signup</Link>
+      <Link to="/login">Login</Link>
+    </section>
+  </div>
+);
 
 export default MainPage;

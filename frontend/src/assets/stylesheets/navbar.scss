@@ -1,181 +1,227 @@
+@import './colors.scss';
+
+// IF SCREEN IS LESS THAN 995PX
 @media screen and (max-width: 995px) {
-  .boba {
+  .boba, .straw, .nav-text {
     display: none;
   }
 
   .nav {
-    position: fixed;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    bottom: 0;
-    background-color: #41382C;
-    padding: 20px;
-    width: 100%;
-    height: 8vh;
   }
-}
 
-@media screen and (min-width: 990px) {
-    .nav {
-        display: none;
-    }
-}
-
-.nav h1 {
-    font-size: 120%;
-    color: #F1F1F1;
-}
-
-.nav a, .nav button {
-    color: #F1F1F1;
-    font-size: 120%;
-    margin-right: 2%;
-}
-
-.menu {
-    position: absolute;
-    background-color: #C3EAF2;
-    width: 5vw;
-    height: 5vw;
-    bottom: 85%;
-    left: 40%;
-    font-size: 1vw;
-    color: #070707;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-}
-
-.nav-icon {
-    width: 4.5vw;
-    height: 4.5vw;
-    position: relative; 
+  .nav-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 3vw;
+  }
+
+  .nav-icon i {
+    font-size: 190%;
+  }
 }
 
-.nav-icon .nav-text {
-    background-color: white;
+// IF SCREEN IS AT FULL-WIDTH
+@media screen and (min-width: 990px) {
+  .straw, .nav-icon {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav-icon .nav-text {
+    background-color: $lightblue;
     color: black;
-    visibility: hidden;
+    font-size: 20px;
     position: absolute;
-    bottom: 0;
+    visibility: hidden;
     z-index: 1;
-}
+    top: -5px;
+    left: 105%;
+  }
 
-.nav-icon:hover .nav-text {
+  .nav-icon:hover .nav-text {
     visibility: visible;
+  }
 }
 
-.menu i {
-    font-size: 230%;
-    color: #C3EAF2;
-}
-
-.menu button {
-    font-size: 100%;
-    color: #C3EAF2;
-}
-
-.menu:hover {
-    transition: height 1s;
-    justify-content: space-evenly;
-    height: 30vw;
-    overflow: visible;
-    opacity: 0.8;
-}
-
-.menu:hover i, .menu:hover button {
-    transition: color 0.5s;
-    color: #F1F1F1;
-}
-
-.menu:hover .menu-title {
-    transition: color 0.5s;
-    color: #C3EAF2;
-}
-
-.menu:hover .nav-icon {
-    background-color: #41382C;
-    border-radius: 50%;
-}
-
+// NORMAL NAV
 .nav {
-    position: fixed;
-    justify-content: space-between;
-    align-items: center;
-    bottom: 0;
-    background-color: #41382C;
-    padding: 20px;
-    width: 100%;
-    height: 8vh;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  background-color: $boba;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+  height: 10vh;
+}
+
+.nav h1 {
+  font-size: 220%;
+  color: $white;
 }
 
 .nav-links {
-    margin-right: 10%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.nav-links a, .nav-links button {
+  color: #F1F1F1;
+  font-size: 120%;
+}
+
+// LINKS
+.nav-icon {
+  width: 4.5vw;
+  height: 4.5vw;
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+}
+
+// STRAW
+.straw {
+  position: absolute;
+  background-image: linear-gradient(to right, #d5f0f6, $lightblue, #c0e9f1, #abe2ed, #96dae8, #82d3e3, #6dccdf);
+  width: 5vw;
+  height: 15vw;
+  bottom: 0;
+  font-size: 1vw;
+  color: $black;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+// STRAW BOBA ANIMATION
+@keyframes up {
+  0% {
+    transform: translateY(1000%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+//
+
+.straw button {
+  font-size: 100%;
+}
+
+.straw i {
+  font-size: 230%;
+  display: none;
+}
+
+.straw-title {
+  font-size: 1.8vw;
+}
+
+.straw:hover {
+  transition: all 1s;
+  height: 45vw;
+  overflow: visible;
+  opacity: 0.8;
+}
+
+.straw:hover a, .straw:hover button {
+  animation: up 2s ease;
+}
+
+.straw:hover i, .straw:hover button {
+  transition: color 0.5s;
+  color: $white;
+  display: block;
+}
+
+.straw:hover .straw-title {
+  display: none;
+}
+
+.straw:hover .nav-icon {
+  background-color: #41382C;
+  border-radius: 50%;
+  margin-top: 20%;
+}
+
+// BOBAS
 .boba {
-    position: fixed;
-    background-color: #41382C;
-    border-radius: 50%;
-    width: 15vw;
-    height: 15vw;
-    text-align: center;
-    color: #F1F1F1;
-    font-size: 9vw;
+  position: fixed;
+  background-color: $boba;
+  border-radius: 50%;
+  width: 15vw;
+  height: 15vw;
+  text-align: center;
+  color: $white;
+  font-size: 9vw;
 }
 
+.boba:hover {
+  width: 16vw;
+  height: 16vw;
+}
+
+//BOBA POSITIONING
 .first {
-    bottom: -6%;
-    left: -5%;
+  bottom: -6%;
+  left: -5%;
 }
 
 .second {
-    bottom: -8%;
-    left: 4%;
+  bottom: -8%;
+  left: 4%;
 }
 
 .third {
-    bottom: -5%;
-    left: 15%;
+  bottom: -5%;
+  left: 15%;
 }
 
 .fourth {
-    bottom: -8%;
-    left: 26%;
+  bottom: -8%;
+  left: 26%;
 }
 
 .fifth {
-    bottom: -7%;
-    left: 38%;
+  bottom: -7%;
+  left: 38%;
 }
 
 .sixth {
-    bottom: -5%;
-    right: 36%;
+  bottom: -5%;
+  right: 36%;
 }
 
 .seventh {
-    bottom: -8%;
-    right: 25%;
+  bottom: -8%;
+  right: 25%;
 }
 
 .eighth {
-    bottom: -5%;
-    right: 14%;
+  bottom: -5%;
+  right: 14%;
 }
 
 .ninth {
-    bottom: -8%;
-    right: 4%;
+  bottom: -8%;
+  right: 4%;
 }
 
 .tenth {
-    bottom: -6%;
-    right: -5%;
+  bottom: -6%;
+  right: -5%;
 }

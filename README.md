@@ -35,6 +35,42 @@ Search Sample Layout:
 - Back-end: MongoDB, Express
 - Cloud: Heroku, AWS
 
+Rendering and handling favorites on the dashboard:
+```javascript
+handleDelete(id) {
+    this.setState({ bobaId: id },
+      () => this.handleFavorite());
+  }
+
+handleFavorite() {
+    this.props.removeFavorite(this.state.bobaId)
+        .then(() => window.location.reload());
+}
+
+render() {
+    const favoritesList = favorites.map(fav => {
+        if (bobas.data) {
+            for (let i = 0; i < bobas.data.length; i++) {
+                let boba = bobas.data[i];
+                if (fav.bobaItemId === boba._id) {
+                    return <li key={`fav-${boba._id}`}>
+                    {boba.name}
+                    <button onClick={() => 
+                        this.handleDelete(fav._id)}>
+                        <i className="far fa-heart" />
+                    </button>
+                    </li>
+                }
+            }
+        }
+    });
+}
+```
+To render a list of favorites, we wanted to make sure we were able to grab the 
+current user's favorited items, matching the Favorite's ```bobaItemId``` to the 
+BobaItem's ```id``` and then returning the correct boba ```name```. We also 
+added the option to delete on the favorites list.
+
 ## Group Members
 - David Hong [Flex Developer / Back-End]
 - Jun (Scott) Lee [Back-End Developer]

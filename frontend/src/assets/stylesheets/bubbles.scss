@@ -127,6 +127,10 @@
   border-radius: 5px;
 }
 
+.modal-child > img { 
+  border-radius: 5px;
+}
+
 @keyframes modal-background-fade-in {
   from {
     background: transparent;

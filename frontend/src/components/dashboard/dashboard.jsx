@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUser()
-      .then(() => this.setState({ firstName: this.props.currentUser.data.user.firstName, lastName: this.props.currentUser.data.user.lastName, username: this.props.currentUser.data.user.username}));
+      .then(() => this.setState({ firstName: this.props.currentUser.data.user.firstName, lastName: this.props.currentUser.data.user.lastName, username: this.props.currentUser.data.user.username }));
   }
 
   render() {
@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
             <FavoritesContainer />
           </div>
 
-            <BudgetCalcContainer />
+          <BudgetCalcContainer />
 
           <div className="d-right">
             <div className="bubbles-container">

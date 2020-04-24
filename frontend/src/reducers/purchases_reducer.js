@@ -1,7 +1,7 @@
 import {
-  RECEIVE_PURCHASES,
-  RECEIVE_PURCHASE,
-  DELETE_PURCHASE,
+    RECEIVE_PURCHASES,
+    RECEIVE_PURCHASE,
+    DELETE_PURCHASE,
 } from "../actions/purchase_actions";
 
 const purchasesReducer = (state = {}, action) => {
@@ -12,7 +12,15 @@ const purchasesReducer = (state = {}, action) => {
         case RECEIVE_PURCHASES:
             return action.purchases;
         case RECEIVE_PURCHASE:
-            return action.purchase;
+            debugger
+            let temp = {
+                price: action.purchase.data.price,
+                date: action.purchase.data.date,
+                id: action.purchase.data._id
+            };
+
+            nextState.data.push(temp);
+            return nextState;
         case DELETE_PURCHASE:
             delete nextState[action.purchaseId];
             return nextState;

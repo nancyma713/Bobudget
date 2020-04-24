@@ -14,7 +14,8 @@ class BudgetCalc extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser();
-    this.props.fetchPurchases(this.props.currentUser.id);
+    this.props.fetchPurchases(this.props.currentUser.id)
+      .then(() => this.setState({ price: "" }));
   }
 
   handleSubmit(e) {
@@ -24,8 +25,10 @@ class BudgetCalc extends React.Component {
     }
 
     this.props.createPurchase(purchase)
-      .then(() => window.location.reload());
-      // .then(() => this.props.history.push("/dashboard"))
+      .then(() => this.setState({
+        price: ""
+      }));
+    // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
@@ -34,7 +37,7 @@ class BudgetCalc extends React.Component {
 
   render() {
     const { currentUser, purchases } = this.props;
-    
+
     if (!currentUser.data) return null;
     if (!purchases) return null;
 
@@ -50,7 +53,7 @@ class BudgetCalc extends React.Component {
     date = date.toDateString();
 
     let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
-
+    debugger
     return (
       <div className="d-middle">
         <div className="budget flex-row space-around">
@@ -66,7 +69,7 @@ class BudgetCalc extends React.Component {
                 />
                 <button
                   className="budget-button flex-row jus-center align-center"
-                  // onSubmit={this.handleSubmit}
+                // onSubmit={this.handleSubmit}
                 >
                   <i className="fas fa-plus-circle" />
                 </button>
@@ -92,7 +95,7 @@ class BudgetCalc extends React.Component {
           </div>
         </div>
 
-        <Calculator moneySpent={moneySpent} moneyLeft={moneyLeft}/>
+        <Calculator moneySpent={moneySpent} moneyLeft={moneyLeft} />
       </div>
     );
   }

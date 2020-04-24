@@ -46,50 +46,41 @@ class BudgetCalc extends React.Component {
 
     let moneyLeft = currentUser.data.user.budget - moneySpent;
 
-    let date = new Date();
-    date = date.toDateString();
-
     let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
 
     return (
       <div className="d-middle">
-        <div className="budget flex-row space-around">
-          <div className="flex-column">
-            <form className="flex-row" onSubmit={this.handleSubmit}>
-              <div className="pos-relative">
-                <input
-                  className="budget-input"
-                  type="number"
-                  step="0.01"
-                  onChange={this.update("price")}
-                  value={this.state.price}
-                />
-                <button
-                  className="budget-button flex-row jus-center align-center"
-                  // onSubmit={this.handleSubmit}
-                >
-                  <i className="fas fa-plus-circle" />
-                </button>
-              </div>
-            </form>
-            <div className="flex-row align-center">
-              <h1>Monthly budget: </h1>
-              <div className="price">$ {currentUser.data.user.budget}</div>
+        <div className="budget flex-column">
+          <form onSubmit={this.handleSubmit}>
+            <div className="pos-relative">
+              <input
+                className="budget-input"
+                type="number"
+                step="0.01"
+                onChange={this.update("price")}
+                value={this.state.price}
+              />
+              <button
+                className="budget-button flex-row jus-center align-center"
+                // onSubmit={this.handleSubmit}
+              >
+                <i className="fas fa-plus-circle" />
+              </button>
             </div>
-            <div className="flex-row align-center">
-              <h1>Money spent: </h1>
-              <div className="price">$ {moneySpent}</div>
-            </div>
-            <div className='flex-row align-center'>
-              <h1>Amount left: </h1>
-              <div className={`price ${red}`}>$ {moneyLeft}</div>
-            </div>
+          </form>
+          <div className="flex-row align-center">
+            <h1>Monthly budget: </h1>
+            <div className="price">$ {currentUser.data.user.budget}</div>
           </div>
-          <div className="flex-column jus-center">{date}</div>
-
-          <div className="budget-bottom-right">
-            <Link to="/purchases">Purchase History</Link>
+          <div className="flex-row align-center">
+            <h1>Money spent: </h1>
+            <div className="price">$ {moneySpent}</div>
           </div>
+          <div className='flex-row align-center'>
+            <h1>Amount left: </h1>
+            <div className={`price ${red}`}>$ {moneyLeft}</div>
+          </div>
+          <Link className="center" to="/purchases">Purchase History</Link>
         </div>
 
         <Calculator moneySpent={moneySpent} moneyLeft={moneyLeft}/>

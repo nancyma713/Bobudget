@@ -24,16 +24,19 @@ class Dashboard extends React.Component {
 
   render() {
     const firstName = this.state.firstName;
+    let date = new Date();
+    date = date.toDateString();
 
     return (
       <div>
-        <h1 id='welcome-msg'>Welcome, {firstName}</h1>
+        <h1 id="welcome-msg">Welcome, {firstName}</h1>
+        <h1 id="date">{date}</h1>
         <div className="dashboard-container">
           <div className="d-left">
             <FavoritesContainer />
           </div>
 
-            <BudgetCalcContainer />
+          <BudgetCalcContainer />
 
           <div className="d-right">
             <div className="bubbles-container">

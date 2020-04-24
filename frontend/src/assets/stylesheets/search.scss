@@ -1,8 +1,42 @@
 @import './colors.scss';
 
+// WHEN SCREEN IS LESS THAN 800PX
+@media screen and (max-width: 800px) {
+  .search-container {
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+  }
+
+  .s-left , #map{
+    width: 100%;
+  }
+
+  .search-results {
+    height: 200px;
+    margin-bottom: 30px;
+  }
+}
+
+// SCREEN @ FULL WIDTH
+@media screen and (min-width: 800px) {
+  .search-container {
+    flex-direction: row;
+    position: fixed;
+  }
+
+  .s-left, #map {
+    width: 70%;
+  }
+
+  .search-results {
+    height: 60%;
+  }
+
+}
+
 .search-container {
   background-color: $lightmatcha;
-  position: fixed;
   border-radius: 20px 20px 0px 0px;
   top: 5%;
   left: 2.5%;
@@ -16,7 +50,6 @@
 }
 
 .s-left {
-  width: 70%;
   margin-right: 30px;
 }
 
@@ -50,16 +83,71 @@
   border-radius: 10px;
   margin-top: 5%;
   background-color: $white;
-  height: 60%;
+  padding: 10px;
+  overflow: scroll;
 }
 
 .search-results p {
+  font-size: 150%;
   text-align: center;
   padding-top: 25%;
 }
 
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  background-color: $pink;
+  overflow: hidden;
+}
+
+.search-item:first-child {
+  margin-top: 0px;
+}
+
+.search-item i {
+  font-size: 40px;
+  color: rgba(55, 95, 55);
+}
+
+.search-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search-item button .fav-tt {
+  visibility: hidden;
+  font-size: 25px;
+}
+
+.search-item button:hover .fav-tt {
+  visibility: visible;
+}
+
+.search-pic {
+  width: 5vw;
+  height: 5vw;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.search-pic img {
+  height: inherit;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
+}
+
 #map {
-  width: 70%;
   height: 80%;
   border-radius: 10px;
 }

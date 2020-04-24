@@ -59,6 +59,7 @@
   padding: 20px;
   width: 100%;
   height: 10vh;
+  z-index: 1;
 }
 
 .nav h1 {
@@ -80,8 +81,8 @@
 
 // LINKS
 .nav-icon {
-  width: 4.5vw;
-  height: 4.5vw;
+  width: 4.7vw;
+  height: 4.7vw;
   position: relative; 
   justify-content: center;
   align-items: center;
@@ -123,7 +124,7 @@
 }
 
 .straw i {
-  font-size: 230%;
+  font-size: 170%;
   display: none;
 }
 
@@ -153,7 +154,8 @@
 }
 
 .straw:hover .nav-icon {
-  background-color: #41382C;
+  background-image: url('https://bobudget-seeds.s3.amazonaws.com/images/finalboba.png');
+  background-size: cover;
   border-radius: 50%;
   margin-top: 20%;
 }

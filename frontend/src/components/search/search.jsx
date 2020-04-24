@@ -61,18 +61,35 @@ class Search extends React.Component {
     let storeLi = [];
     // debugger
     if (this.state.searchResult.items) {
-
       bobaLi = this.state.searchResult.items.data.map((item) => {
-        // debugger
         if (item.store) {
           storeLi.push(item.store)
-
           return (
-            <li key={item._id}>{item.name} is available at{" "}{item.store.name} <button onClick={() => this.handleClick(item._id)}><i className="far fa-heart" /></button></li>
+            <div className="search-item" key={item._id}>
+              <section className="flex-row">
+                <div className="search-pic">
+                  <img src={item.photoUrl} />
+                </div>
+                <div className="flex-column">
+                  <h2>{item.name}</h2>
+                  at {item.store.name}
+                </div>
+              </section>
+              <button onClick={() => this.handleClick(item._id)}>
+                <span className="fav-tt">Add to favorites&nbsp;&nbsp;</span>
+                <i className="fas fa-plus-square" />
+              </button>
+            </div>
           );
         }
       })
-    }
+    };
+
+    if (bobaLi) {
+      if (bobaLi.length === 0 ) {
+          bobaLi = <p>No search result <i className="far fa-frown" /></p>
+      }
+    };
 
     // debugger
     return (
@@ -89,7 +106,7 @@ class Search extends React.Component {
           </form>
 
           <div className="search-results">
-            {bobaLi ? bobaLi : <p>No search results <i className="far fa-frown" /></p>}
+            {bobaLi ? bobaLi : <p>Start your search!</p>}
           </div>
         </div>
         <Map storeLi={storeLi} />

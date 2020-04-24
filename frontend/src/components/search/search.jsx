@@ -8,11 +8,19 @@ class Search extends React.Component {
       searchResult: [],
       location: "",
       name: "",
+      bobaId: ""
     };
     // this.bobaLi = [];
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFavorite = this.handleFavorite.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchBobaItems();
+    this.props.fetchFavorites();
   }
 
   update(field) {
@@ -22,11 +30,29 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-
     this.props.searchBobas(this.state.name)
       .then((list) => this.setState({
         searchResult: list
       }))
+  }
+
+  handleFavorite() {
+    let favorite = this.props.favorites.id;
+    if (favorite) {
+      this.props.removeFavorite(favorite.id)
+        .then(() => this.props.fetchFavorites());
+    } else {
+        let favorite = {
+          userId: this.props.currentUser.data.user._id,
+          bobaItemId: this.state.bobaId
+        }
+      this.props.createFavorite(favorite);
+    }
+  }
+
+  handleClick(id) {
+    this.setState({ bobaId: id },
+      () => this.handleFavorite());
   }
 
   render() {
@@ -41,11 +67,9 @@ class Search extends React.Component {
           storeLi.push(item.store)
 
           return (
-            <li key={item._id}>{item.name} is available at{" "}{item.store.name}</li>
+            <li key={item._id}>{item.name} is available at{" "}{item.store.name} <button onClick={() => this.handleClick(item._id)}><i className="far fa-heart" /></button></li>
           );
         }
-
-
       })
     }
 

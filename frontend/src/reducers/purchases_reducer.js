@@ -12,7 +12,7 @@ const purchasesReducer = (state = {}, action) => {
         case RECEIVE_PURCHASES:
             return action.purchases;
         case RECEIVE_PURCHASE:
-            debugger
+            // debugger
             let temp = {
                 price: action.purchase.data.price,
                 date: action.purchase.data.date,

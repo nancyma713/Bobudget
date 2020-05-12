@@ -14,11 +14,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 3vw;
+    margin-left: calc(10px + 3vw);
   }
 
   .nav-icon i {
-    font-size: 190%;
+    font-size: calc(14px + 3.2vw);
+  }
+
+  .nav-icon i:hover {
+    transition: font-size 0.2s ease-in;
+    font-size: calc(15px + 3.7vw);
   }
 }
 
@@ -35,11 +40,11 @@
   .nav-icon .nav-text {
     background-color: $lightblue;
     color: black;
-    font-size: 20px;
+    font-size: 1.5vw;
     position: absolute;
     visibility: hidden;
     z-index: 1;
-    top: -5px;
+    top: 10px;
     left: 105%;
   }
 
@@ -58,12 +63,13 @@
   box-sizing: border-box;
   padding: 20px;
   width: 100%;
+  min-height: 60px;
   height: 10vh;
   z-index: 1;
 }
 
 .nav h1 {
-  font-size: 220%;
+  font-size: 6vw;
   color: $white;
 }
 
@@ -76,7 +82,6 @@
 
 .nav-links a, .nav-links button {
   color: #F1F1F1;
-  font-size: 120%;
 }
 
 // LINKS
@@ -129,12 +134,12 @@
 }
 
 .straw-title {
-  font-size: 1.8vw;
+  font-size: 1.7vw;
 }
 
 .straw:hover {
-  transition: all 1s;
-  height: 45vw;
+  transition: all 1s ease;
+  height: 90vh;
   overflow: visible;
   opacity: 0.8;
 }
@@ -144,12 +149,13 @@
 }
 
 .straw:hover i, .straw:hover button {
-  transition: color 0.5s;
+  transition: color 0.5s ease-in;
   color: $white;
   display: block;
 }
 
 .straw:hover .straw-title {
+  transition: display 0.5s ease-in;
   display: none;
 }
 

@@ -57,7 +57,7 @@ class BudgetCalc extends React.Component {
     let moneyLeft = currentUser.data.user.budget - moneySpent;
 
     let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
-    debugger
+
     return (
       <div className="d-middle">
         <div className="budget flex-column">
@@ -73,7 +73,7 @@ class BudgetCalc extends React.Component {
               />
               <button
                 className="budget-button flex-row jus-center align-center"
-                // onSubmit={this.handleSubmit}
+              // onSubmit={this.handleSubmit}
               >
                 <i className="fas fa-plus-circle" />
               </button>

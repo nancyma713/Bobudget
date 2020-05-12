@@ -28,7 +28,6 @@ class BudgetCalc extends React.Component {
       .then(() => this.setState({
         price: ""
       }));
-    // .then(() => this.props.history.push("/dashboard"))
   }
 
   update() {
@@ -41,10 +40,18 @@ class BudgetCalc extends React.Component {
     if (!currentUser.data) return null;
     if (!purchases) return null;
 
+    const newDate = new Date();
+    const monthNum = newDate.getMonth();
+    let monthlyPurchases = purchases.filter((purchase) => {
+      const purchaseDate = new Date(purchase.date);
+      const purchaseMonth = purchaseDate.getMonth();
+      return purchaseMonth === monthNum;
+    });
+
     let moneySpent = 0;
 
-    for (let i = 0; i < purchases.length; i++) {
-      moneySpent += purchases[i].price;
+    for (let i = 0; i < monthlyPurchases.length; i++) {
+      moneySpent += monthlyPurchases[i].price;
     }
 
     let moneyLeft = currentUser.data.user.budget - moneySpent;

@@ -114,22 +114,21 @@
 }
 
 .modal-child {
+  font-size: 1.8vw;
   position: relative;
   margin: 0 auto;
-  top: 15%;
+  top: 30vh;
   color: black;
   background: white;
-  height: 200px;
-  width: 200px;
-  border-radius: 3px;
+  height: 15vw;
+  width: 15vw;
   animation-name: modal-swoop-in;
   animation-duration: 0.5s;
-  border-radius: 5px;
+  border-radius: 1vw;
 }
 
 .modal-child > img { 
-  width: 200px;
-  border-radius: 5px;
+  width: 15vw;
 }
 
 @keyframes modal-background-fade-in {
@@ -148,7 +147,7 @@
     right: -35%;
   }
   to {
-    top: 15%;
+    top: 30vh;
     bottom: 0%;
     right: 0%;
   }

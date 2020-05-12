@@ -36,7 +36,7 @@ class NavBar extends React.Component {
           </button>
           <Link className="nav-icon" to="/creators">
             <i className="fas fa-users"></i>
-            <span className="nav-text">Site Developers</span>
+            <span className="nav-text">Developers</span>
           </Link>
         </>
       );
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
           </Link>
           <Link className="nav-icon" to="/creators">
             <i className="fas fa-users"></i>
-            <span className="nav-text">Site Developers</span>
+            <span className="nav-text">Developers</span>
           </Link>
         </>
       );

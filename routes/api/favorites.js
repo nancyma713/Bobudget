@@ -17,7 +17,7 @@ router.post('/new',
   });
 
 router.get("/:userId", (req, res) => {
-  Favorite.find((error, favorites) => {
+  Favorite.find({userId: req.params.userId}, (error, favorites) => {
     if (error) return res.status(404).json({ NoFavorites: "No Favorites found." });
 
     res.json(favorites.map((favorite) => favorite));

@@ -165,65 +165,75 @@
   position: fixed;
   background-color: $boba;
   border-radius: 50%;
-  width: 15vw;
-  height: 15vw;
+  width: 13vw;
+  height: 13vw;
   text-align: center;
   color: $white;
-  font-size: 9vw;
+  font-size: 7.3vw;
 }
 
 .boba:hover {
-  width: 16vw;
-  height: 16vw;
+  width: 13.5vw;
+  height: 13.5vw;
 }
 
 //BOBA POSITIONING
-.first {
+.one {
   bottom: -6%;
   left: -5%;
 }
 
-.second {
-  bottom: -8%;
-  left: 4%;
+.two {
+  bottom: -10%;
+  left: 3%;
 }
 
-.third {
+.three {
+  bottom: -8%;
+  left: 12%;
+}
+
+.four {
   bottom: -5%;
-  left: 15%;
+  left: 21%;
 }
 
-.fourth {
+.five {
   bottom: -8%;
-  left: 26%;
+  left: 30%;
 }
 
-.fifth {
+.six {
   bottom: -7%;
-  left: 38%;
+  left: 39%;
 }
 
-.sixth {
+.seven {
   bottom: -5%;
-  right: 36%;
+  right: 39%;
 }
 
-.seventh {
+.eight {
   bottom: -8%;
-  right: 25%;
+  right: 30%;
 }
 
-.eighth {
+.nine {
   bottom: -5%;
-  right: 14%;
+  right: 21%;
 }
 
-.ninth {
+.ten {
   bottom: -8%;
-  right: 4%;
+  right: 12%;
 }
 
-.tenth {
+.eleven {
+  bottom: -10%;
+  right: 3%;
+}
+
+.twelve {
   bottom: -6%;
   right: -5%;
 }

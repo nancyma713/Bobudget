@@ -67,7 +67,7 @@
 }
 
 .search button {
-  font-size: 2vw;
+  font-size: 25px;
   position: absolute;
   right: 0;
   height: 100%;
@@ -77,6 +77,10 @@
   background-color: $darkmatcha;
   color: $white;
   border-radius: 0px 10px 10px 0px;
+}
+
+.search button:hover {
+  background-color: #898d7c;
 }
 
 .search-results {

@@ -25,6 +25,7 @@ class Search extends React.Component {
   }
 
   update(field) {
+
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 

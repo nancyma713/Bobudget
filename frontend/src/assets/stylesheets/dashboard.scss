@@ -32,24 +32,24 @@
 // SCREEN @ FULL WIDTH
 @media screen and (min-width: 800px) {
   #welcome-msg {
-    font-size: 25px;
-    margin: 10px;
-    padding: 10px;
+    font-size: 2.5vw;
+    margin: .6vw;
+    padding: .3vw .7vw;
     background-color: #41382c;
     display: inline-block;
-    border-radius: 25px;
+    border-radius: 1.8vw;
     color: #ceccc4;
   }
 
   #date {
-    font-size: 25px;
-    margin: 10px;
-    padding: 10px;
+    font-size: 2.5vw;
+    margin: .6vw;
+    padding: .3vw .7vw;
     background-color: #41382c;
     display: inline-block;
     position: absolute;
     right: 0;
-    border-radius: 25px;
+    border-radius: 1.8vw;
     color: #ceccc4;
   }
 
@@ -82,8 +82,7 @@
 .dashboard-container {
   background-color: #ceccc4;
   position: fixed;
-  border-radius: 20px 20px 0px 0px;
-  top: 5%;
+  top: 4vh;
   left: 2.5%;
   width: 95vw;
   height: 95vh;
@@ -93,31 +92,32 @@
 .favorites-container {
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
-  height: 63vh;
+  border-radius: 1vw;
+  margin-top: 8vh;
+  padding: 1vw;
+  height: 65vh;
   overflow: scroll;
-  font-size: 19px;
+  font-size: 1.3vw;
 }
 
 .favorites h3 {
-  font-size: 40px;
+  font-size: 2.2vw;
+  margin-bottom: 3%;
 }
 
 .fav {
   display: flex;
-  padding: 10px;
+  padding: 0.7vw;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 0.8vw;
   justify-content: space-between;
   background-color: $pink;
-  margin-bottom: 10px;
+  margin-bottom: 0.6vw;
 }
 
 .fav button i {
-  color: $white;
-  font-size: 20px;
+  color: $matcha;
+  font-size: 1.3vw;
 }
 
 .fav button i:hover {
@@ -136,10 +136,20 @@
   position: relative;
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
-  height: 40vh;
+  border-radius: 1vw;
+  margin-top: 8vh;
+  padding: 1vw;
+  height: 41vh;
+}
+
+.budget-title {
+  border-radius: 1vw;
+  padding: .5vw 4vw;
+  font-size: 2vw;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: -15%;
+  left: 15%;
 }
 
 .budget-button {
@@ -149,8 +159,15 @@
   top: -8%;
   right: 0%;
   font-size: 3.4vw;
-  color: #41382c;
+  color: $boba;
   box-sizing: border-box;
+}
+
+.budget-button:hover {
+  width: 3.6vw;
+  height: 3.6vw;
+  font-size: 3.6vw;
+  right: -1%;
 }
 
 .budget .price {
@@ -162,47 +179,45 @@
   background-color: #41382c;
   border-radius: 50%;
   color: #f1f1f1;
-  font-size: 1vw;
+  font-size: 1.2vw;
   margin-left: -10%;
-  margin-top: -2%;
+  margin-top: -3%;
 }
 
 .budget h1 {
-  padding: 7px 7px 7px 14px;
-  border-radius: 20px;
+  padding: .5vw;
+  border-radius: .8vw;
   box-sizing: border-box;
   width: 100%;
   background-color: #c3eaf2;
   font-size: 1.5vw;
-  margin-bottom: 10px;
+  margin-bottom: .9vw;
 }
 
 .budget-input {
   background-color: #e8dbe6;
-  border-radius: 20px;
+  border-radius: .8vw;
   box-sizing: border-box;
-  padding: 5px 7px 7px 14px;
-  width: 100%;
+  padding: .5vw;
+  width: 97%;
   font-size: 1.5vw;
   position: relative;
-  margin-bottom: 8px;
-}
-
-.budget-bottom-right {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  margin-bottom: .9vw;
 }
 
 .budget a {
+  font-size: 1.4vw;
   color: #41382c;
   background-color: $darkmatcha;
-  padding: 3px 8px;
-  border-radius: 15px;
+  padding: .1vw .6vw;
+  border-radius: 1vw;
   box-shadow: 0px 1px 1px;
 }
 
 .budget a:hover {
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  background-color: $boba;
+  color: $white;
   box-shadow: 0px 1px 2px;
 }
 
@@ -213,21 +228,22 @@
 .calculator {
   box-sizing: border-box;
   background-color: #f1f1f1;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
+  border-radius: 1vw;
+  margin-top: 5vh;
+  padding: 1vw;
   height: 44vh;
 }
 
 .calc-screen {
   background-color: #e8dbe6;
-  border-radius: 5px;
+  border-radius: .7vw;
   border-style: solid;
   border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
-  border-width: 7px 8px 8px 7px;
-  padding: 10px;
+  border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
+  padding: .8vw;
   height: 38%;
   box-sizing: border-box;
+  font-size: 1vw;
 }
 
 .calc-buttons {
@@ -240,15 +256,20 @@
   font-size: 1.4vw;
 }
 
+.button:before {
+	content: "";
+	float: left;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
 .button {
-  width: 6vw;
-  height: 6vw;
-  border-radius: 5px;
+  width: 23%;
+  border-radius: .7vw;
   background-color: #c3eaf2;
-  margin-top: 15px;
+  margin-top: 1.7vh;
   border-style: solid;
   border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
-  border-width: 7px 8px 8px 7px;
+  border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
   box-sizing: border-box;
 }
 
@@ -256,11 +277,11 @@
 .bubbles-container {
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
+  border-radius: 1vw;
+  margin-top: 8vh;
+  padding: 1vw;
   position: relative;
-  height: 63vh;
+  height: 65vh;
   text-align: center;
 }
 
@@ -271,8 +292,8 @@
 }
 
 .bubbles-container p {
-  margin-top: 45px;
-  font-size: 30px;
+  margin-top: 22vh;
+  font-size: 2vw;
   color: rgba(60, 52, 42, 0.45);
 }
 //--------------------------------

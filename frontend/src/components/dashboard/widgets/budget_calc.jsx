@@ -61,6 +61,7 @@ class BudgetCalc extends React.Component {
     return (
       <div className="d-middle">
         <div className="budget flex-column">
+          <div className="budget-title">Add a Purchase: </div>
           <form onSubmit={this.handleSubmit}>
             <div className="pos-relative">
               <input

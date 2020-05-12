@@ -1,49 +1,48 @@
 .purchased-items {
     margin: auto;
-    margin-top: 0%;
+    margin-top: 0;
     background-color: #E1D3BF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 20px;
-    width: 70%;
-    height: 80vh;
+    padding: 1vw;
+    width: 70vw;
+    height: 90vh;
 }
 
 .purchased-items a {
     color: grey;
-    font-size: 16px;
-    padding: 10px;
+    font-size: 1.6vw;
+    padding: 1vw;
 }
 
 .fa-chevron-left {
-    font-size: 12px;
+    font-size: 1vw;
 }
 
 .purchased-items h1 {
+  font-size: 2.5vw;
     color: #F1F1F1;
     background-color: #8C9DA0;
-    border-radius: 10px;
+    border-radius: .7vw;
     width: 100%;
     align-self: center;
 }
 
 .budget-updates {
-    margin-top: 2%;
+    margin-top: 1vh;
 }
 
 .update-budget {
-    padding: 1%;
-    font-size: 16px;
+    padding: .2vw;
+    font-size: 1.7vw;
 }
 
 .update-budget input {
-    width: 60px;
+    width: 5vw;
     background-color: #f1f1f1;
-    border-radius: 10px;
-    height: 30px;
+    border-radius: .8vw;
     padding: 6px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1.7vw;
 }
 
 .purchased-items button {

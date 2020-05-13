@@ -43,7 +43,6 @@
     font-size: 1.5vw;
     position: absolute;
     visibility: hidden;
-    z-index: 1;
     top: 10px;
     left: 105%;
   }
@@ -176,6 +175,7 @@
   text-align: center;
   color: $white;
   font-size: 7.3vw;
+  z-index: 2;
 }
 
 .boba:hover {

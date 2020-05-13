@@ -101,9 +101,10 @@ class PurchaseHistory extends React.Component {
       totalSpend += purchase.price;
       return (
         <li key={`p-${purchase.date}-${purchase.price}`}>
-          <span>{newDateString}</span>: <span id='purchase-price'>${purchase.price}</span>
+          <span className="p-date">{newDateString}</span>
+          <div id='purchase-price'>${purchase.price}</div>
           <button value={purchase.id} onClick={this.handleDelete}>
-            DELETE
+            <i className="fas fa-times"></i>
         </button>
         </li>
       );
@@ -111,14 +112,26 @@ class PurchaseHistory extends React.Component {
 
     return (
       <div className="purchased-items center">
-        <Link to="/dashboard"><i className="fas fa-chevron-left"></i> Back to Dashboard</Link>
-        <h1>
-          Purchase History for {month} {year}
-        </h1>
-        <section className='budget-updates'>
-          <form onSubmit={this.handleSubmit}>
-            <label className='update-budget'>
-              Update your budget: $
+
+        <h1>{month} {year} Purchase History</h1>
+
+        <div className="purchase-split">
+          <section className="purchase-info">
+
+            <div className="budget-orb">
+              <h3>Monthly Budget:</h3>
+              <p>$ {this.state.budget}</p>
+            </div>
+
+            <div className="budget-orb">
+              <h3>Monthly Spend: </h3>
+              <p>$ {totalSpend}</p>
+            </div>
+
+            <form id="update-budg-form" onSubmit={this.handleSubmit}>
+              <label>Update budget:</label>
+              <div className="b-dollar">$</div>
+
               <input
                 type="number"
                 min="5.00"
@@ -126,20 +139,18 @@ class PurchaseHistory extends React.Component {
                 value={this.state.budget}
                 onChange={this.update("budget")}
               />
-            </label>
-            <button type="submit">Submit</button>
-          </form>
-        </section>
-        <section className='monthly-budget jus-center flex-row'>
-          <h3>Monthly Budget: <span>${this.state.budget}</span></h3>
-          <h3>Total Monthly Spend: <span>${totalSpend}</span></h3>
-        </section>
-        <section className='spends flex-column'>
-          <h3>Current Purchases</h3>
-          <ul className='purchase-list'>
-            {purchaseItems}
-          </ul>
-        </section>
+              <div className="b-desc">a month on boba</div>
+
+              <button type="submit"><i class="fas fa-check"></i></button>
+            </form>
+          </section>
+
+          <section className='spends flex-column'>
+            <ul>
+              {purchaseItems}
+            </ul>
+          </section>
+        </div>
       </div>
     );
   }

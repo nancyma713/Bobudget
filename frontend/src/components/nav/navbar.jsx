@@ -30,14 +30,14 @@ class NavBar extends React.Component {
             <i className="fas fa-search" />
             <span className="nav-text">Search</span>
           </Link>
-          <button className="nav-icon" onClick={this.logoutUser} className="logout nav-icon">
-            <i className="fas fa-sign-out-alt" />
-            <span className="nav-text">Logout</span>
-          </button>
           <Link className="nav-icon" to="/creators">
             <i className="fas fa-users"></i>
             <span className="nav-text">Developers</span>
           </Link>
+          <button className="nav-icon" onClick={this.logoutUser} className="logout nav-icon">
+            <i className="fas fa-sign-out-alt" />
+            <span className="nav-text">Logout</span>
+          </button>
         </>
       );
     } else {

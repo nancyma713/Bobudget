@@ -5,7 +5,7 @@ const Calculator = ({ moneyLeft }) => {
   const msg = moneyLeft.toString().slice(0, 1) === '-' ? 'You need to stop buying boba' : `You are boBallin on a budget!`;
   
   return (
-    <div className="calculator">
+    <>
       <div className="calc-screen center">
         According to our calculations...
         <br />
@@ -27,7 +27,7 @@ const Calculator = ({ moneyLeft }) => {
         <div className="button" />
         <div className="button" />
       </div>
-    </div>
+    </>
   );
 }
 

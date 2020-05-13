@@ -70,13 +70,22 @@ class Favorites extends React.Component {
 
     if (!favorites) return null;
     if (!bobas.data) return null;
-    let favoritesList;
+    // let favoritesList;
+    let favArr = [];
+    let bobaArr = [];
+    favorites.forEach(fav => {
+      if (!bobaArr.includes(fav.bobaItemId)) {
+        bobaArr.push(fav.bobaItemId);
+        favArr.push(fav);
+      }
+    });
 
-    favoritesList = favorites.map(fav => {
+    const favoritesList = favArr.map(fav => {
       if (bobas.data) {
         for (let i = 0; i < bobas.data.length; i++) {
           let boba = bobas.data[i];
           if (fav.bobaItemId === boba._id) {
+
             return (
               <li className="fav" key={`fav-${boba._id}`}>
                 {boba.name}

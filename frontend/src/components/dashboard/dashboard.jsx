@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUser()
-      .then(() => this.setState({ firstName: this.props.currentUser.data.user.firstName, lastName: this.props.currentUser.data.user.lastName, username: this.props.currentUser.data.user.username }));
+      .then(() => this.setState({ firstName: this.props.currentUser.firstName, lastName: this.props.currentUser.lastName, username: this.props.currentUser.username }));
   }
 
   render() {

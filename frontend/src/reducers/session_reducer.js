@@ -8,16 +8,31 @@ const initialState = {
 const sessionReducer = (state = initialState, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
+            debugger;
+            let user;
 
-            const { _id, username, firstName, lastName, budget, zipcode } = action.currentUser;
-            const user = {
-                id: _id,
-                username,
-                firstName,
-                lastName,
-                budget,
-                zipcode
+            if (action.currentUser.data.user) {
+                const { _id, username, firstName, lastName, budget, zipcode } = action.currentUser.data.user;
+                user = {
+                    id: _id,
+                    username,
+                    firstName,
+                    lastName,
+                    budget,
+                    zipcode
+                }
+            } else {
+                const { _id, username, firstName, lastName, budget, zipcode } = action.currentUser;
+                user = {
+                    id: _id,
+                    username,
+                    firstName,
+                    lastName,
+                    budget,
+                    zipcode
+                }
             }
+
 
             return {
                 ...state,

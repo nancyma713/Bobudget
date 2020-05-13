@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
     if (!purchases) return null;
     if (!currentUser) return null;
 
-    const firstName = this.state.firstName;
+    const firstName = currentUser.firstName;
     let date = new Date();
     date = date.toDateString();
 
@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
               <h3>My Favorites</h3>
 
               <div className="favorites">
-                <FavoritesContainer currentUser={currentUser}/>
+                <FavoritesContainer currentUser={currentUser} />
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ class Dashboard extends React.Component {
             </div>
 
             <div className="calculator">
-              <Calculator moneyLeft={moneyLeft}/>
+              <Calculator moneyLeft={moneyLeft} />
             </div>
           </div>
 

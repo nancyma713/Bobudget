@@ -1,56 +1,162 @@
 @import './colors.scss';
 
 // WHEN SCREEN IS LESS THAN 800PX
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .search-container {
     flex-direction: column;
     margin: auto;
     height: 100%;
+    top: 2vh;
+    padding: 3vw;
+    overflow: scroll;
   }
 
   .s-left , #map{
     width: 100%;
   }
 
+  .search input {
+    padding: 2vw;
+    border-radius: 1.5vw;
+    font-size: 3.5vw;
+  }
+
+  .search button {
+    font-size: 3.5vw;
+    border-radius: 0 1.5vw 1.5vw 0;
+    padding: 2vw;
+  }
+
   .search-results {
-    height: 200px;
-    margin-bottom: 30px;
+    height: 45vw;
+    margin-bottom: 2vh;
+    border-radius: 2vw;
+    padding: 2vw;
+  }
+
+  .search-results p {
+    font-size: 3.5vw;
+    padding-top: 17vw;
+  }
+
+  .search-item {
+    border-radius: 1vw;
+    margin-top: 1.5vw;
+    height: 10vw;
+    font-size: 2.7vw;
+  }
+
+  .search-item h2 {
+    font-size: 4vw;
+  }
+
+  .search-item i {
+    font-size: 4vw;
+  }
+
+  .search-item button {
+    margin-right: 2vw;
+  }
+
+  .search-item button .fav-tt {
+    font-size: 3vw;
+  }
+
+  .search-pic {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  #map {
+    height: 100%;
+    border-radius: 2vw;
   }
 }
 
 // SCREEN @ FULL WIDTH
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .search-container {
     flex-direction: row;
     position: fixed;
+    top: 4vh;
+    padding: 2vw;
+  }
+
+  .s-left {
+    margin-right: 2vw;
   }
 
   .s-left, #map {
     width: 70%;
   }
+  .search input {
+    padding: .8vw;
+    border-radius: .8vw;
+    font-size: 1.3vw;
+  }
+
+  .search button {
+    font-size: 1.5vw;
+    border-radius: 0 .8vw .8vw 0;
+    padding: .8vw;
+  }
 
   .search-results {
     height: 61vh;
+    border-radius: .8vw;
+    padding: 1vw;
   }
 
+  .search-results p {
+    font-size: 2vw;
+    padding-top: 23vh;
+  }
+
+  .search-item {
+    border-radius: 1vw;
+    margin-top: .8vw;
+    height: 5vw;
+    font-size: 1.2vw;
+  }
+
+  .search-item h2 {
+    font-size: 1.7vw;
+  }
+
+  .search-item i {
+    font-size: 2vw;
+  }
+
+  .search-item button {
+    margin-right: 1vw;
+  }
+
+  .search-item button .fav-tt {
+    font-size: 1.6vw;
+  }
+
+  .search-pic {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  #map {
+    height: 80%;
+    border-radius: 10px;
+  }
 }
 
 .search-container {
+  position: fixed;
   background-color: $lightmatcha;
-  border-radius: 20px 20px 0px 0px;
-  top: 4vh;
+  border-radius: 2vw 2vw 0px 0px;
   left: 2.5%;
   width: 95vw;
   height: 95vh;
   z-index: -1;
   display: flex;
   justify-content: space-between;
-  padding: 2vw;
   box-sizing: border-box;
-}
-
-.s-left {
-  margin-right: 2vw;
 }
 
 .search {
@@ -59,25 +165,19 @@
 
 .search input {
   width: 100%;
-  padding: .8vw;
   box-sizing: border-box;
-  border-radius: .8vw;
-  font-size: 1.3vw;
   background-color: $white;
 }
 
 .search button {
   transition: background-color 0.3s ease;
-  font-size: 1.5vw;
   position: absolute;
   right: 0;
   height: 100%;
   width: 10%;
-  padding: .8vw;
   box-sizing: border-box;
   background-color: $darkmatcha;
   color: $white;
-  border-radius: 0 .8vw .8vw 0;
 }
 
 .search button:hover {
@@ -85,25 +185,19 @@
 }
 
 .search-results {
-  border-radius: .8vw;
   margin-top: 2vh;
   background-color: $white;
-  padding: 1vw;
   overflow: scroll;
 }
 
 .search-results p {
-  font-size: 7vw;
   text-align: center;
-  padding-top: 25%;
 }
 
 .search-item {
   display: flex;
   justify-content: space-between;
-  border-radius: 10px;
   box-sizing: border-box;
-  margin-top: 10px;
   background-color: $pink;
   overflow: hidden;
 }
@@ -112,8 +206,16 @@
   margin-top: 0px;
 }
 
+.search-item a {
+  transition: color 0.4s ease;
+  color: #686b5d;
+}
+
+.search-item a:hover {
+  color: $darkmatcha;
+}
+
 .search-item i {
-  font-size: 40px;
   color: rgb(55, 95, 55);
 }
 
@@ -121,12 +223,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 20px;
 }
 
 .search-item button .fav-tt {
   visibility: hidden;
-  font-size: 25px;
 }
 
 .search-item button:hover .fav-tt {
@@ -134,8 +234,6 @@
 }
 
 .search-pic {
-  width: 5vw;
-  height: 5vw;
   position: relative;
   overflow: hidden;
   margin-right: 20px;
@@ -150,9 +248,4 @@
   right: -9999px;
   margin: auto;
   z-index: 0;
-}
-
-#map {
-  height: 80%;
-  border-radius: 10px;
 }

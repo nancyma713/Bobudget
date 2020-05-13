@@ -86,7 +86,7 @@ class Search extends React.Component {
                 </div>
                 <div className="flex-column">
                   <h2>{item.name}</h2>
-                  at {item.store.name}
+                  <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
                 </div>
               </section>
               <button onClick={() => this.handleClick(item._id)}>

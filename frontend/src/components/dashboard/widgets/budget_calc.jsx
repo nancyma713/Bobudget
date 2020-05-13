@@ -37,9 +37,8 @@ class BudgetCalc extends React.Component {
   render() {
     const { currentUser, purchases } = this.props;
 
-    if (!currentUser.data) return null;
+    if (!currentUser) return null;
     if (!purchases) return null;
-
     const newDate = new Date();
     const monthNum = newDate.getMonth();
     let monthlyPurchases = purchases.filter((purchase) => {
@@ -54,7 +53,7 @@ class BudgetCalc extends React.Component {
       moneySpent += monthlyPurchases[i].price;
     }
 
-    let moneyLeft = currentUser.data.user.budget - moneySpent;
+    let moneyLeft = currentUser.budget - moneySpent;
 
     let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
 
@@ -82,7 +81,7 @@ class BudgetCalc extends React.Component {
           </form>
           <div className="flex-row align-center">
             <h1>Monthly budget: </h1>
-            <div className="price">$ {currentUser.data.user.budget}</div>
+            <div className="price">$ {currentUser.budget}</div>
           </div>
           <div className="flex-row align-center">
             <h1>Money spent: </h1>

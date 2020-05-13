@@ -52,7 +52,6 @@ class SignupForm extends React.Component {
         }
 
       })
-      .catch((e) => console.log(e));
   }
 
   renderErrors(field) {

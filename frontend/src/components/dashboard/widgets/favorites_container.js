@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Favorites from './favorites';
-import { fetchBobaItems } from '../../../actions/boba_item_actions';
 import { fetchFavorites, createFavorite, removeFavorite } from '../../../actions/favorite_actions';
-import { fetchUser } from "../../../actions/session_actions";
+// import { fetchUser } from "../../../actions/session_actions";
 
 const mapStateToProps = state => {
   // let currentUser;
@@ -21,10 +20,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: () => dispatch(fetchUser()),
-  fetchBobaItems: () => dispatch(fetchBobaItems()),
+  // fetchUser: () => dispatch(fetchUser()),
   createFavorite: (favorite) => dispatch(createFavorite(favorite)),
-  fetchFavorites: (userId) => dispatch(fetchFavorites(userId)),
+  // fetchFavorites: (userId) => dispatch(fetchFavorites(userId)),
   removeFavorite: (favoriteId) => dispatch(removeFavorite(favoriteId)),
 });
 

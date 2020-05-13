@@ -11,12 +11,9 @@ class Favorites extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchBobaItems();
-    this.props.fetchUser()
-      .then(() => this.setState({ bobaId: ' ' }));
-    this.props.fetchFavorites(this.props.currentUser.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchFavorites(this.props.currentUser.id);
+  // }
 
   handleFavorite() {
     // e.preventDefault();

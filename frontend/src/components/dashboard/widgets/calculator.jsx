@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Calculator = ({ moneySpent, moneyLeft }) => {
+const Calculator = ({ moneyLeft }) => {
   const remainingBobas = Math.floor(moneyLeft / 5.69).toString().slice(0, 1) === '-' ? '0' : Math.floor(moneyLeft / 5.69);
   const msg = moneyLeft.toString().slice(0, 1) === '-' ? 'You need to stop buying boba' : `You are boBallin on a budget!`;
   

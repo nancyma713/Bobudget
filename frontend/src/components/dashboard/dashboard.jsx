@@ -4,8 +4,9 @@ import "../../assets/stylesheets/dashboard.scss";
 // WIDGETS
 
 import FavoritesContainer from './widgets/favorites_container';
-import BudgetCalcContainer from './widgets/budget_calc_container';
+import BudgetContainer from './widgets/budget_container';
 import BubblesContainer from '../bubbles/bubbles_container';
+import Calculator from './widgets/calculator';
 
 
 class Dashboard extends React.Component {
@@ -18,14 +19,36 @@ class Dashboard extends React.Component {
     }
   }
   componentDidMount() {
-    this.props.fetchUser()
+    this.props.fetchUser();
+    this.props.fetchPurchases(this.props.currentUser.id);
+    this.props.fetchFavorites(this.props.currentUser.id);
   }
 
   render() {
-    console.log(this.props.currentUser);
-    const firstName = this.props.currentUser.firstName;
+    const { purchases, currentUser } = this.props;
+
+    if (!purchases) return null;
+    if (!currentUser) return null;
+
+    const firstName = this.state.firstName;
     let date = new Date();
     date = date.toDateString();
+
+    const newDate = new Date();
+    const monthNum = newDate.getMonth();
+    let monthlyPurchases = purchases.filter((purchase) => {
+      const purchaseDate = new Date(purchase.date);
+      const purchaseMonth = purchaseDate.getMonth();
+      return purchaseMonth === monthNum;
+    });
+
+    let moneySpent = 0;
+
+    for (let i = 0; i < monthlyPurchases.length; i++) {
+      moneySpent += monthlyPurchases[i].price;
+    }
+
+    let moneyLeft = currentUser.budget - moneySpent;
 
     return (
       <div>
@@ -37,12 +60,20 @@ class Dashboard extends React.Component {
               <h3>My Favorites</h3>
 
               <div className="favorites">
-                <FavoritesContainer />
+                <FavoritesContainer currentUser={currentUser}/>
               </div>
             </div>
           </div>
 
-          <BudgetCalcContainer />
+          <div className="d-middle">
+            <div className="budget flex-column">
+              <BudgetContainer />
+            </div>
+
+            <div className="calculator">
+              <Calculator moneyLeft={moneyLeft}/>
+            </div>
+          </div>
 
           <div className="d-right">
             <div className="bubbles-container">

@@ -19,11 +19,11 @@ class Dashboard extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUser()
-      .then(() => this.setState({ firstName: this.props.currentUser.firstName, lastName: this.props.currentUser.lastName, username: this.props.currentUser.username }));
   }
 
   render() {
-    const firstName = this.state.firstName;
+    console.log(this.props.currentUser);
+    const firstName = this.props.currentUser.firstName;
     let date = new Date();
     date = date.toDateString();
 
@@ -33,7 +33,13 @@ class Dashboard extends React.Component {
         <h1 id="date">{date}</h1>
         <div className="dashboard-container">
           <div className="d-left">
-            <FavoritesContainer />
+            <div className="favorites-container">
+              <h3>My Favorites</h3>
+
+              <div className="favorites">
+                <FavoritesContainer />
+              </div>
+            </div>
           </div>
 
           <BudgetCalcContainer />

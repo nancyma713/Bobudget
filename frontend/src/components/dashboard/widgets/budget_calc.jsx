@@ -55,12 +55,12 @@ class BudgetCalc extends React.Component {
 
     let moneyLeft = currentUser.budget - moneySpent;
 
-    let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : '';
+    let red = moneyLeft.toString().slice(0, 1) === '-' ? 'red' : 'green';
 
     return (
       <div className="d-middle">
         <div className="budget flex-column">
-          <div className="budget-title">Add a Purchase: </div>
+          <div className="budget-title">Add a Purchase</div>
           <form onSubmit={this.handleSubmit}>
             <div className="pos-relative">
               <input
@@ -79,15 +79,15 @@ class BudgetCalc extends React.Component {
 
             </div>
           </form>
-          <div className="flex-row align-center">
+          <div className="flex-row align-center pos-relative">
             <h1>Monthly budget: </h1>
             <div className="price">$ {currentUser.budget}</div>
           </div>
-          <div className="flex-row align-center">
+          <div className="flex-row align-center pos-relative">
             <h1>Money spent: </h1>
             <div className="price">$ {moneySpent}</div>
           </div>
-          <div className='flex-row align-center'>
+          <div className='flex-row align-center pos-relative'>
             <h1>Amount left: </h1>
             <div className={`price ${red}`}>$ {moneyLeft}</div>
           </div>

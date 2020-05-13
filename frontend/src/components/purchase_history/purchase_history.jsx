@@ -15,7 +15,7 @@ class PurchaseHistory extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser().then(() => this.setState({ budget: this.props.currentUser.data.user.budget }))
+    this.props.fetchUser().then(() => this.setState({ budget: this.props.currentUser.budget }))
     this.props.fetchPurchases(this.props.currentUser.id);
   }
 

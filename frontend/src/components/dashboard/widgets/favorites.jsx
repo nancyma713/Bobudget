@@ -102,14 +102,10 @@ class Favorites extends React.Component {
 
 
     return (
-      <div className="favorites-container">
-        <div className="favorites">
-          <h3>My Favorites</h3>
-          <ul>
-            {favoritesList}
-          </ul>
-        </div>
-      </div>);
+      <ul>
+        {favoritesList}
+      </ul>
+    );
   }
 }
 

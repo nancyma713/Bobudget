@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../assets/stylesheets/splash.scss";
-import Bubbles from "../bubbles/bubbles_container";
 
 const MainPage = () => (
   <div className="welcome-form center">

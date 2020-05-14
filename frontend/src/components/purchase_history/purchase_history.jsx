@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../../assets/stylesheets/purchases.scss';
 
 class PurchaseHistory extends React.Component {
@@ -11,7 +10,6 @@ class PurchaseHistory extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.deleteButton = this.deleteButton.bind(this);
   }
 
   componentDidMount() {
@@ -21,7 +19,7 @@ class PurchaseHistory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let user = this.props.currentUser.data.user;
+    let user = this.props.currentUser;
     user.budget = this.state.budget;
     this.props.updateUser(user)
       .then(() => window.location.reload());
@@ -141,7 +139,7 @@ class PurchaseHistory extends React.Component {
               />
               <div className="b-desc">a month on boba</div>
 
-              <button type="submit"><i class="fas fa-check"></i></button>
+              <button type="submit"><i className="fas fa-check"></i></button>
             </form>
           </section>
 

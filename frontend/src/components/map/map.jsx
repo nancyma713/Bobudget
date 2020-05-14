@@ -5,14 +5,12 @@ class Map extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.marker_arr = [];
         this.pos_arr = [];
         this.initMap = this.initMap.bind(this);
         this.addMarker = this.addMarker.bind(this);
         this.listenForClick = this.listenForClick.bind(this);
     }
-
 
     initMap() {
         const mapOptions = {
@@ -208,7 +206,6 @@ class Map extends React.Component {
         }
     }
 
-
     listenForClick() {
         const popUp = [];
 
@@ -221,7 +218,6 @@ class Map extends React.Component {
                     <a href=${url}>Get Directions!</a>
             </div> `
             }))
-
         })
 
         this.marker_arr.map((marker, i) => {
@@ -229,12 +225,9 @@ class Map extends React.Component {
                 popUp[i].open(this.map, marker)
             })
         })
-
     }
 
-
     render() {
-        // this.initMap();
         this.marker_arr.map(marker => {
             marker.setMap(null)
         })

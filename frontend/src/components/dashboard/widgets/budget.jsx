@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Calculator from './calculator';
 
 class Budget extends React.Component {
   constructor(props) {
@@ -10,10 +11,6 @@ class Budget extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.fetchPurchases(this.props.currentUser.id)
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -68,9 +65,7 @@ class Budget extends React.Component {
               value={this.state.price}
             />
             <button
-              className="budget-button flex-row jus-center align-center"
-            // onSubmit={this.handleSubmit}
-            >
+              className="budget-button flex-row jus-center align-center">
               <i className="fas fa-plus-circle" />
             </button>
 

@@ -39,16 +39,29 @@ class Search extends React.Component {
   }
 
   handleFavorite() {
-    let favorite = this.props.favorites.id;
-    if (favorite) {
-      this.props.removeFavorite(favorite.id)
-        .then(() => this.props.fetchFavorites());
-    } else {
-        let favorite = {
-          userId: this.props.currentUser.data.user._id,
-          bobaItemId: this.state.bobaId
+    let favorite;
+    if (this.props.favorites) {
+      Array.from(this.props.favorites).forEach(fav => {
+        if (this.state.bobaId === fav.bobaItemId) {
+
+          favorite = fav;
         }
-      this.props.createFavorite(favorite);
+      });
+    }
+
+    if (favorite) {
+      let fav = {
+        userId: favorite.userId,
+        bobaItemId: favorite.bobaItemId
+      }
+      this.props.removeFavorite(favorite._id)
+        .then(() => this.props.createFavorite(fav));
+    } else {
+      let favorite = {
+        userId: this.props.currentUser.id,
+        bobaItemId: this.state.bobaId
+      }
+      this.props.createFavorite(favorite)
     }
   }
 
@@ -73,7 +86,7 @@ class Search extends React.Component {
                 </div>
                 <div className="flex-column">
                   <h2>{item.name}</h2>
-                  at {item.store.name}
+                  <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
                 </div>
               </section>
               <button onClick={() => this.handleClick(item._id)}>
@@ -87,8 +100,8 @@ class Search extends React.Component {
     };
 
     if (bobaLi) {
-      if (bobaLi.length === 0 ) {
-          bobaLi = <p>No search result <i className="far fa-frown" /></p>
+      if (bobaLi.length === 0) {
+        bobaLi = <p>No search result <i className="far fa-frown" /></p>
       }
     };
 

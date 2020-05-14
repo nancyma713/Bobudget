@@ -7,13 +7,15 @@
     flex-direction: column;
     align-items: center;
     overflow: scroll;
+    border-radius: 2vw;
+    top: 2vh;
   }
 
   .d-left,
   .d-middle,
   .d-right {
     display: block;
-    width: 85%;
+    width: 90%;
     // margin: auto;
   }
 
@@ -27,29 +29,191 @@
   .button {
     display: none;
   }
+
+  #welcome-msg {
+    display: none;
+  }
+
+  #date {
+    display: none;
+  }
+
+  .favorites-container {
+    margin-top: 4vh;
+    padding: 3vw;
+    font-size: 3.3vw;
+    height: 57vw;
+    border-radius: 3vw;
+  }
+
+  .favorites-container h3 {
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  .favorites {
+    height: 43vw;
+  }
+
+  .fav {
+    padding: 1.5vw;
+    border-radius: 1.8vw;
+    margin-bottom: 1.2vw;
+  }
+
+  .fav button i {
+    font-size: 3.5vw;
+  }
+
+  .budget {
+    margin-top: 3.5vh;
+    border-radius: 3vw;
+    padding: 3vw;
+  }
+
+  .budget-title {
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 3%;
+  }
+
+  .budget-input {
+    padding: 1.5vw;
+    font-size: 3.3vw;
+    margin-bottom: 2vw;
+    border-radius: 1.5vw;
+    width: 100%;
+  }
+
+  .budget h1 {
+    font-size: 3.3vw;
+    margin-bottom: 2vw;
+    padding: 1.5vw;
+    border-radius: 1.5vw;
+  }
+
+  .budget-button {
+    top: 0;
+    right: 0;
+    font-size: 4vw;
+    background-color: $boba;
+    height: 77%;
+    width: 7vw;
+    color: $white;
+    border-radius: 0 1.5vw 1.5vw 0;
+  }
+
+  .budget-button:hover {
+    font-size: 4.5vw;
+  }
+
+  .budget .price {
+    color: $black;
+    font-size: 3.3vw;
+    position: absolute;
+    top: 1.5vw;
+    right: 2vw;
+  }
+
+  .budget a {
+    font-size: 3vw;
+    border-radius: 2vw;
+  }
+
+  .calculator {
+    border-radius: 3vw;
+    margin-top: 3.5vh;
+    padding: 3vw;
+    height: 30vw;
+  }
+
+  .calc-screen {
+    border-radius: 1vw;
+    border-style: solid;
+    border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
+    border-width: 1vw;
+    padding: 2vw;
+    height: 100%;
+    font-size: 3vw;
+  }
+
+  .calc-msg {
+    font-size: 5vw;
+  }
+
+  .budget .red {
+    color: rgb(158, 27, 27);
+  }
+
+
+  .budget .green {
+    color: rgb(79, 158, 27);;
+  }
+
+  .remainder {
+    font-size: 4vw;
+  }
+
+  .bubbles-container {
+    border-radius: 3vw;
+    margin-top: 3.5vh;
+    padding: 3vw;
+    height: 40vh;
+    margin-bottom: 10vh;
+  }
+
+  .bubbles-container p {
+    margin-top: 16vh;
+    font-size: 4vw;
+  }
+
+  .modal-child {
+    font-size: 5vw;
+    height: 50vw;
+    width: 50vw;
+    border-radius: 2vw;
+    top: 20vh;
+  }
+
+  .modal-child > img { 
+    width: 50vw;
+  }
+
+  @keyframes modal-swoop-in {
+    from {
+      top: 0%;
+      bottom: -60%;
+      right: -35%;
+    }
+    to {
+      top: 20vh;
+      bottom: 0%;
+      right: 0%;
+    }
+  }
 }
 
 // SCREEN @ FULL WIDTH
 @media screen and (min-width: 800px) {
   #welcome-msg {
-    font-size: 25px;
-    margin: 10px;
-    padding: 10px;
+    font-size: 2.5vw;
+    margin: .6vw;
+    padding: .3vw .7vw;
     background-color: #41382c;
     display: inline-block;
-    border-radius: 25px;
+    border-radius: 1.8vw;
     color: #ceccc4;
   }
 
   #date {
-    font-size: 25px;
-    margin: 10px;
-    padding: 10px;
+    font-size: 2.5vw;
+    margin: .6vw;
+    padding: .3vw .7vw;
     background-color: #41382c;
     display: inline-block;
     position: absolute;
     right: 0;
-    border-radius: 25px;
+    border-radius: 1.8vw;
     color: #ceccc4;
   }
 
@@ -58,6 +222,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    top: 4vh;
   }
 
   .d-left,
@@ -77,13 +242,175 @@
   .bubbles-container {
     width: 80%;
   }
+
+  .favorites-container {
+    margin-top: 8vh;
+    padding: 1vw;
+    font-size: 1.3vw;
+    height: 66vh;
+    border-radius: 1vw;
+  }
+
+  .favorites-container h3 {
+    font-size: 2.2vw;
+  }
+
+  .favorites {
+    height: 54vh;
+  }
+
+  .fav {
+    padding: 0.7vw;
+    border-radius: 0.8vw;
+    margin-bottom: 1.3vh;
+  }
+
+  .fav button i {
+    font-size: 1.3vw;
+  }
+
+  .budget {
+    margin-top: 8vh;
+    border-radius: 1vw;
+    padding: 1vw;
+  }
+
+  .budget-title {
+    border-radius: 1vw;
+    padding: .5vw 4vw;
+    font-size: 2vw;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: -15%;
+    left: 15%;
+  }
+
+  .budget-input {
+    margin-bottom: 1.5vh;
+    font-size: 1.5vw;
+    width: 97%;
+    border-radius: .8vw;
+    padding: .5vw;
+
+  }
+
+  .budget h1 {
+    font-size: 1.5vw;
+    margin-bottom: 1.5vh;
+    padding: .5vw;
+    border-radius: .8vw;
+  }
+
+  .budget-button {
+    top: -8%;
+    right: 0%;
+    width: 3.4vw;
+    height: 3.4vw;
+    font-size: 3.4vw;
+    color: $boba;
+  }
+
+  .budget-button:hover {
+    width: 3.6vw;
+    height: 3.6vw;
+    font-size: 3.6vw;
+    right: -1%;
+  }
+
+  .budget .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.4vw;
+    height: 3.4vw;
+    background-color: #41382c;
+    border-radius: 50%;
+    color: #f1f1f1;
+    font-size: 1.1vw;
+    margin-left: -10%;
+    margin-top: -3%;
+  }
+
+  .budget a {
+    font-size: 1.4vw;
+    border-radius: 1vw;
+  }
+
+  .calculator {
+    border-radius: 1vw;
+    margin-top: 5vh;
+    padding: 1vw;
+    height: 48vh;
+  }
+
+  .calc-screen {
+    border-radius: .7vw;
+    border-style: solid;
+    border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
+    border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
+    padding: .8vw;
+    height: 38%;
+    font-size: 1vw;
+  }
+
+  .calc-msg {
+    font-size: 1.4vw;
+  }
+
+  .budget .red {
+    background-color: rgb(158, 27, 27);
+  }
+
+
+  .budget .green {
+    background-color: rgb(79, 158, 27);;
+  }
+
+  .remainder {
+    font-size: 1.3vw;
+  }
+
+  .bubbles-container {
+    border-radius: 1vw;
+    margin-top: 8vh;
+    padding: 1vw;
+    height: 66vh;
+  }
+
+  .bubbles-container p {
+    margin-top: 22vh;
+    font-size: 2vw;
+  }
+
+  .modal-child {
+    font-size: 1.8vw;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 1vw;
+    top: 30vh;
+  }
+
+  .modal-child > img { 
+    width: 15vw;
+  }
+
+  @keyframes modal-swoop-in {
+    from {
+      top: 0%;
+      bottom: -60%;
+      right: -35%;
+    }
+    to {
+      top: 30vh;
+      bottom: 0%;
+      right: 0%;
+    }
+  }
 }
 
 .dashboard-container {
   background-color: #ceccc4;
   position: fixed;
-  border-radius: 20px 20px 0px 0px;
-  top: 5%;
   left: 2.5%;
   width: 95vw;
   height: 95vh;
@@ -93,116 +420,65 @@
 .favorites-container {
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
-  height: 63vh;
-  overflow: scroll;
-  font-size: 19px;
 }
 
-.favorites h3 {
-  font-size: 40px;
+.favorites-container h3 {
+  margin-bottom: 3%;
+}
+
+.favorites {
+  overflow: scroll;
 }
 
 .fav {
   display: flex;
-  padding: 10px;
   box-sizing: border-box;
-  border-radius: 10px;
   justify-content: space-between;
   background-color: $pink;
-  margin-bottom: 10px;
 }
 
 .fav button i {
-  color: $white;
-  font-size: 20px;
+  color: $matcha;
 }
 
 .fav button i:hover {
   color: $darkmatcha;
 }
 
-.item-container {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #e8dbe6;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
 .budget {
   position: relative;
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
-  height: 40vh;
 }
 
 .budget-button {
-  width: 3.4vw;
-  height: 3.4vw;
   position: absolute;
-  top: -8%;
-  right: 0%;
-  font-size: 3.4vw;
-  color: #41382c;
   box-sizing: border-box;
-}
-
-.budget .price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 3.4vw;
-  height: 3.4vw;
-  background-color: #41382c;
-  border-radius: 50%;
-  color: #f1f1f1;
-  font-size: 1vw;
-  margin-left: -10%;
-  margin-top: -2%;
 }
 
 .budget h1 {
-  padding: 7px 7px 7px 14px;
-  border-radius: 20px;
   box-sizing: border-box;
   width: 100%;
   background-color: #c3eaf2;
-  font-size: 1.5vw;
-  margin-bottom: 10px;
 }
 
 .budget-input {
   background-color: #e8dbe6;
-  border-radius: 20px;
   box-sizing: border-box;
-  padding: 5px 7px 7px 14px;
-  width: 100%;
-  font-size: 1.5vw;
   position: relative;
-  margin-bottom: 8px;
-}
-
-.budget-bottom-right {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 
 .budget a {
   color: #41382c;
   background-color: $darkmatcha;
-  padding: 3px 8px;
-  border-radius: 15px;
+  padding: .1vw .6vw;
   box-shadow: 0px 1px 1px;
 }
 
 .budget a:hover {
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  background-color: $boba;
+  color: $white;
   box-shadow: 0px 1px 2px;
 }
 
@@ -213,20 +489,10 @@
 .calculator {
   box-sizing: border-box;
   background-color: #f1f1f1;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
-  height: 44vh;
 }
 
 .calc-screen {
   background-color: #e8dbe6;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
-  border-width: 7px 8px 8px 7px;
-  padding: 10px;
-  height: 38%;
   box-sizing: border-box;
 }
 
@@ -236,31 +502,31 @@
   flex-wrap: wrap;
 }
 
-.calc-msg {
-  font-size: 1.4vw;
+.remainder {
+  color: rgb(79, 158, 27);
+}
+
+.button:before {
+	content: "";
+	float: left;
+	padding-top: 100%; 	
 }
 
 .button {
-  width: 6vw;
-  height: 6vw;
-  border-radius: 5px;
+  width: 23%;
+  border-radius: .7vw;
   background-color: #c3eaf2;
-  margin-top: 15px;
+  margin-top: 1.7vh;
   border-style: solid;
   border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
-  border-width: 7px 8px 8px 7px;
+  border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
   box-sizing: border-box;
 }
 
-//--- REPLACING FAVORITES--------
 .bubbles-container {
   background-color: #f1f1f1;
   box-sizing: border-box;
-  border-radius: 10px;
-  margin-top: 38px;
-  padding: 20px;
   position: relative;
-  height: 63vh;
   text-align: center;
 }
 
@@ -271,13 +537,36 @@
 }
 
 .bubbles-container p {
-  margin-top: 45px;
-  font-size: 30px;
   color: rgba(60, 52, 42, 0.45);
 }
-//--------------------------------
 
-.budget .red {
-  background-color: rgb(158, 27, 27);
+//-----------MODAL--------------------
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(112, 111, 111, 0.8);
+  z-index: 10;
+  animation-name: modal-background-fade-in;
+  animation-duration: 0.5s;
 }
 
+.modal-child {
+  position: relative;
+  margin: 0 auto;
+  color: black;
+  background: white;
+  animation-name: modal-swoop-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes modal-background-fade-in {
+  from {
+    background: transparent;
+  }
+  to {
+    background: rgba(112, 111, 111, 0.8);
+  }
+}

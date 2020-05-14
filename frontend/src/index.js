@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
 import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
-import { logout } from './actions/session_actions'; 
-import Root from './components/root'; 
+import { logout } from './actions/session_actions';
+import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let store; 
+  let store;
 
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
+
     const preloadedState = {
       session: {
-        isAuthenticated: true, 
+        isAuthenticated: true,
         user: decodedUser
       }
     }

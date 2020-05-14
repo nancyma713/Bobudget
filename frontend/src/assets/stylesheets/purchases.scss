@@ -1,93 +1,260 @@
+@import './colors.scss';
+
+@media screen and (max-width: 1300px) {
+  .purchased-items {
+    width: 100%;
+  }
+
+  .purchase-split {
+    flex-direction: column;
+  }
+
+  .purchased-items h1 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+  }
+
+  .purchase-info {
+    align-items: flex-start;
+  }
+
+  #update-budg-form, .budget-orb {
+    width: 33.33%;
+    margin: 1vw;
+    font-size: 3vw;
+  }
+
+  #update-budg-form label, .budget-orb h3 {
+    border-radius: .8vw .8vw 0 0;
+    padding: .5vw;
+    font-size: 3vw;
+    height: 6vw;
+  }
+
+  #update-budg-form input {
+    font-size: 4vw;
+    height: 7vw;
+  }
+
+  .budget-orb p {
+    height: 7vw;
+    font-size: 4vw;
+  }
+
+  #update-budg-form button {
+    height: 4.7vw;
+    font-size: 2vw;
+  }
+
+  .b-dollar {
+    top: 7.3vw;
+    left: 2vw;
+  }
+
+  .b-desc {
+    display: none;
+  }
+
+  .spends {
+    margin: 2vw auto;
+    border-radius: .8vw;
+    width: 93vw;
+    height: 65vh;
+  }
+
+  .spends li {
+    font-size: 3vw;
+    padding: 2vw;
+  }
+
+  .spends button {
+    font-size: 3vw;
+    right: 1.5vw;
+  }
+
+  .p-date {
+    width: 27vw;
+  }
+
+  #purchase-price {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .purchased-items {
+    width: 70vw;
+  }
+
+  .purchased-items h1 {
+    font-size: 2.3vw;
+    margin-bottom: .8vw;
+  }
+
+  .purchase-info {
+    flex-direction: column;
+  }
+
+  #update-budg-form, .budget-orb {
+    width: 12vw;
+    margin: .7vw;
+    font-size: 1.3vw;
+  }
+
+  #update-budg-form label, .budget-orb h3 {
+    border-radius: .8vw .8vw 0 0;
+    padding: .5vw;
+    font-size: 1.3vw;
+    height: 3vw;
+  }
+
+  #update-budg-form input {
+    font-size: 1.4vw;
+    height: 2.5vw;
+  }
+
+  .budget-orb p {
+    height: 4.7vw;
+    font-size: 3vw;
+  }
+
+  #update-budg-form button {
+    height: 3vw;
+    font-size: .9vw;
+  }
+
+  .b-dollar {
+    top: 3.38vw;
+    left: 1vw;
+  }
+
+  .spends {
+    margin: .7vw;
+    border-radius: .8vw;
+    width: 100%;
+    height: 60vh;
+  }
+
+  .spends li {
+    font-size: 1.2vw;
+    padding: .5vw;
+  }
+
+  .p-date {
+    width: 10vw;
+  }
+
+  .spends button {
+    font-size: 1.2vw;
+    right: 1vw;
+  }
+
+  #purchase-price {
+    font-size: 1.2vw;
+  }
+}
+
 .purchased-items {
-    margin: auto;
-    margin-top: 0%;
-    background-color: #E1D3BF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 20px;
-    width: 70%;
-    height: 80vh;
+  margin: 0 auto;
+  background-color: #ceccc4;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2vw;
+  height: 90vh;
+  box-sizing: border-box;
 }
 
-.purchased-items a {
-    color: grey;
-    font-size: 16px;
-    padding: 10px;
-}
-
-.fa-chevron-left {
-    font-size: 12px;
+.purchase-split {
+  display: flex;
 }
 
 .purchased-items h1 {
-    color: #F1F1F1;
-    background-color: #8C9DA0;
-    border-radius: 10px;
-    width: 100%;
-    align-self: center;
+  color: #F1F1F1;
+  background-color: #8C9DA0;
+  border-radius: .7vw;
+  width: 100%;
+  margin-top: 1vw;
 }
 
-.budget-updates {
-    margin-top: 2%;
+.purchase-info {
+  display: flex;
+  justify-content: center;
+  z-index: 0;
 }
 
-.update-budget {
-    padding: 1%;
-    font-size: 16px;
+#update-budg-form, .budget-orb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-.update-budget input {
-    width: 60px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    height: 30px;
-    padding: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
+#update-budg-form label, .budget-orb h3 {
+  background-color: $darkmatcha;
 }
 
-.purchased-items button {
-    margin: 5px 10px;
-    width: 50px;
-    background-color: #B3BA9E;
-    color: #F1F1F1;
-    font-size: 14px;
-    border-radius: 10px;
-    padding: 2px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#update-budg-form input {
+  text-align: center;
+  width: 100%;
+  background-color: $white;
+  padding: .4vw .5vw 0vw 1.7vw;
+  box-sizing: border-box;
 }
 
-.monthly-budget h3 {
-    font-size: 26px;
-    margin: 10px;
+.budget-orb p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $white;
+  box-sizing: border-box;
+  border-radius: 0 0 .8vw .8vw;
 }
 
-.monthly-budget span {
-    color: #75A1AB;
-    padding-left: 5px;
+#update-budg-form button {
+  transition: background-color .4s ease-in;
+  color: $white;
+  background-color: $darkmatcha;
+  width: 100%;
+  padding: .8vw;
+  border-radius: 0 0 .8vw .8vw;
 }
 
-.spends h3{
-    font-size: 30px;
-    color: #F1F1F1;
-    background-color: #8C9DA0;
-    border-radius: 10px;
-    width: 100%;
-    align-self: center;
+#update-budg-form button:hover {
+  background-color: $matcha;
 }
 
-.purchase-list {
-    list-style: none;
-    height: 22vw;
-    overflow: scroll;
+.b-dollar {
+  position: absolute;
 }
 
-.purchase-list li {
-  font-size: 20px;
+.b-desc {
+  font-size: .9vw;
+  background-color: $white;
+  padding-bottom: .4vw;
+  height: 2.2vw;
+}
+
+.spends {
+  overflow: scroll;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.spends li {
+  display: flex;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.spends li:nth-child(odd) {
+  background-color: rgb(241, 241, 241);
+}
+
+.spends button {
+  position: absolute;
 }
 
 #purchase-price {
-    color: #75A1AB;
-    padding-left: 10px;
-    font-size: 20px;
+  color: #75A1AB;
 }

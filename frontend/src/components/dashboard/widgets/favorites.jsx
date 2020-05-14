@@ -11,12 +11,9 @@ class Favorites extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchBobaItems();
-    this.props.fetchUser()
-      .then(() => this.setState({ bobaId: ' ' }));
-    this.props.fetchFavorites(this.props.currentUser.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchFavorites(this.props.currentUser.id);
+  // }
 
   handleFavorite() {
     // e.preventDefault();
@@ -70,18 +67,27 @@ class Favorites extends React.Component {
 
     if (!favorites) return null;
     if (!bobas.data) return null;
+    // let favoritesList;
+    let favArr = [];
+    let bobaArr = [];
+    favorites.forEach(fav => {
+      if (!bobaArr.includes(fav.bobaItemId)) {
+        bobaArr.push(fav.bobaItemId);
+        favArr.push(fav);
+      }
+    });
 
-
-    const favoritesList = favorites.map(fav => {
+    const favoritesList = favArr.map(fav => {
       if (bobas.data) {
         for (let i = 0; i < bobas.data.length; i++) {
           let boba = bobas.data[i];
           if (fav.bobaItemId === boba._id) {
+
             return (
               <li className="fav" key={`fav-${boba._id}`}>
                 {boba.name}
                 <button onClick={() => this.handleDelete(fav._id)}>
-                  <i class="fas fa-trash-alt" />
+                  <i className="fas fa-trash-alt" />
                 </button>
               </li>
             );
@@ -90,15 +96,13 @@ class Favorites extends React.Component {
       }
     });
 
+
+
     return (
-      <div className="favorites-container">
-        <div className="favorites">
-          <h3>My Favorites</h3>
-          <ul>
-            {favoritesList}
-          </ul>
-        </div>
-      </div>);
+      <ul>
+        {favoritesList}
+      </ul>
+    );
   }
 }
 

@@ -52,7 +52,6 @@ class SignupForm extends React.Component {
         }
 
       })
-      .catch((e) => console.log(e));
   }
 
   renderErrors(field) {
@@ -71,7 +70,6 @@ class SignupForm extends React.Component {
       <div className="signup margin-auto">
         <form className="session-form" onSubmit={this.handleSubmit}>
           <h2>Sign Up</h2>
-
           <div className="half-width">
             <label className="split">
               First Name

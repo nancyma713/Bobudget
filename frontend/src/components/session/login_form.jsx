@@ -47,13 +47,6 @@ class LoginForm extends React.Component {
     }
   }
 
-  // demoLogin(e) {
-  //   e.preventDefault();
-  //   const user = { username: "demo_user", password: "123456" };
-
-  //   this.props.login(user)
-  // }
-
   demoLogin(e) {
     e.preventDefault();
     const user = { username: "demo_user", password: "123456" };

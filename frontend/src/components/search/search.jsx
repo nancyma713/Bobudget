@@ -11,7 +11,6 @@ class Search extends React.Component {
       name: "",
       bobaId: ""
     };
-    // this.bobaLi = [];
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,7 +72,7 @@ class Search extends React.Component {
   render() {
     let bobaLi;
     let storeLi = [];
-    // debugger
+
     if (this.state.searchResult.items) {
       bobaLi = this.state.searchResult.items.data.map((item) => {
         if (item.store) {
@@ -105,7 +104,6 @@ class Search extends React.Component {
       }
     };
 
-    // debugger
     return (
       <div className="search-container">
         <div className="s-left">

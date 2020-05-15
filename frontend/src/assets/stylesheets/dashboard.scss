@@ -172,7 +172,7 @@
     font-size: 4vw;
   }
 
-  .modal-child {
+  .boba-pop-up {
     font-size: 5vw;
     height: 50vw;
     width: 50vw;
@@ -180,7 +180,7 @@
     top: 20vh;
   }
 
-  .modal-child > img { 
+  .boba-pop-up > img { 
     width: 50vw;
   }
 
@@ -389,7 +389,7 @@
     font-size: 2vw;
   }
 
-  .modal-child {
+  .boba-pop-up {
     font-size: 1.8vw;
     height: 15vw;
     width: 15vw;
@@ -397,7 +397,7 @@
     top: 30vh;
   }
 
-  .modal-child > img { 
+  .boba-pop-up > img { 
     width: 15vw;
   }
 
@@ -501,6 +501,34 @@
 .fav .fa-heart:hover:before {
   font-size: 1.8vw;
   content: "\f00d";
+}
+
+.fav-pop-up {
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  color: $black;
+  background: $white;
+  animation-name: modal-swoop-in;
+  animation-duration: 0.5s;
+  font-size: 1.7vw;
+  height: 15vw;
+  width: 30vw;
+  border-radius: 1vw;
+  top: 30vh;
+  padding: 2vw;
+}
+
+.fav-bold {
+  color: $superdarkmatcha;
+}
+
+.fav-pop-up button {
+  border-radius: 1vw;
+  font-size: 1.6vw;
+  background-color: $pink;
+  padding: 1vw 2vw;
+  margin-right: 1vw;
 }
 
 .budget {
@@ -612,7 +640,7 @@
   animation-duration: 0.5s;
 }
 
-.modal-child {
+.boba-pop-up {
   position: relative;
   margin: 0 auto;
   color: $black;

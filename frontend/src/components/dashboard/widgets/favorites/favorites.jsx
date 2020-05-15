@@ -4,22 +4,34 @@ class Favorites extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bobaId: ''
+      modal: false,
+      bobaName: '',
+      favId: ''
     }
 
-    this.handleFavorite = this.handleFavorite.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
-  handleFavorite() {
-    this.props.removeFavorite(this.state.bobaId)
-      .then(() => this.props.fetchFavorites(this.props.currentUser.id));
+  handleRemove() {
+    this.props.removeFavorite(this.state.favId)
+      .then(() => this.props.fetchFavorites(this.props.currentUser.id))
+      .then(() => this.setState({ bobaName: '', favId: '', modal: false }));
   }
 
-  handleDelete(id) {
-    this.setState({ bobaId: id },
-      () => this.handleFavorite()
-    );
+  openModal(bobaName, favId) {
+    this.setState({ 
+      modal: true,
+      bobaName: bobaName,
+      favId: favId
+    });
+  }
+
+  closeModal() {
+    this.setState({ 
+      modal: false,
+      bobaName: '',
+      favId: ''
+    });
   }
 
   render() {
@@ -36,7 +48,7 @@ class Favorites extends React.Component {
             return (
               <li className="fav" key={`fav-${boba._id}`}>
                 {boba.name}
-                <button onClick={() => this.handleDelete(fav._id)}>
+                <button onClick={() => this.openModal(boba.name, fav._id)}>
                   <i className="fas fa-heart" />
                 </button>
               </li>
@@ -49,6 +61,15 @@ class Favorites extends React.Component {
     return (
       <ul>
         {favoritesList}
+        {this.state.modal ? <div className="modal-background">
+          <div className="fav-pop-up">
+            <p>Are you sure you want to remove</p>
+            <div className="fav-bold">{this.state.bobaName}</div> 
+            <p>from your favorites?</p>
+            <button onClick={() => this.handleRemove()}>Yes</button>
+            <button onClick={() => this.closeModal()}>No</button>
+          </div>
+        </div> : ''}
       </ul>
     );
   }

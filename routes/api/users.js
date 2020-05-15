@@ -114,10 +114,7 @@ router.put(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    // const { errors, isValid } = validateRegisterInput(req.body);
-    // if (!isValid) {
-    //   return res.status(400).json(errors);
-    // }
+
     User.findOneAndUpdate(
       { _id: req.user.id },
       { $set: { budget: parseInt(req.body.budget) } },
@@ -130,16 +127,4 @@ router.put(
   }
 );
 
-// router.get(
-//   "/logout",
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     // console.log("User Id", req.user.id);
-
-//     User.findByIdAndRemove(req.user.id, function (err) {
-//       if (err) res.send(err);
-//       res.json({ message: "User Deleted!" });
-//     });
-//   }
-// );
 module.exports = router;

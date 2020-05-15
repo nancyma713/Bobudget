@@ -3,9 +3,8 @@ import PurchaseHistory from './purchase_history';
 import { fetchPurchases, removePurchase } from "../../actions/purchase_actions";
 import { fetchUser, updateUser } from "../../actions/session_actions";
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   purchases: state.entities.purchases.data,
-  // purchase: state.entities.purchases.data[ownProps.match.params.purchaseId],
   currentUser: state.session.user
 });
 

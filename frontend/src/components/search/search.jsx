@@ -65,6 +65,7 @@ class Search extends React.Component {
 
   render() {
     const { favorites, currentUser } = this.props;
+    console.log(favorites);
 
     let bobaLi;
     let storeLi = [];

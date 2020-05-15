@@ -8,21 +8,8 @@ const favoritesReducer = (state = {}, action) => {
     case RECEIVE_FAVORITES:
       return action.favorites;
     case RECEIVE_FAVORITE:
-<<<<<<< HEAD
-
-      let temp = {
-        bobaItemId: action.favorite.data.bobaItemId,
-        userId: action.favorite.data.userId,
-        _id: action.favorite.data._id
-      };
-
-      nextState.data.push(temp);
+      nextState.data.push(action.favorite.data);
       return nextState;
-      // return nextState.data.push(action.favorite.data);
-      // return action.favorite.data;
-=======
-      return action.favorite.data;
->>>>>>> master
     case DELETE_FAVORITE:
       delete nextState[action.favoriteId];
       return nextState;

@@ -504,6 +504,7 @@
 }
 
 .fav .fa-heart:hover:before {
+  transition: content 1s ease;
   font-size: 1.8vw;
   content: "\f00d";
 }

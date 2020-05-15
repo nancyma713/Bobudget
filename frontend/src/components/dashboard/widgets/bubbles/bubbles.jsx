@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/stylesheets/bubbles.scss";
+import '../../../../assets/stylesheets/bubbles.scss';
 
 class Bubbles extends React.Component {
   constructor(props) {

@@ -34,7 +34,7 @@ class NavBar extends React.Component {
             <i className="fas fa-users"></i>
             <span className="nav-text">Developers</span>
           </Link>
-          <button className="nav-icon" onClick={this.logoutUser} className="logout nav-icon">
+          <button className="logout nav-icon" onClick={this.logoutUser}>
             <i className="fas fa-sign-out-alt" />
             <span className="nav-text">Logout</span>
           </button>

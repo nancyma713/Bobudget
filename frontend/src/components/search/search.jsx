@@ -1,5 +1,5 @@
 import React from "react";
-import Map from '../map/map_container';
+import Map from './map';
 import '../../assets/stylesheets/search.scss';
 
 class Search extends React.Component {
@@ -11,105 +11,111 @@ class Search extends React.Component {
       name: "",
       bobaId: ""
     };
-    // this.bobaLi = [];
 
     this.update = this.update.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFavorite = this.handleFavorite.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleAddFavorite = this.handleAddFavorite.bind(this);
+    this.handleRemoveFavorite = this.handleRemoveFavorite.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBobaItems();
-    this.props.fetchFavorites();
+    this.props.fetchFavorites(this.props.currentUser.id);
   }
 
   update(field) {
-
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
-  handleSubmit(e) {
+  handleSearch(e) {
     e.preventDefault();
 
     this.props.searchBobas(this.state.name)
       .then((list) => this.setState({
         searchResult: list
-      }))
+      })
+    );
   }
 
-  handleFavorite() {
-    let favorite;
-    if (this.props.favorites) {
-      Array.from(this.props.favorites).forEach(fav => {
-        if (this.state.bobaId === fav.bobaItemId) {
-
-          favorite = fav;
-        }
-      });
-    }
-
-    if (favorite) {
-      let fav = {
-        userId: favorite.userId,
-        bobaItemId: favorite.bobaItemId
-      }
-      this.props.removeFavorite(favorite._id)
-        .then(() => this.props.createFavorite(fav));
+  handleClick(id, add) {
+    if (add) {
+      this.setState({ bobaId: id },
+        () => this.handleAddFavorite());
     } else {
-      let favorite = {
-        userId: this.props.currentUser.id,
-        bobaItemId: this.state.bobaId
-      }
-      this.props.createFavorite(favorite)
+      this.setState({ bobaId: id },
+        () => this.handleRemoveFavorite());
     }
   }
 
-  handleClick(id) {
-    this.setState({ bobaId: id },
-      () => this.handleFavorite());
+  handleAddFavorite() {
+    let favorite = {
+      userId: this.props.currentUser.id,
+      bobaItemId: this.state.bobaId
+    }
+
+    this.props.createFavorite(favorite)
+      .then(() => this.props.fetchFavorites(this.props.currentUser.id));
+  }
+
+  handleRemoveFavorite() {
+    this.props.removeFavorite(this.state.bobaId)
+      .then(() => this.props.fetchFavorites(this.props.currentUser.id));
   }
 
   render() {
+    const { favorites, currentUser } = this.props;
+
     let bobaLi;
     let storeLi = [];
-    // debugger
+
     if (this.state.searchResult.items) {
       bobaLi = this.state.searchResult.items.data.map((item) => {
         if (item.store) {
-          storeLi.push(item.store)
-          return (
-            <div className="search-item" key={item._id}>
-              <section className="flex-row">
-                <div className="search-pic">
-                  <img src={item.photoUrl} />
-                </div>
-                <div className="flex-column">
-                  <h2>{item.name}</h2>
-                  <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
-                </div>
-              </section>
-              <button onClick={() => this.handleClick(item._id)}>
-                <span className="fav-tt">Add to favorites&nbsp;&nbsp;</span>
-                <i className="fas fa-plus-square" />
-              </button>
-            </div>
-          );
+          storeLi.push(item.store);
         }
-      })
+
+        let favButton = <button onClick={() => this.handleClick(item._id, true)}>
+          <i className="far fa-heart"></i>
+        </button>;
+
+        for (let i = 0; i < favorites.length; i++) {
+          let fav = favorites[i];
+
+          if (fav.bobaItemId === item._id) {
+            favButton = <button onClick={() => this.handleClick(fav._id, false)}>
+              <i className="fas fa-heart"></i>
+            </button>
+
+            break;
+          }
+        }
+
+        return (
+          <div className="search-item" key={item._id}>
+            <section className="flex-row">
+              <div className="search-pic">
+                <img src={item.photoUrl} />
+              </div>
+              <div className="flex-column">
+                <h2>{item.name}</h2>
+                <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
+              </div>
+            </section>
+            {favButton}
+          </div>
+        );
+      });
+    } 
+
+    if (bobaLi && bobaLi.length === 0) {
+      bobaLi = <p>No search result <i className="far fa-frown" /></p>
     };
 
-    if (bobaLi) {
-      if (bobaLi.length === 0) {
-        bobaLi = <p>No search result <i className="far fa-frown" /></p>
-      }
-    };
-
-    // debugger
     return (
       <div className="search-container">
         <div className="s-left">
-          <form className="search" onSubmit={this.handleSubmit}>
+          <form className="search" onSubmit={this.handleSearch}>
             <input
               type="text"
               value={this.state.name}
@@ -120,9 +126,12 @@ class Search extends React.Component {
           </form>
 
           <div className="search-results">
-            {bobaLi ? bobaLi : <p>Start your search!</p>}
+            <div className="results">
+              {bobaLi ? bobaLi : <p>Start your search!</p>}
+            </div>
           </div>
         </div>
+
         <Map storeLi={storeLi} />
       </div>
     );

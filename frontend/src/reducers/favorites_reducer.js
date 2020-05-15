@@ -12,17 +12,17 @@ const favoritesReducer = (state = {}, action) => {
       return action.favorites;
     case RECEIVE_FAVORITE:
 
-      // let temp = {
-      //   bobaItemId: action.favorite.data.bobaItemId,
-      //   userId: action.favorite.data.userId,
-      //   _id: action.favorite.data._id
-      // };
+      let temp = {
+        bobaItemId: action.favorite.data.bobaItemId,
+        userId: action.favorite.data.userId,
+        _id: action.favorite.data._id
+      };
 
-      // nextState.data.push(temp);
-      return action.favorite.data;
+      nextState.data.push(temp);
+      return nextState;
+      // return nextState.data.push(action.favorite.data);
+      // return action.favorite.data;
     case DELETE_FAVORITE:
-
-
       delete nextState[action.favoriteId];
       return nextState;
     default:

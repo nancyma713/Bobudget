@@ -1,13 +1,13 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-
 import { Route } from "react-router-dom";
-
 import { Switch } from "react-router-dom";
-import NavBarContainer from "./nav/navbar_container";
+
 import "../assets/stylesheets/colors.scss";
 import "../assets/stylesheets/app.scss";
+
 import MainPage from "./main/main_page";
+import NavBarContainer from "./nav/navbar_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import DashboardContainer from "./dashboard/dashboard_container";
@@ -15,14 +15,8 @@ import Creators from "./creators/creators";
 import Search from "./search/search_container";
 import PurchaseHistoryContainer from './purchase_history/purchase_history_container';
 
-
-
-// Testing for maps- START
-import MapContainer from "./map/map_container";
-//END
-
 const App = () => (
-  <div>
+  <>
     <NavBarContainer />
     <Route exact path='/creators' component={Creators} />
     <Switch>
@@ -32,14 +26,9 @@ const App = () => (
 
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
       <ProtectedRoute exact path="/search" component={Search} />
-
-      {/* testing for map-START */}
-        <Route exact path='/map' component={MapContainer}/>
-      {/* END */}
-      
       <ProtectedRoute exact path="/purchases" component={PurchaseHistoryContainer} />
     </Switch>
-  </div>
+  </>
 );
 
 export default App;

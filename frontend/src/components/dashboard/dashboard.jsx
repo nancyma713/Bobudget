@@ -1,13 +1,11 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../../assets/stylesheets/dashboard.scss";
 
 // WIDGETS
-
-import FavoritesContainer from './widgets/favorites_container';
-import BudgetContainer from './widgets/budget_container';
-import BubblesContainer from '../bubbles/bubbles_container';
-import Calculator from './widgets/calculator';
-
+import FavoritesContainer from './widgets/favorites/favorites_container';
+import BudgetCalcContainer from './widgets/budget_calc/budget_calc_container';
+import BubblesContainer from './widgets/bubbles/bubbles_container';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -35,22 +33,6 @@ class Dashboard extends React.Component {
     let date = new Date();
     date = date.toDateString();
 
-    const newDate = new Date();
-    const monthNum = newDate.getMonth();
-    let monthlyPurchases = purchases.filter((purchase) => {
-      const purchaseDate = new Date(purchase.date);
-      const purchaseMonth = purchaseDate.getMonth();
-      return purchaseMonth === monthNum;
-    });
-
-    let moneySpent = 0;
-
-    for (let i = 0; i < monthlyPurchases.length; i++) {
-      moneySpent += monthlyPurchases[i].price;
-    }
-
-    let moneyLeft = currentUser.budget - moneySpent;
-
     return (
       <div>
         <h1 id="welcome-msg">Welcome, {firstName}</h1>
@@ -58,22 +40,38 @@ class Dashboard extends React.Component {
         <div className="dashboard-container">
           <div className="d-left">
             <div className="favorites-container">
-              <h3>My Favorites</h3>
+              <i id="fav-info-i" className="fas fa-info-circle"></i>
+              <div className="fav-info">
+                How to add a Favorite: 
+                <ol>
+                  <li>Search for your favorite boba drinks in the Search page</li>
+                  <li>Click on the <i className="far fa-heart"></i> to favorite the ones you like</li>
+                  <li>All the ones you heart will appear here!</li>
+                </ol>
+                <br />
+                How to remove a Favorite: 
+                <ol>
+                  <li>On the Dashboard: </li>
+                  <ul>
+                    <li>For the boba drink you would like to remove, click on the <i className="fas fa-heart"></i></li>
+                  </ul>
+                  <li>On the Search page: </li>
+                  <ul>
+                    <li>Search the boba drink you would like to unfavorite</li>
+                    <li>Click on the <i className="fas fa-heart"></i></li>
+                  </ul>
+                </ol>
+              </div>
 
+              <h3>My Favorites</h3>
               <div className="favorites">
-                <FavoritesContainer currentUser={currentUser} />
+                <FavoritesContainer />
               </div>
             </div>
           </div>
 
           <div className="d-middle">
-            <div className="budget flex-column">
-              <BudgetContainer />
-            </div>
-
-            <div className="calculator">
-              <Calculator moneyLeft={moneyLeft} />
-            </div>
+            <BudgetCalcContainer />
           </div>
 
           <div className="d-right">

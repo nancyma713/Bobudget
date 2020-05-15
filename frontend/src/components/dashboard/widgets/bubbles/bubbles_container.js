@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import Bubbles from "./bubbles";
-import { fetchBobaItems } from "../../actions/boba_item_actions";
+import { fetchBobaItems } from '../../../../actions/boba_item_actions';
+import Bubbles from './bubbles';
 
 const msp = (state) => {
   return {

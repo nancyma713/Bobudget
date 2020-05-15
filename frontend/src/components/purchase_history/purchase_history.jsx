@@ -22,13 +22,13 @@ class PurchaseHistory extends React.Component {
     let user = this.props.currentUser;
     user.budget = this.state.budget;
     this.props.updateUser(user)
-      .then(() => window.location.reload());
+      .then(() => this.props.fetchUser());
   }
 
   handleDelete(e) {
     e.preventDefault();
     this.props.removePurchase(e.currentTarget.value)
-      .then(() => window.location.reload());
+      .then(() => this.props.fetchPurchases(this.props.currentUser.id));
   }
 
   update(field) {
@@ -36,7 +36,7 @@ class PurchaseHistory extends React.Component {
   }
 
   render() {
-    const { purchases } = this.props;
+    const { currentUser, purchases } = this.props;
 
     const newDate = new Date();
     const monthNum = newDate.getMonth();
@@ -111,14 +111,14 @@ class PurchaseHistory extends React.Component {
     return (
       <div className="purchased-items center">
 
-        <h1>{month} {year} Purchase History</h1>
+        <h1>{currentUser.firstName}'s {month} {year} Purchase History</h1>
 
         <div className="purchase-split">
           <section className="purchase-info">
 
             <div className="budget-orb">
               <h3>Monthly Budget:</h3>
-              <p>$ {this.state.budget}</p>
+              <p>$ {currentUser.budget}</p>
             </div>
 
             <div className="budget-orb">

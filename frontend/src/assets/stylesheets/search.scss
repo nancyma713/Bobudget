@@ -58,10 +58,6 @@
     margin-right: 2vw;
   }
 
-  .search-item button .fav-tt {
-    font-size: 3vw;
-  }
-
   .search-pic {
     width: 10vw;
     height: 10vw;
@@ -112,6 +108,10 @@
     padding-top: 23vh;
   }
 
+  .results {
+    height: 57vh;
+  }
+
   .search-item {
     border-radius: 1vw;
     margin-top: .8vw;
@@ -129,10 +129,6 @@
 
   .search-item button {
     margin-right: 1vw;
-  }
-
-  .search-item button .fav-tt {
-    font-size: 1.6vw;
   }
 
   .search-pic {
@@ -184,9 +180,16 @@
   background-color: #898d7c;
 }
 
+.search button:hover {
+  background-color: #898d7c;
+}
+
 .search-results {
   margin-top: 2vh;
   background-color: $white;
+}
+
+.results {
   overflow: scroll;
 }
 
@@ -223,14 +226,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.search-item button .fav-tt {
-  visibility: hidden;
-}
-
-.search-item button:hover .fav-tt {
-  visibility: visible;
 }
 
 .search-pic {

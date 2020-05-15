@@ -15,8 +15,8 @@ const msp = (state) => {
 const mdp = (dispatch) => ({
   fetchBobaItems: () => dispatch(fetchBobaItems()),
   searchBobas: (bobaName) => dispatch(searchBobas(bobaName)),
+  fetchFavorites: userId => dispatch(fetchFavorites(userId)),
   createFavorite: (favorite) => dispatch(createFavorite(favorite)),
-  fetchFavorites: () => dispatch(fetchFavorites()),
   removeFavorite: (favoriteId) => dispatch(removeFavorite(favoriteId))
 });
 

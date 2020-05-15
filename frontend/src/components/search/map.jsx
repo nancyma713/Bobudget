@@ -174,6 +174,8 @@ class Map extends React.Component {
 
 
   render() {
+    if (!window.google) return null;
+
     this.marker_arr.forEach(marker => {
       marker.setMap(null);
     });

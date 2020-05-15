@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-// WHEN SCREEN IS LESS THAN 800PX
+// WHEN SCREEN IS LESS THAN 900PX
 @media screen and (max-width: 900px) {
   .search-container {
     flex-direction: column;
@@ -177,11 +177,7 @@
 }
 
 .search button:hover {
-  background-color: #898d7c;
-}
-
-.search button:hover {
-  background-color: #898d7c;
+  background-color: $superdarkmatcha;
 }
 
 .search-results {
@@ -211,7 +207,7 @@
 
 .search-item a {
   transition: color 0.4s ease;
-  color: #686b5d;
+  color: $superdarkmatcha;
 }
 
 .search-item a:hover {
@@ -219,7 +215,7 @@
 }
 
 .search-item i {
-  color: rgb(55, 95, 55);
+  color: $forestgreen;
 }
 
 .search-item button {

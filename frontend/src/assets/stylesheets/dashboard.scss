@@ -16,7 +16,6 @@
   .d-right {
     display: block;
     width: 90%;
-    // margin: auto;
   }
 
   .bubbles-container,
@@ -133,8 +132,6 @@
 
   .calc-screen {
     border-radius: 1vw;
-    border-style: solid;
-    border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
     border-width: 1vw;
     padding: 2vw;
     height: 100%;
@@ -146,12 +143,12 @@
   }
 
   .budget .red {
-    color: rgb(158, 27, 27);
+    color: $red;
   }
 
 
   .budget .green {
-    color: rgb(79, 158, 27);;
+    color: $green;
   }
 
   .remainder {
@@ -207,22 +204,22 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: #41382c;
+    background-color: $boba;
     display: inline-block;
     border-radius: 1.8vw;
-    color: #ceccc4;
+    color: $white;
   }
 
   #date {
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: #41382c;
+    background-color: $boba;
     display: inline-block;
     position: absolute;
     right: 0;
     border-radius: 1.8vw;
-    color: #ceccc4;
+    color: $white;
   }
 
   .dashboard-container {
@@ -287,7 +284,7 @@
     border-radius: 1vw;
     padding: .5vw 4vw;
     font-size: 2vw;
-    background-color: #f1f1f1;
+    background-color: $white;
     position: absolute;
     top: -15%;
     left: 15%;
@@ -331,9 +328,9 @@
     align-items: center;
     width: 3.4vw;
     height: 3.4vw;
-    background-color: #41382c;
+    background-color: $boba;
     border-radius: 50%;
-    color: #f1f1f1;
+    color: $white;
     font-size: 1.1vw;
     margin-left: -10%;
     margin-top: -3%;
@@ -353,8 +350,6 @@
 
   .calc-screen {
     border-radius: .7vw;
-    border-style: solid;
-    border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
     border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
     padding: .8vw;
     height: 38%;
@@ -366,12 +361,12 @@
   }
 
   .budget .red {
-    background-color: rgb(158, 27, 27);
+    background-color: $red;
   }
 
 
   .budget .green {
-    background-color: rgb(79, 158, 27);;
+    background-color: $green;
   }
 
   .remainder {
@@ -421,7 +416,7 @@
 }
 
 .dashboard-container {
-  background-color: #ceccc4;
+  background-color: $lightmatcha;
   position: fixed;
   left: 2.5%;
   width: 95vw;
@@ -430,7 +425,7 @@
 }
 
 .favorites-container {
-  background-color: #f1f1f1;
+  background-color: $white;
   box-sizing: border-box;
   position: relative;
 }
@@ -452,7 +447,7 @@
 
 .fav-info {
   display: none;
-  background-color: #b3ba9ed8;
+  background-color: $matcha;
   box-sizing: border-box;
   position: absolute;
   padding: 1vw;
@@ -460,7 +455,7 @@
   right: 1vw;
   top: 4vw;
   font-size: 1.2vw;
-  width: 90%;
+  width: 92%;
   z-index: 2;
 }
 
@@ -504,14 +499,13 @@
 }
 
 .fav .fa-heart:hover:before {
-  transition: content 1s ease;
   font-size: 1.8vw;
   content: "\f00d";
 }
 
 .budget {
   position: relative;
-  background-color: #f1f1f1;
+  background-color: $white;
   box-sizing: border-box;
 }
 
@@ -523,11 +517,11 @@
 .budget h1 {
   box-sizing: border-box;
   width: 100%;
-  background-color: #c3eaf2;
+  background-color: $lightblue;
 }
 
 .budget-input {
-  background-color: #e8dbe6;
+  background-color: $pink;
   box-sizing: border-box;
   position: relative;
 }
@@ -552,11 +546,13 @@
 
 .calculator {
   box-sizing: border-box;
-  background-color: #f1f1f1;
+  background-color: $white;
 }
-
+  
 .calc-screen {
-  background-color: #e8dbe6;
+  border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
+  border-style: solid;
+  background-color: $pink;
   box-sizing: border-box;
 }
 
@@ -567,7 +563,7 @@
 }
 
 .remainder {
-  color: rgb(79, 158, 27);
+  color: $green;
 }
 
 .button:before {
@@ -579,7 +575,7 @@
 .button {
   width: 23%;
   border-radius: .7vw;
-  background-color: #c3eaf2;
+  background-color: $lightblue;
   margin-top: 1.7vh;
   border-style: solid;
   border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
@@ -588,7 +584,7 @@
 }
 
 .bubbles-container {
-  background-color: #f1f1f1;
+  background-color: $white;
   box-sizing: border-box;
   position: relative;
   text-align: center;
@@ -604,7 +600,6 @@
   color: rgba(60, 52, 42, 0.45);
 }
 
-//-----------MODAL--------------------
 .modal-background {
   position: fixed;
   top: 0;
@@ -620,8 +615,8 @@
 .modal-child {
   position: relative;
   margin: 0 auto;
-  color: black;
-  background: white;
+  color: $black;
+  background: $white;
   animation-name: modal-swoop-in;
   animation-duration: 0.5s;
 }

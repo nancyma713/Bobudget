@@ -27,7 +27,7 @@ router.post(
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    // debugger;
+
     const newBoba = new BobaItem({
       name: req.body.name,
     });
@@ -51,7 +51,7 @@ router.get(
 
 router.get("/search/:boba_name", (req, res) => {
   const regex = new RegExp(["^.*", req.params.boba_name, ".*$"].join(""), "i");
-  // debugger;
+
   BobaItem.find({ name: regex })
     .populate("store")
     .then((bobaItems) => res.json(bobaItems))
@@ -59,21 +59,3 @@ router.get("/search/:boba_name", (req, res) => {
 });
 
 module.exports = router;
-
-// router.post(
-//   "/",
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     const { errors, isValid } = validateTweetInput(req.body);
-
-//     if (!isValid) {
-//       return res.status(400).json(errors);
-//     }
-
-//     const newTweet = new Tweet({
-//       text: req.body.text,
-//       user: req.user.id,
-//     });
-
-//     newTweet.save().then((tweet) => res.json(tweet));
-//   }

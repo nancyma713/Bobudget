@@ -139,7 +139,7 @@ class PurchaseHistory extends React.Component {
               />
               <div className="b-desc">a month on boba</div>
 
-              <button type="submit"><i class="fas fa-check"></i></button>
+              <button type="submit"><i className="fas fa-check"></i></button>
             </form>
           </section>
 

@@ -43,7 +43,6 @@ router.delete("/:favoriteId",
         res.status(400).send({ message: "Could not remove favorite" });
       });
 
-    // Favorite.findByIdAndRemove(req.params.favoriteId);
   });
 
 

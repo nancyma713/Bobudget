@@ -16,6 +16,7 @@ class Dashboard extends React.Component {
       username: ''
     }
   }
+  
   componentDidMount() {
     this.props.fetchUser();
     this.props.fetchPurchases(this.props.currentUser.id);

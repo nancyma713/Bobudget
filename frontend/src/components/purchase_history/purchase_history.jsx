@@ -5,11 +5,13 @@ class PurchaseHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budget: ''
+      budget: '',
+      price: ''
     };
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBudget = this.handleBudget.bind(this);
+    this.handlePurchase = this.handlePurchase.bind(this);
   }
 
   componentDidMount() {
@@ -17,12 +19,26 @@ class PurchaseHistory extends React.Component {
     this.props.fetchPurchases(this.props.currentUser.id);
   }
 
-  handleSubmit(e) {
+  handleBudget(e) {
     e.preventDefault();
     let user = this.props.currentUser;
     user.budget = this.state.budget;
     this.props.updateUser(user)
       .then(() => this.props.fetchUser());
+  }
+
+  handlePurchase(e) {
+    e.preventDefault();
+
+    let purchase = {
+      price: this.state.price
+    }
+
+    this.props.createPurchase(purchase)
+      .then(() => this.setState({
+        price: ''
+      })
+    );
   }
 
   handleDelete(e) {
@@ -100,7 +116,7 @@ class PurchaseHistory extends React.Component {
       return (
         <li key={`p-${purchase.date}-${purchase.price}`}>
           <span className="p-date">{newDateString}</span>
-          <div id='purchase-price'>${purchase.price}</div>
+          <div className='purchase-price'>${purchase.price}</div>
           <button value={purchase.id} onClick={this.handleDelete}>
             <i className="fas fa-times"></i>
         </button>
@@ -126,7 +142,7 @@ class PurchaseHistory extends React.Component {
               <p>$ {totalSpend}</p>
             </div>
 
-            <form id="update-budg-form" onSubmit={this.handleSubmit}>
+            <form id="update-budg-form" onSubmit={this.handleBudget}>
               <label>Update budget:</label>
               <div className="b-dollar">$</div>
 
@@ -143,8 +159,22 @@ class PurchaseHistory extends React.Component {
             </form>
           </section>
 
-          <section className='spends flex-column'>
-            <ul>
+          <section className='flex-column width-100'>
+            <form id="p-add-purchase" onSubmit={this.handlePurchase}>
+              <span className="p-date">{newDate.toDateString()}</span>
+              <div className="purchase-price">
+                $ <input
+                type="number"
+                step="0.01"
+                value={this.state.price}
+                onChange={this.update("price")}
+                />
+              </div>
+
+              <button>Add a Purchase</button>
+            </form>
+            
+            <ul className="spends">
               {purchaseItems}
             </ul>
           </section>

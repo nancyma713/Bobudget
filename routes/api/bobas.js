@@ -4,8 +4,6 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 
 const BobaItem = require("../../models/BobaItem");
-const StoreBobaItem = require("../../models/StoreBobaItem");
-const Store = require("../../models/Store");
 const validateBobaInput = require("../../validation/boba");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the boba route" }));

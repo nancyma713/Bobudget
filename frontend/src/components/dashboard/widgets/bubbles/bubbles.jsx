@@ -1,5 +1,5 @@
 import React from "react";
-import '../../../../assets/stylesheets/bubbles.scss';
+import "../../../../assets/stylesheets/bubbles.scss";
 
 class Bubbles extends React.Component {
   constructor(props) {
@@ -17,15 +17,11 @@ class Bubbles extends React.Component {
   }
 
   openModal() {
-    this.setState({
-      modal: true,
-    });
+    this.setState({ modal: true });
   }
 
   closeModal() {
-    this.setState({
-      modal: false,
-    });
+    this.setState({ modal: false });
   }
 
   render() {
@@ -39,7 +35,9 @@ class Bubbles extends React.Component {
 
     return (
       <>
-        <ul className="bubbles">
+        <ul id="bubbles">
+          <li onClick={this.openModal}></li>
+          <li onClick={this.openModal}></li>
           <li onClick={this.openModal}></li>
           <li onClick={this.openModal}></li>
           <li onClick={this.openModal}></li>
@@ -47,16 +45,15 @@ class Bubbles extends React.Component {
           <li onClick={this.openModal}></li>
           <li onClick={this.openModal}></li>
         </ul>
+
         {this.state.modal ? (
           <div className="modal-background" onClick={this.closeModal}>
-            <div className="boba-pop-up" onClick={(e) => e.stopPropagation()}>
+            <div id="boba-pop-up" onClick={(e) => e.stopPropagation()}>
               {bobaSample.name}
-              <img src={bobaSample.photoUrl} alt="" />
+              <img src={bobaSample.photoUrl} alt={bobaSample.name} />
             </div>
           </div>
-        ) : (
-            <></>
-          )}
+        ) : null}
       </>
     );
   }

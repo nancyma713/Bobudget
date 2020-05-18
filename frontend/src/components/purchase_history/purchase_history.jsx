@@ -1,30 +1,36 @@
-import React from 'react';
-import '../../assets/stylesheets/purchases.scss';
+import React from "react";
+import "../../assets/stylesheets/purchases.scss";
 
 class PurchaseHistory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      budget: '',
-      price: ''
+      budget: "",
+      price: ""
     };
 
-    this.handleDelete = this.handleDelete.bind(this);
     this.handleBudget = this.handleBudget.bind(this);
     this.handlePurchase = this.handlePurchase.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchUser().then(() => this.setState({ budget: this.props.currentUser.budget }))
+    this.props.fetchUser().then(() => 
+      this.setState({ budget: this.props.currentUser.budget })
+    );
+
     this.props.fetchPurchases(this.props.currentUser.id);
   }
 
   handleBudget(e) {
     e.preventDefault();
+
     let user = this.props.currentUser;
     user.budget = this.state.budget;
-    this.props.updateUser(user)
-      .then(() => this.props.fetchUser());
+
+    this.props.updateUser(user).then(() => 
+      this.props.fetchUser()
+    );
   }
 
   handlePurchase(e) {
@@ -34,17 +40,17 @@ class PurchaseHistory extends React.Component {
       price: this.state.price
     }
 
-    this.props.createPurchase(purchase)
-      .then(() => this.setState({
-        price: ''
-      })
+    this.props.createPurchase(purchase).then(() => 
+      this.setState({ price: "" })
     );
   }
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.removePurchase(e.currentTarget.value)
-      .then(() => this.props.fetchPurchases(this.props.currentUser.id));
+
+    this.props.removePurchase(e.currentTarget.value).then(() => 
+      this.props.fetchPurchases(this.props.currentUser.id)
+    );
   }
 
   update(field) {
@@ -54,9 +60,12 @@ class PurchaseHistory extends React.Component {
   render() {
     const { currentUser, purchases } = this.props;
 
+    if (!purchases) return null;
+
     const newDate = new Date();
     const monthNum = newDate.getMonth();
     const year = newDate.getFullYear();
+
     let month = "";
     switch (monthNum) {
       case 0:
@@ -99,11 +108,10 @@ class PurchaseHistory extends React.Component {
         return;
     }
 
-    if (!purchases) return null;
-
     let monthlyPurchases = purchases.filter((purchase) => {
       const purchaseDate = new Date(purchase.date);
       const purchaseMonth = purchaseDate.getMonth();
+
       return purchaseMonth === monthNum;
     });
 
@@ -113,10 +121,11 @@ class PurchaseHistory extends React.Component {
       const newDate = new Date(purchase.date);
       const newDateString = newDate.toDateString();
       totalSpend += purchase.price;
+
       return (
         <li key={`p-${purchase.date}-${purchase.price}`}>
-          <span className="p-date">{newDateString}</span>
-          <div className='purchase-price'>${purchase.price}</div>
+          <span className="purchase-date">{newDateString}</span>
+          <div className="purchase-price">${purchase.price}</div>
           <button value={purchase.id} onClick={this.handleDelete}>
             <i className="fas fa-times"></i>
         </button>
@@ -125,12 +134,11 @@ class PurchaseHistory extends React.Component {
     });
 
     return (
-      <div className="purchased-items center">
-
+      <div id="purchased-items" className="center">
         <h1>{currentUser.firstName}'s {month} {year} Purchase History</h1>
 
-        <div className="purchase-split">
-          <section className="purchase-info">
+        <div id="purchase-split">
+          <section id="purchase-info">
 
             <div className="budget-orb">
               <h3>Monthly Budget:</h3>
@@ -144,7 +152,7 @@ class PurchaseHistory extends React.Component {
 
             <form id="update-budg-form" onSubmit={this.handleBudget}>
               <label>Update budget:</label>
-              <div className="b-dollar">$</div>
+              <div id="b-dollar">$</div>
 
               <input
                 type="number"
@@ -153,15 +161,16 @@ class PurchaseHistory extends React.Component {
                 value={this.state.budget}
                 onChange={this.update("budget")}
               />
-              <div className="b-desc">a month on boba</div>
+
+              <div id="b-desc">a month on boba</div>
 
               <button type="submit"><i className="fas fa-check"></i></button>
             </form>
           </section>
 
-          <section className='flex-column width-100'>
+          <section className="flex-column width-100">
             <form id="p-add-purchase" onSubmit={this.handlePurchase}>
-              <span className="p-date">{newDate.toDateString()}</span>
+              <span className="purchase-date">{newDate.toDateString()}</span>
               <div className="purchase-price">
                 $ <input
                 type="number"
@@ -174,7 +183,7 @@ class PurchaseHistory extends React.Component {
               <button>Add a Purchase</button>
             </form>
             
-            <ul className="spends">
+            <ul id="all-purchases">
               {purchaseItems}
             </ul>
           </section>

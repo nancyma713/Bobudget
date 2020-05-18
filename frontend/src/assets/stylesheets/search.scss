@@ -2,7 +2,7 @@
 
 // WHEN SCREEN IS LESS THAN 900PX
 @media screen and (max-width: 900px) {
-  .search-container {
+  #search-container {
     flex-direction: column;
     margin: auto;
     height: 100%;
@@ -11,30 +11,30 @@
     overflow: scroll;
   }
 
-  .s-left , #map{
+  #search-left , #map{
     width: 100%;
   }
 
-  .search input {
+  #search input {
     padding: 2vw;
     border-radius: 1.5vw;
     font-size: 3.5vw;
   }
 
-  .search button {
+  #search button {
     font-size: 3.5vw;
     border-radius: 0 1.5vw 1.5vw 0;
     padding: 2vw;
   }
 
-  .search-results {
+  #search-results {
     height: 45vw;
     margin-bottom: 2vh;
     border-radius: 2vw;
     padding: 2vw;
   }
 
-  .search-results p {
+  #search-results p {
     font-size: 3.5vw;
     padding-top: 17vw;
   }
@@ -71,44 +71,44 @@
 
 // SCREEN @ FULL WIDTH
 @media screen and (min-width: 900px) {
-  .search-container {
+  #search-container {
     flex-direction: row;
     position: fixed;
     top: 4vh;
     padding: 2vw;
   }
 
-  .s-left {
+  #search-left {
     margin-right: 2vw;
   }
 
-  .s-left, #map {
+  #search-left, #map {
     width: 70%;
   }
-  .search input {
+  #search input {
     padding: .8vw;
     border-radius: .8vw;
     font-size: 1.3vw;
   }
 
-  .search button {
+  #search button {
     font-size: 1.5vw;
     border-radius: 0 .8vw .8vw 0;
     padding: .8vw;
   }
 
-  .search-results {
+  #search-results {
     height: 61vh;
     border-radius: .8vw;
     padding: 1vw;
   }
 
-  .search-results p {
+  #search-results p {
     font-size: 2vw;
     padding-top: 23vh;
   }
 
-  .results {
+  #results {
     height: 57vh;
   }
 
@@ -142,7 +142,7 @@
   }
 }
 
-.search-container {
+#search-container {
   position: fixed;
   background-color: $lightorange;
   border-radius: 2vw 2vw 0px 0px;
@@ -155,17 +155,17 @@
   box-sizing: border-box;
 }
 
-.search {
+#search {
   position: relative;
 }
 
-.search input {
+#search input {
   width: 100%;
   box-sizing: border-box;
   background-color: $white;
 }
 
-.search button {
+#search button {
   transition: background-color 0.3s ease;
   position: absolute;
   right: 0;
@@ -176,20 +176,20 @@
   color: $white;
 }
 
-.search button:hover {
+#search button:hover {
   background-color: $superdarkmatcha;
 }
 
-.search-results {
+#search-results {
   margin-top: 2vh;
   background-color: $white;
 }
 
-.results {
+#results {
   overflow: scroll;
 }
 
-.search-results p {
+#search-results p {
   text-align: center;
 }
 

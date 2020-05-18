@@ -1,4 +1,4 @@
-.bubbles {
+#bubbles {
   position: absolute;
   top: 0;
   left: 0;
@@ -9,7 +9,7 @@
   transform: translateZ(0);
 }
 
-.bubbles li {
+#bubbles li {
   position: absolute;
   list-style: none;
   display: block;
@@ -22,11 +22,11 @@
   transition-timing-function: linear;
 }
 
-.bubbles li:nth-child(1) {
+#bubbles li:nth-child(1) {
   width: 40px;
   height: 40px;
 }
-.bubbles li:nth-child(2) {
+#bubbles li:nth-child(2) {
   width: 60px;
   height: 60px;
   -webkit-animation-delay: 2s;
@@ -35,7 +35,7 @@
   animation-duration: 26s;
 }
 
-.bubbles li:nth-child(3) {
+#bubbles li:nth-child(3) {
   width: 45px;
   height: 45px;
   -webkit-animation-delay: 4s;
@@ -44,7 +44,7 @@
   animation-duration: 20s;
 }
 
-.bubbles li:nth-child(4) {
+#bubbles li:nth-child(4) {
   width: 80px;
   height: 80px;
   -webkit-animation-delay: 1s;
@@ -53,7 +53,7 @@
   animation-duration: 22s;
 }
 
-.bubbles li:nth-child(5) {
+#bubbles li:nth-child(5) {
   width: 50px;
   height: 50px;
   -webkit-animation-delay: 7s;
@@ -62,7 +62,7 @@
   animation-duration: 23s;
 }
 
-.bubbles li:nth-child(6) {
+#bubbles li:nth-child(6) {
   width: 40px;
   height: 40px;
   -webkit-animation-delay: 5s;

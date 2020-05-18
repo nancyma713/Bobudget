@@ -6,7 +6,7 @@
     display: none;
   }
 
-  .nav {
+  #nav {
     display: flex;
   }
 
@@ -33,7 +33,7 @@
     display: flex;
   }
 
-  .nav {
+  #nav {
     display: none;
   }
 
@@ -53,7 +53,7 @@
 }
 
 // NORMAL NAV
-.nav {
+#nav {
   position: fixed;
   justify-content: space-between;
   align-items: center;
@@ -67,19 +67,19 @@
   z-index: 1;
 }
 
-.nav h1 {
+#nav h1 {
   font-size: 6vw;
   color: $white;
 }
 
-.nav-links {
+#nav-links {
   margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav-links a, .nav-links button {
+#nav-links a, #nav-links button {
   color: $white;
 }
 
@@ -93,7 +93,7 @@
 }
 
 // STRAW
-.straw {
+#straw {
   position: absolute;
   background-image: linear-gradient(to right, #d5f0f6, $lightblue, #c0e9f1, #abe2ed, #96dae8, #82d3e3, #6dccdf);
   width: 5vw;
@@ -123,42 +123,42 @@
 }
 //
 
-.straw button {
+#straw button {
   font-size: 100%;
 }
 
-.straw i {
+#straw i {
   font-size: 170%;
   display: none;
 }
 
-.straw-title {
+#straw-title {
   font-size: 1.7vw;
 }
 
-.straw:hover {
+#straw:hover {
   transition: all 1s ease;
   height: 90vh;
   overflow: visible;
   opacity: 0.8;
 }
 
-.straw:hover a, .straw:hover button {
+#straw:hover a, #straw:hover button {
   animation: up 2s ease;
 }
 
-.straw:hover i, .straw:hover button {
+#straw:hover i, #straw:hover button {
   transition: color 0.5s ease-in;
   color: $white;
   display: block;
 }
 
-.straw:hover .straw-title {
+#straw:hover #straw-title {
   transition: display 0.5s ease-in;
   display: none;
 }
 
-.straw:hover .nav-icon {
+#straw:hover .nav-icon {
   background-image: url('https://bobudget-seeds.s3.amazonaws.com/images/finalboba.png');
   background-size: cover;
   border-radius: 50%;
@@ -184,62 +184,62 @@
 }
 
 //BOBA POSITIONING
-.one {
+#one {
   bottom: -6%;
   left: -5%;
 }
 
-.two {
+#two {
   bottom: -10%;
   left: 3%;
 }
 
-.three {
+#three {
   bottom: -8%;
   left: 12%;
 }
 
-.four {
+#four {
   bottom: -5%;
   left: 21%;
 }
 
-.five {
+#five {
   bottom: -8%;
   left: 30%;
 }
 
-.six {
+#six {
   bottom: -7%;
   left: 39%;
 }
 
-.seven {
+#seven {
   bottom: -5%;
   right: 39%;
 }
 
-.eight {
+#eight {
   bottom: -8%;
   right: 30%;
 }
 
-.nine {
+#nine {
   bottom: -5%;
   right: 21%;
 }
 
-.ten {
+#ten {
   bottom: -8%;
   right: 12%;
 }
 
-.eleven {
+#eleven {
   bottom: -10%;
   right: 3%;
 }
 
-.twelve {
+#twelve {
   bottom: -6%;
   right: -5%;
 }

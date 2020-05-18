@@ -1,15 +1,15 @@
 @import './colors.scss';
 
 @media screen and (max-width: 1300px) {
-  .purchased-items {
+  #purchased-items {
     width: 100%;
   }
 
-  .purchase-split {
+  #purchase-split {
     flex-direction: column;
   }
 
-  .purchased-items h1 {
+  #purchased-items h1 {
     font-size: 4vw;
     margin-bottom: 2vw;
   }
@@ -46,33 +46,33 @@
     font-size: 2vw;
   }
 
-  .b-dollar {
+  #b-dollar {
     top: 7.3vw;
     left: 2vw;
   }
 
-  .b-desc {
+  #b-desc {
     display: none;
   }
 
-  .spends {
+  #all-purchases {
     margin: 2vw auto;
     border-radius: .8vw;
     width: 93vw;
     height: 65vh;
   }
 
-  .spends li {
+  #all-purchases li {
     font-size: 3vw;
     padding: 2vw;
   }
 
-  .spends button {
+  #all-purchases button {
     font-size: 3vw;
     right: 1.5vw;
   }
 
-  .p-date {
+  .purchase-date {
     width: 27vw;
   }
 
@@ -82,11 +82,11 @@
 }
 
 @media screen and (min-width: 1300px) {
-  .purchased-items {
+  #purchased-items {
     width: 70vw;
   }
 
-  .purchased-items h1 {
+  #purchased-items h1 {
     font-size: 2.3vw;
     margin-bottom: .8vw;
   }
@@ -123,28 +123,28 @@
     font-size: .9vw;
   }
 
-  .b-dollar {
+  #b-dollar {
     top: 3.38vw;
     left: 1vw;
   }
 
-  .spends {
+  #all-purchases {
     margin: .3vw .7vw .7vw .7vw;
     border-radius: .8vw;
     width: 100%;
     height: 60vh;
   }
 
-  .spends li {
+  #all-purchases li {
     font-size: 1.2vw;
     padding: .5vw;
   }
 
-  .p-date {
+  .purchase-date {
     width: 10vw;
   }
 
-  .spends button {
+  #all-purchases button {
     font-size: 1.2vw;
     right: 1vw;
   }
@@ -154,7 +154,7 @@
   }
 }
 
-.purchased-items {
+#purchased-items {
   margin: 0 auto;
   background-color: $lightorange;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -163,12 +163,12 @@
   box-sizing: border-box;
 }
 
-.purchase-split {
+#purchase-split {
   display: flex;
   align-items: flex-start;
 }
 
-.purchased-items h1 {
+#purchased-items h1 {
   color: $white;
   background-color: $darkblue;
   border-radius: .7vw;
@@ -224,11 +224,11 @@
   background-color: $matcha;
 }
 
-.b-dollar {
+#b-dollar {
   position: absolute;
 }
 
-.b-desc {
+#b-desc {
   font-size: .9vw;
   background-color: $white;
   padding-bottom: .4vw;
@@ -259,24 +259,24 @@
   height: 100%;
 }
 
-.spends {
+#all-purchases {
   overflow: scroll;
   background-color: white;
   box-sizing: border-box;
 }
 
-.spends li {
+#all-purchases li {
   display: flex;
   text-align: left;
   position: relative;
   box-sizing: border-box;
 }
 
-.spends li:nth-child(odd) {
+#all-purchases li:nth-child(odd) {
   background-color: $white;
 }
 
-.spends button {
+#all-purchases button {
   position: absolute;
 }
 

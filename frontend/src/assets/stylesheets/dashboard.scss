@@ -2,7 +2,7 @@
 
 // WHEN SCREEN IS LESS THAN 800PX
 @media screen and (max-width: 800px) {
-  .dashboard-container {
+  #dashboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,17 +11,17 @@
     top: 2vh;
   }
 
-  .d-left,
-  .d-middle,
-  .d-right {
+  #dash-left,
+  #dash-middle,
+  #dash-right {
     display: block;
     width: 90%;
   }
 
-  .bubbles-container,
-  .favorites-container,
+  #bubbles-container,
+  #favorites-container,
   .budget,
-  .calculator {
+  #calculator {
     width: 100%;
   }
 
@@ -37,7 +37,7 @@
     display: none;
   }
 
-  .favorites-container {
+  #favorites-container {
     margin-top: 4vh;
     padding: 3vw;
     font-size: 3.3vw;
@@ -45,7 +45,7 @@
     border-radius: 3vw;
   }
 
-  .favorites-container h3 {
+  #favorites-container h3 {
     text-align: center;
     font-size: 4vw;
   }
@@ -54,7 +54,7 @@
     display: none;
   }
 
-  .favorites {
+  #favorites {
     height: 43vw;
   }
 
@@ -68,19 +68,19 @@
     font-size: 3.5vw;
   }
 
-  .budget {
+  #budget {
     margin-top: 3.5vh;
     border-radius: 3vw;
     padding: 3vw;
   }
 
-  .budget-title {
+  #budget-title {
     text-align: center;
     font-size: 4vw;
     margin-bottom: 3%;
   }
 
-  .budget-input {
+  #budget input {
     padding: 1.5vw;
     font-size: 3.3vw;
     margin-bottom: 2vw;
@@ -88,14 +88,14 @@
     width: 100%;
   }
 
-  .budget h1 {
+  #budget h1 {
     font-size: 3.3vw;
     margin-bottom: 2vw;
     padding: 1.5vw;
     border-radius: 1.5vw;
   }
 
-  .budget-button {
+  #budget-button {
     top: 0;
     right: 0;
     font-size: 4vw;
@@ -106,11 +106,11 @@
     border-radius: 0 1.5vw 1.5vw 0;
   }
 
-  .budget-button:hover {
+  #budget-button:hover {
     font-size: 4.5vw;
   }
 
-  .budget .price {
+  #budget .price {
     color: $black;
     font-size: 3.3vw;
     position: absolute;
@@ -118,19 +118,19 @@
     right: 2vw;
   }
 
-  .budget a {
+  #budget a {
     font-size: 3vw;
     border-radius: 2vw;
   }
 
-  .calculator {
+  #calculator {
     border-radius: 3vw;
     margin-top: 3.5vh;
     padding: 3vw;
     height: 30vw;
   }
 
-  .calc-screen {
+  #calc-screen {
     border-radius: 1vw;
     border-width: 1vw;
     padding: 2vw;
@@ -138,24 +138,24 @@
     font-size: 3vw;
   }
 
-  .calc-msg {
+  #calc-msg {
     font-size: 5vw;
   }
 
-  .budget .red {
+  #budget .red {
     color: $red;
   }
 
 
-  .budget .green {
+  #budget .green {
     color: $green;
   }
 
-  .remainder {
+  #remainder {
     font-size: 4vw;
   }
 
-  .bubbles-container {
+  #bubbles-container {
     border-radius: 3vw;
     margin-top: 3.5vh;
     padding: 3vw;
@@ -163,16 +163,16 @@
     margin-bottom: 10vh;
   }
 
-  .bubbles {
+  #bubbles {
     border-radius: 3vw;
   }
 
-  .bubbles-container p {
+  #bubbles-container p {
     margin-top: 16vh;
     font-size: 4vw;
   }
 
-  .boba-pop-up {
+  #boba-pop-up {
     font-size: 5vw;
     height: 50vw;
     width: 50vw;
@@ -180,7 +180,7 @@
     top: 20vh;
   }
 
-  .boba-pop-up > img { 
+  #boba-pop-up > img { 
     width: 50vw;
   }
 
@@ -222,7 +222,7 @@
     color: $white;
   }
 
-  .dashboard-container {
+  #dashboard-container {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -230,25 +230,25 @@
     top: 4vh;
   }
 
-  .d-left,
-  .d-right {
+  #dash-left,
+  #dash-right {
     width: 33.33%;
     display: flex;
     justify-content: center;
   }
 
-  .d-middle {
+  #dash-middle {
     width: 33.33%;
     display: flex;
     flex-direction: column;
   }
 
-  .favorites-container,
-  .bubbles-container {
+  #favorites-container,
+  #bubbles-container {
     width: 80%;
   }
 
-  .favorites-container {
+  #favorites-container {
     margin-top: 8vh;
     padding: 1vw;
     font-size: 1.3vw;
@@ -256,11 +256,11 @@
     border-radius: 1vw;
   }
 
-  .favorites-container h3 {
+  #favorites-container h3 {
     font-size: 2.2vw;
   }
 
-  .favorites {
+  #favorites {
     height: 54vh;
   }
 
@@ -274,13 +274,13 @@
     font-size: 1.3vw;
   }
 
-  .budget {
+  #budget {
     margin-top: 8vh;
     border-radius: 1vw;
     padding: 1vw;
   }
 
-  .budget-title {
+  #budget-title {
     border-radius: 1vw;
     padding: .5vw 4vw;
     font-size: 2vw;
@@ -290,7 +290,7 @@
     left: 15%;
   }
 
-  .budget-input {
+  #budget input {
     margin-bottom: 1.5vh;
     font-size: 1.5vw;
     width: 97%;
@@ -299,14 +299,14 @@
 
   }
 
-  .budget h1 {
+  #budget h1 {
     font-size: 1.5vw;
     margin-bottom: 1.5vh;
     padding: .5vw;
     border-radius: .8vw;
   }
 
-  .budget-button {
+  #budget-button {
     top: -8%;
     right: 0%;
     width: 3.4vw;
@@ -315,14 +315,14 @@
     color: $boba;
   }
 
-  .budget-button:hover {
+  #budget-button:hover {
     width: 3.6vw;
     height: 3.6vw;
     font-size: 3.6vw;
     right: -1%;
   }
 
-  .budget .price {
+  #budget .price {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -336,19 +336,19 @@
     margin-top: -3%;
   }
 
-  .budget a {
+  #budget a {
     font-size: 1.4vw;
     border-radius: 1vw;
   }
 
-  .calculator {
+  #calculator {
     border-radius: 1vw;
     margin-top: 5vh;
     padding: 1vw;
     height: 48vh;
   }
 
-  .calc-screen {
+  #calc-screen {
     border-radius: .7vw;
     border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
     padding: .8vw;
@@ -356,40 +356,40 @@
     font-size: 1vw;
   }
 
-  .calc-msg {
+  #calc-msg {
     font-size: 1.4vw;
   }
 
-  .budget .red {
+  #budget .red {
     background-color: $red;
   }
 
 
-  .budget .green {
+  #budget .green {
     background-color: $green;
   }
 
-  .remainder {
+  #remainder {
     font-size: 1.3vw;
   }
 
-  .bubbles-container {
+  #bubbles-container {
     border-radius: 1vw;
     margin-top: 8vh;
     padding: 1vw;
     height: 66vh;
   }
 
-  .bubbles {
+  #bubbles {
     border-radius: 1vw;
   }
 
-  .bubbles-container p {
+  #bubbles-container p {
     margin-top: 22vh;
     font-size: 2vw;
   }
 
-  .boba-pop-up {
+  #boba-pop-up {
     font-size: 1.8vw;
     height: 15vw;
     width: 15vw;
@@ -397,7 +397,7 @@
     top: 30vh;
   }
 
-  .boba-pop-up > img { 
+  #boba-pop-up > img { 
     width: 15vw;
   }
 
@@ -415,7 +415,7 @@
   }
 }
 
-.dashboard-container {
+#dashboard-container {
   background-color: $brightmatcha;
   position: fixed;
   left: 2.5%;
@@ -424,13 +424,13 @@
   z-index: -1;
 }
 
-.favorites-container {
+#favorites-container {
   background-color: $white;
   box-sizing: border-box;
   position: relative;
 }
 
-.favorites-container h3 {
+#favorites-container h3 {
   margin-bottom: 3%;
 }
 
@@ -445,7 +445,7 @@
   cursor: help;
 }
 
-.fav-info {
+#fav-info {
   display: none;
   background-color: $matcha;
   box-sizing: border-box;
@@ -459,31 +459,31 @@
   z-index: 2;
 }
 
-.fav-info ol, .fav-info ul {
+#fav-info ol, #fav-info ul {
   font-size: 1vw;
 }
 
-.fav-info ol {
+#fav-info ol {
   margin-left: 1.1vw;
 }
 
-.fav-info ol li {
+#fav-info ol li {
   list-style-type: decimal;
 }
 
-.fav-info ol ul {
+#fav-info ol ul {
   margin-left: 1.1vw;
 }
 
-.fav-info ol ul li {
+#fav-info ol ul li {
   list-style-type: disc;
 }
 
-#fav-info-i:hover + .fav-info {
+#fav-info-i:hover + #fav-info {
   display: block;
 }
 
-.favorites {
+#favorites {
   overflow: scroll;
 }
 
@@ -503,7 +503,7 @@
   content: "\f00d";
 }
 
-.fav-pop-up {
+#fav-pop-up {
   text-align: center;
   position: relative;
   margin: 0 auto;
@@ -519,11 +519,11 @@
   padding: 2vw;
 }
 
-.fav-bold {
+#fav-bold {
   color: $superdarkmatcha;
 }
 
-.fav-pop-up button {
+#fav-pop-up button {
   border-radius: 1vw;
   font-size: 1.6vw;
   background-color: $pink;
@@ -531,53 +531,53 @@
   margin-right: 1vw;
 }
 
-.budget {
+#budget {
   position: relative;
   background-color: $white;
   box-sizing: border-box;
 }
 
-.budget-button {
+#budget-button {
   position: absolute;
   box-sizing: border-box;
 }
 
-.budget h1 {
+#budget h1 {
   box-sizing: border-box;
   width: 100%;
   background-color: $lightblue;
 }
 
-.budget-input {
+#budget input {
   background-color: $pink;
   box-sizing: border-box;
   position: relative;
 }
 
-.budget a {
+#budget a {
   color: #41382c;
   background-color: $darkmatcha;
   padding: .1vw .6vw;
   box-shadow: 0px 1px 1px;
 }
 
-.budget a:hover {
+#budget a:hover {
   transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   background-color: $boba;
   color: $white;
   box-shadow: 0px 1px 2px;
 }
 
-.budget a:focus {
+#budget a:focus {
   box-shadow: 0px 1px 2px inset;
 }
 
-.calculator {
+#calculator {
   box-sizing: border-box;
   background-color: $white;
 }
   
-.calc-screen {
+#calc-screen {
   border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
   border-style: solid;
   background-color: $pink;
@@ -590,7 +590,7 @@
   flex-wrap: wrap;
 }
 
-.remainder {
+#remainder {
   color: $green;
 }
 
@@ -611,20 +611,20 @@
   box-sizing: border-box;
 }
 
-.bubbles-container {
+#bubbles-container {
   background-color: $white;
   box-sizing: border-box;
   position: relative;
   text-align: center;
 }
 
-.bubbles {
+#bubbles {
   overflow: hidden;
   height: 100%;
   z-index: 1;
 }
 
-.bubbles-container p {
+#bubbles-container p {
   color: rgba(60, 52, 42, 0.45);
 }
 
@@ -640,7 +640,7 @@
   animation-duration: 0.5s;
 }
 
-.boba-pop-up {
+#boba-pop-up {
   position: relative;
   margin: 0 auto;
   color: $black;

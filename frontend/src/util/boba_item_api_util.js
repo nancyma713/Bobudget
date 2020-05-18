@@ -9,7 +9,7 @@ export const fetchBobaItem = (bobaItemId) => {
 };
 
 export const createBobaItem = (data) => {
-  return axios.post(`/api/bobas`, data);
+  return axios.post("/api/bobas", data);
 };
 
 export const searchBobas = (bobaName) => {

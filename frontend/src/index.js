@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import jwt_decode from 'jwt-decode';
-import configureStore from './store/store';
-import { setAuthToken } from './util/session_api_util';
-import { logout } from './actions/session_actions';
-import Root from './components/root';
+import React from "react";
+import ReactDOM from "react-dom";
+import jwt_decode from "jwt-decode";
+import configureStore from "./store/store";
+import { setAuthToken } from "./util/session_api_util";
+import { logout } from "./actions/session_actions";
+import Root from "./components/root";
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   let store;
 
   if (localStorage.jwtToken) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadedState = {
       session: {
         isAuthenticated: true,
-        user: decodedUser
+        user: decodedUser,
       }
     }
 
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (decodedUser.exp < currentTime) {
       store.dispatch(logout());
-      window.location.href = '/';
+      window.location.href = "/";
     }
   } else {
     store = configureStore({});
   }
 
-  const root = document.getElementById('root');
+  const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);
 })

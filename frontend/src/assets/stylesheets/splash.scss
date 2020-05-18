@@ -1,6 +1,6 @@
 @import './colors.scss';
 
-.bubbles {
+#bubbles {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   transform: translateZ(0);
 }
 
-.bubbles li {
+#bubbles li {
   position: absolute;
   list-style: none;
   display: block;
@@ -24,12 +24,12 @@
   transition-timing-function: linear;
 }
 
-.bubbles li:nth-child(1) {
+#bubbles li:nth-child(1) {
   width: 40px;
   height: 40px;
   left: 20%;
 }
-.bubbles li:nth-child(2) {
+#bubbles li:nth-child(2) {
   width: 60px;
   height: 60px;
   left: 40%;
@@ -39,7 +39,7 @@
   animation-duration: 17s;
 }
 
-.bubbles li:nth-child(3) {
+#bubbles li:nth-child(3) {
   width: 30px;
   height: 30px;
   left: 60%;
@@ -49,7 +49,7 @@
   animation-duration: 13s;
 }
 
-.bubbles li:nth-child(4) {
+#bubbles li:nth-child(4) {
   width: 80px;
   height: 80px;
   left: 80%;
@@ -59,7 +59,7 @@
   animation-duration: 22s;
 }
 
-.bubbles li:nth-child(5) {
+#bubbles li:nth-child(5) {
   width: 50px;
   height: 50px;
   left: 50%;

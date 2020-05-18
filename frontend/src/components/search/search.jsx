@@ -64,7 +64,7 @@ class Search extends React.Component {
   }
 
   render() {
-    const { favorites, currentUser } = this.props;
+    const { favorites } = this.props;
 
     let bobaLi;
     let storeLi = [];
@@ -95,11 +95,11 @@ class Search extends React.Component {
           <div className="search-item" key={item._id}>
             <section className="flex-row">
               <div className="search-pic">
-                <img src={item.photoUrl} />
+                <img alt={item.name} src={item.photoUrl} />
               </div>
               <div className="flex-column">
                 <h2>{item.name}</h2>
-                <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
+                <a target="_blank" rel="noopener noreferrer" href={item.store.mapUrl}>{item.store.name}</a>
               </div>
             </section>
             {favButton}

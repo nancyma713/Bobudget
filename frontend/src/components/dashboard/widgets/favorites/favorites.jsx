@@ -39,7 +39,7 @@ class Favorites extends React.Component {
 
     if (!favorites || !bobas.data) return null;
 
-    const favoritesList = favorites.map(fav => {
+    const favoritesList = favorites.map((fav) => {
       if (bobas.data) {
         for (let i = 0; i < bobas.data.length; i++) {
           let boba = bobas.data[i];
@@ -53,9 +53,11 @@ class Favorites extends React.Component {
                 </button>
               </li>
             );
-          }
+          } 
         }
       }
+
+      return null;
     });
 
     return (

@@ -204,7 +204,7 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: $boba;
+    background-color: $greyblue;
     display: inline-block;
     border-radius: 1.8vw;
     color: $white;
@@ -214,7 +214,7 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: $boba;
+    background-color: $greyblue;
     display: inline-block;
     position: absolute;
     right: 0;
@@ -416,7 +416,7 @@
 }
 
 .dashboard-container {
-  background-color: $lightmatcha;
+  background-color: $brightmatcha;
   position: fixed;
   left: 2.5%;
   width: 95vw;
@@ -491,7 +491,7 @@
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
-  background-color: $pink;
+  background-color: $lightorange;
 }
 
 .fav button i {

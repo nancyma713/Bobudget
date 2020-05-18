@@ -2,7 +2,7 @@
 
 // IF SCREEN IS LESS THAN 995PX
 @media screen and (max-width: 995px) {
-  .boba, .straw, .nav-text {
+  .boba, #straw, .nav-text {
     display: none;
   }
 
@@ -29,7 +29,7 @@
 
 // IF SCREEN IS AT FULL-WIDTH
 @media screen and (min-width: 990px) {
-  .straw, .nav-icon {
+  #straw, .nav-icon {
     display: flex;
   }
 

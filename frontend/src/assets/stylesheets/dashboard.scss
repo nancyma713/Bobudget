@@ -204,7 +204,7 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: $greyblue;
+    background-color: #57524E;
     display: inline-block;
     border-radius: 1.8vw;
     color: $white;
@@ -214,7 +214,7 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: $greyblue;
+    background-color: #57524E;
     display: inline-block;
     position: absolute;
     right: 0;
@@ -416,7 +416,7 @@
 }
 
 #dashboard-container {
-  background-color: $brightmatcha;
+  background-color: $matcha;
   position: fixed;
   left: 2.5%;
   width: 95vw;
@@ -425,7 +425,7 @@
 }
 
 #favorites-container {
-  background-color: $white;
+  background-color: $offwhite;
   box-sizing: border-box;
   position: relative;
 }
@@ -491,11 +491,11 @@
   display: flex;
   box-sizing: border-box;
   justify-content: space-between;
-  background-color: $lightorange;
+  background-color: $lightmatcha;
 }
 
 .fav button i {
-  color: $matcha;
+  color: $offwhite;
 }
 
 .fav .fa-heart:hover:before {
@@ -545,11 +545,11 @@
 #budget h1 {
   box-sizing: border-box;
   width: 100%;
-  background-color: $lightblue;
+  background-color: #EDE0CC;
 }
 
 #budget input {
-  background-color: $pink;
+  background-color: #E0C8A2;
   box-sizing: border-box;
   position: relative;
 }
@@ -578,9 +578,9 @@
 }
   
 #calc-screen {
-  border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
-  border-style: solid;
-  background-color: $pink;
+  // border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
+  // border-style: solid;
+  background-color: #E0C8A2;
   box-sizing: border-box;
 }
 
@@ -603,10 +603,10 @@
 .button {
   width: 23%;
   border-radius: .7vw;
-  background-color: $lightblue;
+  background-color: $milktea;
   margin-top: 1.7vh;
-  border-style: solid;
-  border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
+  // border-style: solid;
+  // border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
   border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
   box-sizing: border-box;
 }

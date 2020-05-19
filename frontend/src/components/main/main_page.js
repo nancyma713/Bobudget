@@ -3,20 +3,6 @@ import { Link } from "react-router-dom";
 import "../../assets/stylesheets/splash.scss";
 
 const MainPage = () => (
-  // <div id="welcome" className="center">
-  //   <section>
-  //     <h1>Welcome, 
-  //       <br />Boba Enthusiasts!&nbsp;&nbsp;
-  //       <i className="far fa-laugh-wink" /></h1>
-  //     <h2>Get poppin' below:</h2>
-  //   </section>
-
-  //   <section className="flex-column">
-  //     <Link to="/signup">Signup</Link>
-  //     <Link to="/login">Login</Link>
-  //   </section>
-  // </div>
-
   <div id="welcome-outer">
     <div id="welcome-middle">
       <div id="welcome-inner">

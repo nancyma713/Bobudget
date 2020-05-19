@@ -1,149 +1,503 @@
 @import './colors.scss';
 
-.signup {
-  margin-top: 3vh;
+// .signup {
+//   margin-top: 3vh;
+// }
+
+// .login {
+//   margin-top: 10vh;
+// }
+
+// .session-form {
+//   margin: auto;
+//   background-color: $milktea;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 10px;
+//   padding: 20px;
+//   display: flex;
+//   flex-direction: column;
+//   max-width: 25%;
+//   min-width: 330px;
+// }
+
+// .session-form h2 {
+//   font-size: 190%;
+//   text-align: center;
+// }
+
+// .session-form input {
+//   background-color: $white;
+//   border-radius: 10px;
+//   width: 100%;
+//   height: 10%;
+//   min-height: 47px;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   font-size: 115%;
+// }
+
+// .session-form label {
+//   margin: 7px 0px;
+//   position: relative;
+// }
+
+// .session-form button {
+//   margin: 10px auto;
+//   width: 70%;
+//   background-color: $matcha;
+//   color: $white;
+//   font-size: 130%;
+//   border-radius: 10px;
+//   padding: 10px;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+// }
+
+// .session-form button:hover {
+//   background-color: $darkmatcha;
+//   cursor: pointer;
+// }
+
+// .session-form p {
+//   font-size: 110%;
+// }
+
+// .session-form a {
+//   color: $darkmatcha;
+// }
+
+// .session-form a:hover {
+//   text-decoration: underline;
+// }
+
+// .session-form label .error-left {
+//   background-color: rgba(158, 27, 27, .8);
+//   color: $white;
+//   border-radius: 5px;
+//   padding: 10px;
+//   box-sizing: border-box;
+//   position: absolute;
+//   top: 10px;
+//   width: 120px;
+//   right: 105%;
+//   text-align: center;
+//   font-size: 85%;
+//   z-index: 1;
+// }
+
+// .session-form label .error-left::after {
+//   content: " ";
+//   position: absolute;
+//   top: 50%;
+//   left: 103%; 
+//   margin-left: -5px;
+//   border-width: 5px;
+//   border-style: solid;
+//   border-color: transparent transparent transparent rgb(158, 27, 27);
+// }
+
+// .half-width {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .split {
+//   width: 48%;
+// }
+
+@media screen and (max-width: 400px) {
+  #login-form-outer {
+    margin: 8vh auto;
+    width: 85vw;
+    height: 100vw;
+    border-radius: 32vw;
+  }
+
+  #login-form-middle {
+    width: 78vw;
+    height: 92vw;
+    border-radius: 30vw;
+    top: 5.3vw;
+    left: 3.5vw;
+  }
+
+  #login-form-inner {
+    width: 73vw;
+    height: 86vw;
+    border-radius: 28vw;
+    top: 3vw;
+    left: 2.3vw;
+  }
+
+  #login-form-inner h1 {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 9vw;
+  }
+
+  #login-form-inner form {
+    font-size: 5vw;
+  }
+
+  #login-form-inner input {
+    font-size: 5.3vw;
+    padding: 1vw;
+    border-radius: 3vw;
+    margin-bottom: 1.8vw;
+  }
+
+  #login-form-inner input:focus {
+    border: 1vw solid $lightpassionseed;
+  }
+
+  #login-form-inner button {
+    margin-top: 1vw;
+    padding: 1vw 3vw;
+    font-size: 5vw;
+    border-radius: 2vw;
+  }
+
+  #login-form-inner button:first-child {
+    margin-right: 3vw;
+  }
+
+  #login-form-inner p {
+    margin-top: 1vw;
+    font-size: 3.8vw;
+  }
+
+  #login-form-inner label .error-right {
+    display: none;
+  }
+
+  .red {
+    border: 1vw solid $passionred;
+  }
+
+  .none {
+    border: 1vw solid transparent;
+  }
 }
 
-.login {
-  margin-top: 10vh;
+@media screen and (min-width: 400px) and (max-width: 990px) {
+  #login-form-outer {
+    margin: 9vh auto;
+    width: 50vw;
+    height: 58vw;
+    border-radius: 19vw;
+  }
+
+  #login-form-middle {
+    width: 46vw;
+    height: 53vw;
+    border-radius: 16vw;
+    top: 3vw;
+    left: 1.9vw;
+  }
+
+  #login-form-inner {
+    width: 42vw;
+    height: 50vw;
+    border-radius: 14vw;
+    top: 1.5vw;
+    left: 1.8vw;
+  }
+
+  #login-form-inner h1 {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    font-size: 5vw;
+  }
+
+  #login-form-inner form {
+    font-size: 2.6vw;
+  }
+
+  #login-form-inner input {
+    font-size: 2.8vw;
+    padding: 1vw;
+    border-radius: 1.8vw;
+    margin-bottom: 1.5vw;
+  }
+
+  #login-form-inner input:focus {
+    border: .42vw solid $lightpassionseed;
+  }
+
+  #login-form-inner button {
+    padding: 1vw 2.7vw;
+    font-size: 3vw;
+    border-radius: 1.5vw;
+  }
+
+  #login-form-inner button:first-child {
+    margin-right: 1.5vw;
+  }
+
+  #login-form-inner p {
+    margin-top: 1.5vw;
+    font-size: 2vw;
+  }
+
+  #login-form-inner label .error-right {
+    border-radius: .8vw;
+    padding: 1.4vw;
+    top: .5vw;
+    width: 16vw;
+    font-size: 2vw;
+  }
+
+  #login-form-inner label .error-right::after {
+    border-width: .6vw;
+  }
+
+  .red {
+    border: .42vw solid $passionred;
+  }
+
+  .none {
+    border: .42vw solid transparent;
+  }
 }
 
-.session-form {
-  margin: auto;
-  background-color: $milktea;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  max-width: 25%;
-  min-width: 330px;
+@media screen and (min-width: 990px) and (max-width: 1350px) {
+  #login-form-outer {
+    margin: 2.5vh auto;
+    width: 40vw;
+    height: 43vw;
+    border-radius: 15vw;
+  }
+
+  #login-form-middle {
+    width: 37vw;
+    height: 39vw;
+    border-radius: 13vw;
+    top: 2.5vw;
+    left: 1.5vw;
+  }
+
+  #login-form-inner {
+    width: 35vw;
+    height: 37vw;
+    border-radius: 12vw;
+    top: 1.25vw;
+    left: 1vw;
+  }
+
+  #login-form-inner h1 {
+    margin-top: .8vw;
+    margin-bottom: 1vw;
+    font-size: 3.7vw;
+  }
+
+  #login-form-inner form {
+    font-size: 2vw;
+  }
+
+  #login-form-inner input {
+    font-size: 2.1vw;
+    padding: .7vw;
+    border-radius: 1.2vw;
+    margin-bottom: 1.5vw;
+  }
+
+  #login-form-inner input:focus {
+    border: .2vw solid $lightpassionseed;
+  }
+
+  #login-form-inner button {
+    padding: .7vw 2vw;
+    font-size: 2.3vw;
+    border-radius: 1vw;
+  }
+
+  #login-form-inner button:first-child {
+    margin-right: 1vw;
+  }
+
+  #login-form-inner p {
+    margin-top: 1vw;
+    font-size: 1.7vw;
+  }
+
+  #login-form-inner label .error-right {
+    border-radius: .5vw;
+    padding: 1.2vw;
+    top: .2vw;
+    width: 10vw;
+    font-size: 1.5vw;
+  }
+
+  #login-form-inner label .error-right::after {
+    border-width: .39vw;
+  }
+
+  .red {
+    border: .3vw solid $passionred;
+  }
+
+  .none {
+    border: .3vw solid transparent;
+  }
 }
 
-.session-form h2 {
-  font-size: 190%;
-  text-align: center;
+@media screen and (min-width: 1350px) {
+  #login-form-outer {
+    margin: 2.7vh auto;
+    width: 36vw;
+    height: 37vw;
+    border-radius: 13vw;
+  }
+
+  #login-form-middle {
+    width: 33vw;
+    height: 33vw;
+    border-radius: 11vw;
+    top: 2.5vw;
+    left: 1.5vw;
+  }
+
+  #login-form-inner {
+    width: 31vw;
+    height: 31vw;
+    border-radius: 10vw;
+    top: 1.25vw;
+    left: 1vw;
+  }
+
+  #login-form-inner h1 {
+    margin-top: .8vw;
+    margin-bottom: 2vw;
+    font-size: 3vw;
+  }
+
+  #login-form-inner form {
+    font-size: 1.5vw;
+  }
+
+  #login-form-inner input {
+    font-size: 1.6vw;
+    padding: .7vw;
+    border-radius: .8vw;
+    margin-bottom: 1.4vw;
+  }
+
+  #login-form-inner input:focus {
+    border: .2vw solid $lightpassionseed;
+  }
+
+  #login-form-inner button {
+    padding: .7vw 2vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+  }
+
+  #login-form-inner button:first-child {
+    margin-right: .5vw;
+  }
+
+  #login-form-inner p {
+    margin-top: 1vw;
+    font-size: 1.3vw;
+  }
+
+  #login-form-inner label .error-right {
+    border-radius: .3vw;
+    padding: 1vw;
+    top: .3vw;
+    width: 8vw;
+    font-size: 1.2vw;
+  }
+
+  #login-form-inner label .error-right::after {
+    border-width: .38vw;
+  }
+
+  .red {
+    border: .2vw solid $passionred;
+  }
+
+  .none {
+    border: .2vw solid transparent;
+  }
 }
 
-.session-form input {
-  background-color: $white;
-  border-radius: 10px;
-  width: 100%;
-  height: 10%;
-  min-height: 47px;
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 115%;
-}
-
-.session-form input:focus {
-  transition: border 0.2s ease-in;
-  border: 2px solid $darkmatcha;
-}
-
-.session-form label {
-  margin: 7px 0px;
+#login-form-outer {
+  background-color: $passionred;
   position: relative;
 }
 
-.session-form button {
-  margin: 10px auto;
-  width: 70%;
-  background-color: $matcha;
-  color: $white;
-  font-size: 130%;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#login-form-middle {
+  position: absolute;
+  background-color: $offwhite;
 }
 
-.session-form button:hover {
-  background-color: $darkmatcha;
-  cursor: pointer;
+#login-form-inner {
+  position: absolute;
+  text-align: center;
+  background-color: $passionorange;
+  color: $passionseed;
 }
 
-.session-form p {
-  font-size: 110%;
+#login-form-inner form {
+  width: 88%;
+  margin: auto;
+  text-align: left;
 }
 
-.session-form a {
-  color: $darkmatcha;
+#login-form-inner label {
+  position: relative;
 }
 
-.session-form a:hover {
+#login-form-inner input {
+  transition: border 0.2s ease-in;
+  background-color: $passionyellow;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#login-form-inner button {
+  transition: background-color .8s ease;
+  background-color: $lightpassionseed;
+  color: $offwhite;
+  box-sizing: border-box;
+}
+
+#login-form-inner button:hover {
+  background-color: $passionseed;
+}
+
+#login-form-inner p {
+  text-align: center;
+}
+
+#login-form-inner p a {
+  color: $passionred;
+}
+
+#login-form-inner p a:hover {
   text-decoration: underline;
 }
 
-.session-form label .error-right {
+#login-form-inner label .error-right {
   background-color: rgba(158, 27, 27, .8);
   color: $white;
-  border-radius: 5px;
-  padding: 10px;
   box-sizing: border-box;
   position: absolute;
-  top: 10px;
-  width: 120px;
   left: 105%;
   text-align: center;
-  font-size: 85%;
   z-index: 1;
 }
 
-.session-form label .error-right::after {
+#login-form-inner label .error-right::after {
   content: " ";
   position: absolute;
   top: 50%;
   right: 100%; 
-  margin-left: -5px;
-  border-width: 5px;
+  margin-left: -10px;
   border-style: solid;
-  border-color: transparent rgb(158, 27, 27) transparent transparent;
-}
-
-.session-form label .error-left {
-  background-color: rgba(158, 27, 27, .8);
-  color: $white;
-  border-radius: 5px;
-  padding: 10px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 10px;
-  width: 120px;
-  right: 105%;
-  text-align: center;
-  font-size: 85%;
-  z-index: 1;
-}
-
-.session-form label .error-left::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 103%; 
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent rgb(158, 27, 27);
-}
-
-.red {
-  transition: border 0.2s ease-in;
-  border: 2px solid rgb(158, 27, 27);;
-}
-
-.none {
-  border: 2px solid transparent;
+  border-color: transparent rgba(158, 27, 27, 0.8) transparent transparent;
 }
 
 .no-error {
   display: none;
-}
-
-.half-width {
-  display: flex;
-  justify-content: space-between;
-}
-
-.split {
-  width: 48%;
 }

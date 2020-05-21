@@ -14,8 +14,8 @@
     margin-bottom: 2vw;
   }
 
-  .purchase-info {
-    align-items: flex-start;
+  #purchase-info {
+    align-items: start;
   }
 
   #update-budg-form, .budget-orb {
@@ -55,8 +55,22 @@
     display: none;
   }
 
+  #p-add-purchase {
+    margin: 2vw;
+    border-radius: .8vw;
+    width: 93vw;
+    padding: 2vw;
+    font-size: 3vw;
+  }
+
+  #p-add-purchase button {
+    font-size: 3vw;
+    padding: 2vw;
+    border-radius: 0 .8vw .8vw 0;
+  }
+
   #all-purchases {
-    margin: 2vw auto;
+    margin: 1vw auto;
     border-radius: .8vw;
     width: 93vw;
     height: 65vh;
@@ -91,7 +105,7 @@
     margin-bottom: .8vw;
   }
 
-  .purchase-info {
+  #purchase-info {
     flex-direction: column;
   }
 
@@ -128,6 +142,20 @@
     left: 1vw;
   }
 
+  #p-add-purchase {
+    margin: .7vw .7vw .3vw .7vw;
+    border-radius: .8vw;
+    width: 100%;
+    padding: .8vw .5vw;
+    font-size: 1.2vw;
+  }
+
+  #p-add-purchase button {
+    font-size: 1.2vw;
+    padding: .5vw .8vw;
+    border-radius: 0 .8vw .8vw 0;
+  }
+
   #all-purchases {
     margin: .3vw .7vw .7vw .7vw;
     border-radius: .8vw;
@@ -156,8 +184,7 @@
 
 #purchased-items {
   margin: 0 auto;
-  background-color: $lightorange;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: $matcha;
   padding: 2vw;
   height: 90vh;
   box-sizing: border-box;
@@ -169,16 +196,15 @@
 }
 
 #purchased-items h1 {
-  color: $white;
-  background-color: $darkblue;
+  color: $boba;
+  background-color: $offwhite;
   border-radius: .7vw;
   width: 100%;
   margin-top: 1vw;
 }
 
-.purchase-info {
+#purchase-info {
   display: flex;
-  justify-content: center;
   z-index: 0;
 }
 
@@ -196,7 +222,7 @@
 #update-budg-form input {
   text-align: center;
   width: 100%;
-  background-color: $white;
+  background-color: white;
   padding: .4vw .5vw 0vw 1.7vw;
   box-sizing: border-box;
 }
@@ -206,7 +232,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: $white;
+  background-color: white;
   box-sizing: border-box;
   border-radius: 0 0 .8vw .8vw;
 }
@@ -221,7 +247,7 @@
 }
 
 #update-budg-form button:hover {
-  background-color: $matcha;
+  background-color: $boba;
 }
 
 #b-dollar {
@@ -230,7 +256,7 @@
 
 #b-desc {
   font-size: .9vw;
-  background-color: $white;
+  background-color: white;
   padding-bottom: .4vw;
   height: 2.2vw;
 }
@@ -239,24 +265,22 @@
   position: relative;
   display: flex;
   text-align: left;
-  background-color: $white;
-  margin: .7vw .7vw .3vw .7vw;
-  border-radius: .3vw;
-  width: 100%;
-  height: 5vh;
-  padding: .5vw;
-  font-size: 1.2vw;
+  background-color: white;
 }
 
 #p-add-purchase button {
-  background-color: $pink;
+  transition: background-color .4s ease-in, color .4s ease-in;
+  background-color: $darkmatcha;
   box-sizing: border-box;
   position: absolute;
-  font-size: 1.2vw;
+  height: 100%;
   top: 0;
   right: 0;
-  padding: .5vw;
-  height: 100%;
+}
+
+#p-add-purchase button:hover {
+  color: $offwhite;
+  background-color: $boba;
 }
 
 #all-purchases {

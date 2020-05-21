@@ -68,6 +68,23 @@
     font-size: 3.5vw;
   }
 
+  #fav-pop-up {
+    font-size: 4vw;
+    height: 40vw;
+    width: 70vw;
+    border-radius: 3vw;
+    top: 30vh;
+    padding: 5.3vw;
+  }
+
+  #fav-pop-up button {
+    border-radius: 2vw;
+    font-size: 3.9vw;
+    padding: 2vw 5vw;
+    margin-right: 3vw;
+    margin-top: 3vw;
+  }
+
   #budget {
     margin-top: 3.5vh;
     border-radius: 3vw;
@@ -174,14 +191,21 @@
 
   #boba-pop-up {
     font-size: 5vw;
-    height: 50vw;
-    width: 50vw;
-    border-radius: 2vw;
-    top: 20vh;
+    height: 72vw;
+    width: 70vw;
+    border-radius: 3vw;
+    top: 10vh;
+    padding: 3vw;
   }
 
-  #boba-pop-up > img { 
-    width: 50vw;
+  .bpu-name {
+    margin-bottom: 1vw;
+  }
+
+  .bpu-img-container { 
+    width: 64.5vw;
+    height: 57vw;
+    border-radius: 3vw;
   }
 
   @keyframes modal-swoop-in {
@@ -191,7 +215,7 @@
       right: -35%;
     }
     to {
-      top: 20vh;
+      top: 10vh;
       bottom: 0%;
       right: 0%;
     }
@@ -274,6 +298,23 @@
     font-size: 1.3vw;
   }
 
+  #fav-pop-up {
+    font-size: 1.7vw;
+    height: 17vw;
+    width: 30vw;
+    border-radius: 1vw;
+    top: 30vh;
+    padding: 2vw;
+  }
+
+  #fav-pop-up button {
+    border-radius: 1vw;
+    font-size: 1.6vw;
+    padding: 1vw 3vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+  }
+
   #budget {
     margin-top: 8vh;
     border-radius: 1vw;
@@ -284,7 +325,7 @@
     border-radius: 1vw;
     padding: .5vw 4vw;
     font-size: 2vw;
-    background-color: $white;
+    background-color: $offwhite;
     position: absolute;
     top: -15%;
     left: 15%;
@@ -311,15 +352,13 @@
     right: 0%;
     width: 3.4vw;
     height: 3.4vw;
-    font-size: 3.4vw;
+    font-size: 2vw;
+    font-weight: 900;
     color: $boba;
   }
 
   #budget-button:hover {
-    width: 3.6vw;
-    height: 3.6vw;
-    font-size: 3.6vw;
-    right: -1%;
+    font-size: 2.3vw;
   }
 
   #budget .price {
@@ -333,7 +372,7 @@
     color: $white;
     font-size: 1.1vw;
     margin-left: -10%;
-    margin-top: -3%;
+    margin-top: -2.5%;
   }
 
   #budget a {
@@ -357,7 +396,7 @@
   }
 
   #calc-msg {
-    font-size: 1.4vw;
+    font-size: 1.5vw;
   }
 
   #budget .red {
@@ -390,15 +429,22 @@
   }
 
   #boba-pop-up {
-    font-size: 1.8vw;
-    height: 15vw;
-    width: 15vw;
+    font-size: 2vw;
+    height: 32vw;
+    width: 30vw;
     border-radius: 1vw;
-    top: 30vh;
+    top: 10vh;
+    padding: 1vw;
   }
 
-  #boba-pop-up > img { 
-    width: 15vw;
+  .bpu-name {
+    margin-bottom: 1vw;
+  }
+
+  .bpu-img-container { 
+    width: 28vw;
+    height: 26vw;
+    border-radius: 1vw;
   }
 
   @keyframes modal-swoop-in {
@@ -408,7 +454,7 @@
       right: -35%;
     }
     to {
-      top: 30vh;
+      top: 10vh;
       bottom: 0%;
       right: 0%;
     }
@@ -424,7 +470,9 @@
   z-index: -1;
 }
 
-#favorites-container {
+#favorites-container, 
+#bubbles-container,
+#budget {
   background-color: $offwhite;
   box-sizing: border-box;
   position: relative;
@@ -509,14 +557,14 @@
   margin: 0 auto;
   color: $black;
   background: $white;
-  animation-name: modal-swoop-in;
-  animation-duration: 0.5s;
-  font-size: 1.7vw;
-  height: 15vw;
-  width: 30vw;
-  border-radius: 1vw;
-  top: 30vh;
-  padding: 2vw;
+}
+
+#fav-pop-up i {
+  font-size: 70%;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  cursor: pointer;
 }
 
 #fav-bold {
@@ -524,38 +572,78 @@
 }
 
 #fav-pop-up button {
-  border-radius: 1vw;
-  font-size: 1.6vw;
-  background-color: $pink;
-  padding: 1vw 2vw;
-  margin-right: 1vw;
+  transition: background-color .8s ease;
+  background-color: $blue;
 }
 
-#budget {
-  position: relative;
-  background-color: $white;
-  box-sizing: border-box;
+#fav-pop-up button:hover {
+  background-color: $darkmatcha;
 }
 
 #budget-button {
   position: absolute;
   box-sizing: border-box;
+  background-color: $boba;
+  border-radius: 50%;
+  color: $offwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #budget h1 {
   box-sizing: border-box;
   width: 100%;
-  background-color: #EDE0CC;
+  background-color: $milktea;
 }
 
 #budget input {
-  background-color: #E0C8A2;
+  background-color: $blue;
   box-sizing: border-box;
   position: relative;
 }
 
+#dash-budg-err {
+  transition: opacity .6s ease;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgba(158, 27, 27, .8);
+  color: $offwhite;
+  padding: .6vw 2.7vw;
+  border-radius: .4vw;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  white-space: nowrap;
+  opacity: 1;
+}
+
+#dash-budg-err:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(158, 27, 27, .8) transparent;
+}
+
+#dash-budg-err i {
+  font-size: 70%;
+  position: absolute;
+  right: 4%;
+  top: 18%;
+  cursor: pointer;
+}
+
+#none {
+  position: absolute;
+  opacity: 0;
+}
+
 #budget a {
-  color: #41382c;
+  color: $boba;
   background-color: $darkmatcha;
   padding: .1vw .6vw;
   box-shadow: 0px 1px 1px;
@@ -574,14 +662,15 @@
 
 #calculator {
   box-sizing: border-box;
-  background-color: $white;
+  background-color: $offwhite;
 }
   
 #calc-screen {
   // border-color: #fceefa #eecfeb #d4b9d2 #d7c8d5;
   // border-style: solid;
-  background-color: #E0C8A2;
+  background-color: $milktea;
   box-sizing: border-box;
+  padding-top: 4%;
 }
 
 .calc-buttons {
@@ -603,19 +692,10 @@
 .button {
   width: 23%;
   border-radius: .7vw;
-  background-color: $milktea;
+  background-color: $blue;
   margin-top: 1.7vh;
-  // border-style: solid;
-  // border-color: #e7f1f3 #acc1c6 #75a1ab #8c9da0;
   border-width: 0.4vw 0.5vw 0.5vw 0.4vw;
   box-sizing: border-box;
-}
-
-#bubbles-container {
-  background-color: $white;
-  box-sizing: border-box;
-  position: relative;
-  text-align: center;
 }
 
 #bubbles {
@@ -625,6 +705,7 @@
 }
 
 #bubbles-container p {
+  text-align: center;
   color: rgba(60, 52, 42, 0.45);
 }
 
@@ -644,9 +725,27 @@
   position: relative;
   margin: 0 auto;
   color: $black;
-  background: $white;
+  background: $offwhite;
+  text-align: center;
   animation-name: modal-swoop-in;
   animation-duration: 0.5s;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#boba-pop-up i {
+  font-size: 70%;
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+}
+
+.bpu-img-container {
+  overflow: hidden;
+}
+
+.bpu-img-container img {
+  width: 100%;
 }
 
 @keyframes modal-background-fade-in {

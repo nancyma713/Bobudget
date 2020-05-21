@@ -49,8 +49,12 @@ class Bubbles extends React.Component {
         {this.state.modal ? (
           <div className="modal-background" onClick={this.closeModal}>
             <div id="boba-pop-up" onClick={(e) => e.stopPropagation()}>
-              {bobaSample.name}
-              <img src={bobaSample.photoUrl} alt={bobaSample.name} />
+              <i onClick={this.closeModal} className="fas fa-times"></i>
+              <div className="bpu-name">{bobaSample.name}</div>
+
+              <div className="bpu-img-container">
+                <img src={bobaSample.photoUrl} alt={bobaSample.name} />
+              </div>
             </div>
           </div>
         ) : null}

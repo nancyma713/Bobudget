@@ -7,6 +7,7 @@ class BudgetCalc extends React.Component {
     super(props);
     this.state = {
       price: "",
+      error: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,13 +16,17 @@ class BudgetCalc extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let purchase = {
-      price: this.state.price
-    }
+    if (this.state.price === "") {
+      this.setState({ error: true })
+    } else {
+      let purchase = {
+        price: this.state.price
+      }
 
-    this.props.createPurchase(purchase).then(() => 
-      this.setState({ price: "" })
-    );
+      this.props.createPurchase(purchase).then(() =>
+        this.setState({ price: "" })
+      );
+    }
   }
 
   update() {
@@ -66,9 +71,14 @@ class BudgetCalc extends React.Component {
                 onChange={this.update("price")}
                 value={this.state.price}
               />
-              <button id="budget-button" className="flex-row jus-center align-center">
-                <i className="fas fa-plus-circle" />
+              <button id="budget-button">
+                <i className="fas fa-plus"></i>
               </button>
+            </div>
+
+            <div id={this.state.error ? "dash-budg-err" : "none"}>
+              <i onClick={() => this.setState({ error: false })} className="fas fa-times"></i>
+              Please enter a purchase! 
             </div>
           </form>
 

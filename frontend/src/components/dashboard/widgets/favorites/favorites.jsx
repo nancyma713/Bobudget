@@ -10,6 +10,7 @@ class Favorites extends React.Component {
     }
 
     this.handleRemove = this.handleRemove.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleRemove() {
@@ -67,6 +68,7 @@ class Favorites extends React.Component {
 
         {this.state.modal ? <div className="modal-background">
           <div id="fav-pop-up">
+            <i onClick={this.closeModal} className="fas fa-times"></i>
             <p>Are you sure you want to remove</p>
             <div id="fav-bold">{this.state.bobaName}</div> 
             <p>from your favorites?</p>

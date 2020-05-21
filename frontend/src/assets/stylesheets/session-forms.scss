@@ -35,6 +35,8 @@
 //   width: 48%;
 // }
 
+
+
 @media screen and (max-width: 400px) {
   #login-form-outer {
     margin: 8vh auto;
@@ -269,6 +271,11 @@
   .none {
     border: .3vw solid transparent;
   }
+}
+.signup {
+  background-color: #fff;
+  width: 50vw;
+  font-size: 2vw;
 }
 
 @media screen and (min-width: 1350px) {

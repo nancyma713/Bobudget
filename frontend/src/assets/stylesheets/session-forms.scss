@@ -1,41 +1,35 @@
 @import './colors.scss';
 
-// .session-form label .error-left {
-//   background-color: rgba(158, 27, 27, .8);
-//   color: $white;
-//   border-radius: 5px;
-//   padding: 10px;
-//   box-sizing: border-box;
-//   position: absolute;
-//   top: 10px;
-//   width: 120px;
-//   right: 105%;
-//   text-align: center;
-//   font-size: 85%;
-//   z-index: 1;
-// }
+.error-left {
+  background-color: rgba(158, 27, 27, .8);
+  color: $white;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 10px;
+  width: 120px;
+  right: 105%;
+  text-align: center;
+  font-size: 85%;
+  z-index: 1;
+}
 
-// .session-form label .error-left::after {
-//   content: " ";
-//   position: absolute;
-//   top: 50%;
-//   left: 103%; 
-//   margin-left: -5px;
-//   border-width: 5px;
-//   border-style: solid;
-//   border-color: transparent transparent transparent rgb(158, 27, 27);
-// }
+.error-left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 103%; 
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(158, 27, 27);
+}
 
 // .half-width {
 //   display: flex;
 //   justify-content: space-between;
 // }
-
-// .split {
-//   width: 48%;
-// }
-
-
 
 @media screen and (max-width: 400px) {
   #login-form-outer {
@@ -98,7 +92,7 @@
     font-size: 3.8vw;
   }
 
-  #login-form-inner label .error-right {
+  .error-right {
     display: none;
   }
 
@@ -171,7 +165,7 @@
     font-size: 2vw;
   }
 
-  #login-form-inner label .error-right {
+  .error-right {
     border-radius: .8vw;
     padding: 1.4vw;
     top: .5vw;
@@ -179,7 +173,7 @@
     font-size: 2vw;
   }
 
-  #login-form-inner label .error-right::after {
+  .error-right::after {
     border-width: .6vw;
   }
 
@@ -252,7 +246,7 @@
     font-size: 1.7vw;
   }
 
-  #login-form-inner label .error-right {
+  .error-right {
     border-radius: .5vw;
     padding: 1.2vw;
     top: .2vw;
@@ -260,7 +254,7 @@
     font-size: 1.5vw;
   }
 
-  #login-form-inner label .error-right::after {
+  .error-right::after {
     border-width: .39vw;
   }
 
@@ -279,6 +273,46 @@
 }
 
 @media screen and (min-width: 1350px) {
+  #signup-form-outer {
+    margin: 2.7vh auto;
+    width: 45vw;
+    height: 37vw;
+    border-radius: 13vw;
+  }
+
+  #signup-form-middle {
+    width: 42vw;
+    height: 33vw;
+    border-radius: 11vw;
+    top: 2.5vw;
+    left: 1.5vw;
+  }
+
+  #signup-form-inner {
+    width: 40vw;
+    height: 31vw;
+    border-radius: 10vw;
+    top: 1.25vw;
+    left: 1vw;
+  }
+
+  #signup-form-inner h1 {
+    margin-top: .8vw;
+    margin-bottom: .3vw;
+    font-size: 3vw;
+  }
+
+  #signup-form-inner form {
+    font-size: 1.5vw;
+  }
+
+  #signup-form-inner input {
+    font-size: 1.4vw;
+    padding: .6vw;
+    border-radius: .8vw;
+    margin-bottom: 1.4vw;
+  }
+
   #login-form-outer {
     margin: 2.7vh auto;
     width: 36vw;
@@ -314,7 +348,7 @@
 
   #login-form-inner input {
     font-size: 1.6vw;
-    padding: .7vw;
+    padding: .6vw;
     border-radius: .8vw;
     margin-bottom: 1.4vw;
   }
@@ -338,7 +372,7 @@
     font-size: 1.3vw;
   }
 
-  #login-form-inner label .error-right {
+  .error-right {
     border-radius: .3vw;
     padding: 1vw;
     top: .3vw;
@@ -346,7 +380,7 @@
     font-size: 1.2vw;
   }
 
-  #login-form-inner label .error-right::after {
+  .error-right {
     border-width: .38vw;
   }
 
@@ -359,34 +393,34 @@
   }
 }
 
-#login-form-outer {
+#login-form-outer, #signup-form-outer {
   background-color: $passionred;
   position: relative;
 }
 
-#login-form-middle {
+#login-form-middle, #signup-form-middle {
   position: absolute;
   background-color: $offwhite;
 }
 
-#login-form-inner {
+#login-form-inner, #signup-form-inner {
   position: absolute;
   text-align: center;
   background-color: $passionorange;
   color: $passionseed;
 }
 
-#login-form-inner form {
+#login-form-inner form, #signup-form-inner form {
   width: 88%;
   margin: auto;
   text-align: left;
 }
 
-#login-form-inner label {
+#login-form-inner label, #signup-form-inner label {
   position: relative;
 }
 
-#login-form-inner input {
+#login-form-inner input, #signup-form-inner input {
   transition: border 0.2s ease-in;
   background-color: $passionyellow;
   box-sizing: border-box;
@@ -416,7 +450,7 @@
   text-decoration: underline;
 }
 
-#login-form-inner label .error-right {
+.error-right {
   background-color: rgba(158, 27, 27, .8);
   color: $white;
   box-sizing: border-box;
@@ -426,7 +460,7 @@
   z-index: 1;
 }
 
-#login-form-inner label .error-right::after {
+.error-right::after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -438,4 +472,13 @@
 
 .no-error {
   display: none;
+}
+
+.signup-split {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-split label {
+  width: 48%;
 }

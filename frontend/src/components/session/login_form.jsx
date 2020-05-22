@@ -80,46 +80,6 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      // <div className="login margin-auto">
-        // <form className="session-form" onSubmit={this.handleSubmit}>
-        //   <h2>Log In</h2>
-        //   <label>
-        //     Username
-        //     <input
-        //       className={this.props.errors["username"] ? "red" : "none"}
-        //       type="text"
-        //       value={this.state.username}
-        //       onChange={this.update("username")}
-        //       placeholder="Username"
-        //     />
-        //     <span className={this.props.errors["username"] ? "error-right" : "no-error"}>{this.renderErrors("username")}</span>
-        //   </label>
-
-        //   <label>
-        //     Password
-        //     <input
-        //       className={this.props.errors["password"] ? "red" : "none"}
-        //       type="password"
-        //       value={this.state.password}
-        //       onChange={this.update("password")}
-        //       placeholder="Password"
-        //     />
-        //     <span className={this.props.errors["password"] ? "error-right" : "no-error"}>{this.renderErrors("password")}</span>
-        //   </label>
-
-        //   <button className="center" type="submit">
-        //     Log in
-        //   </button>
-
-        //   <button className="center" type="submit" onClick={this.demoLogin}>
-        //     Demo User
-        //   </button>
-
-        //   <p className="margin-auto">
-        //     Don"t have an account? <Link to="/signup">Sign up</Link>
-        //   </p>
-        // </form>
-      // </div>
       <div id="login-form-outer">
         <div id="login-form-middle">
           <div id="login-form-inner">

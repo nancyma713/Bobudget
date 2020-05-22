@@ -25,7 +25,7 @@ class Map extends React.Component {
           "featureType": "water",
           "elementType": "geometry",
           "stylers": [
-            {"color": "#a0d6d1"},
+            {"color": "#b1d4d9"},
             {"lightness": 17}
           ]
         },

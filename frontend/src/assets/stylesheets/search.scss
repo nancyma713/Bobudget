@@ -39,6 +39,10 @@
     padding-top: 17vw;
   }
 
+  #results {
+    height: 34vh;
+  }
+
   .search-item {
     border-radius: 1vw;
     margin-top: 1.5vw;
@@ -144,7 +148,7 @@
 
 #search-container {
   position: fixed;
-  background-color: $lightorange;
+  background-color: $matcha;
   border-radius: 2vw 2vw 0px 0px;
   left: 2.5%;
   width: 95vw;
@@ -162,7 +166,7 @@
 #search input {
   width: 100%;
   box-sizing: border-box;
-  background-color: $white;
+  background-color: $offwhite;
 }
 
 #search button {
@@ -182,7 +186,7 @@
 
 #search-results {
   margin-top: 2vh;
-  background-color: $white;
+  background-color: $offwhite;
 }
 
 #results {
@@ -197,7 +201,7 @@
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: $pink;
+  background-color: $blue;
   overflow: hidden;
 }
 
@@ -206,12 +210,11 @@
 }
 
 .search-item a {
-  transition: color 0.4s ease;
-  color: $superdarkmatcha;
+  color: $boba;
 }
 
 .search-item a:hover {
-  color: $darkmatcha;
+  text-decoration: underline;
 }
 
 .search-item i {
@@ -231,12 +234,6 @@
 }
 
 .search-pic img {
-  height: inherit;
   position: absolute;
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-  z-index: 0;
+  width: inherit;
 }

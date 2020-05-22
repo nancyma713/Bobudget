@@ -1,42 +1,321 @@
-.creators {
-    margin: 20px 20px 50px 20px;
+@import './colors.scss';
+
+@media screen and (max-width: 800px) {
+  #members {
+    flex-direction: column;
+    margin-top: 7vh;
+    margin-left: 10vw;
+    margin-bottom: 10vh;
+  }
+
+  .member {
+    margin-bottom: 5vh;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 0 0 10vw 10vw;
+  }
+  
+  .member:before {
+    top: -13%;
+    left: 3.9%;
+    height: 29vw;
+    width: 10vw;
+  }
+
+  .member:after {
+    top: 3%;
+    right: 3.6%;
+    height: 22.6vw;
+    width: 25.5vw;
+  }
+
+  .member:nth-child(even) {
+    margin-left: 40vw;
+  }
+
+  .member-img {
+    position: absolute;
+    height: 40vw;
+    width: 34vw;
+    border-radius: 2vw;
+    border: 1.5vw solid $offwhite;
+    box-sizing: border-box;
+  }
+
+  .member-img img {
+    width: 100%;
+  }
+  
+  .even {
+    left: -100%;
+    top: -5%;
+  }
+
+  .odd {
+    top: -5%;
+    right: -100%;
+  }
+
+  .member h1 {
+    font-size: 4vw;
+    top: 3%;
+    left: 35%;
+  }
+
+  .member h2 {
+    font-size: 3vw;
+    top: 17%;
+    left: 35%;
+  }
+
+  .member h3 {
+    height: 13vw;
+    width: 37vw;
+    padding: 3vw;
+    border-radius: 0 0 8vw 8vw;
+    font-size: 3.5vw;
+    bottom: 4%;
+    left: 3.5%;
+    box-sizing: border-box;
+  }
+
+  .member h3 i {
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  .member-boba {
+    width: 8vw;
+    height: 8vw;
+    font-size: 5vw;
+  }
+
+  .member-boba:hover {
+    width: 8.2vw;
+    height: 8.2vw;
+  }
+
+  .github {
+    top: -10%;
+    left: 6.3%;
+  }
+
+  .linkedin {
+    top: 13%;
+    left: 6.3%;
+  }
+
+  .angellist {
+    top: 37%;
+    left: 6.3%;
+  }
 }
 
-#team {
-    background-color: #CECCC4;
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+  .member {
+    margin-top: 20vh;
+  }
+
+  .member:nth-child(even) {
+    margin-top: 28vh;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .member {
+    margin-top: 10vh;
+  }
+
+  .member:nth-child(even) {
+    margin-top: 18vh;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .member {
+    margin-left: 4vw;
+    width: 20vw;
+    height: 30vw;
+    border-radius: 0 0 7vw 7vw;
+  }
+  
+  .member:before {
+    top: -13%;
+    left: 3.9%;
+    height: 22.5vw;
+    width: 4.5vw;
+  }
+
+  .member:after {
+    top: 64%;
+    left: 3.6%;
+    height: 10vw;
+    width: 18.5vw;
+    border-radius: 0 0 6.5vw 6.5vw;
+  }
+
+  .member-img {
+    height: 17.2vw;
+    width: 13.2vw;
+    margin-left: 6vw;
+    margin-top: 1.3vw;
+  }
+
+  .member-img img {
     height: 100%;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 30px;
+  }
+
+  .member h1 {
+    font-size: 2.4vw;
+    left: 8%;
+    bottom: 25%;
+  }
+
+  .member h2 {
+    font-size: 1.4vw;
+    left: 8%;
+    bottom: 21%;
+  }
+
+  .member h3 {
+    width: 13vw;
+    padding: .5vw;
+    border-radius: 1vw;
+    font-size: 1.2vw;
+    left: 23%;
+    bottom: 8%;
+  }
+
+  .member h3 i {
+    top: 28%;
+    right: 5%;
+  }
+
+  .member-boba {
+    width: 3.8vw;
+    height: 3.8vw;
+    font-size: 2.5vw;
+  }
+
+  .member-boba:hover {
+    width: 3.9vw;
+    height: 3.9vw;
+  }
+
+  .github {
+    top: 10%;
+    left: 5.5%;
+  }
+
+  .linkedin {
+    top: 25%;
+    left: 5.5%;
+  }
+
+  .angellist {
+    top: 40%;
+    left: 5.5%;
+  }
 }
 
-.members {
-    display: flex;
-    width: 700px;
-    flex-wrap: wrap;
+#members {
+  display: flex;
 }
 
 .member {
-    margin: 5%;
-    width: 250px;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: #CECCC4;
+  position: relative; 
+  background-color: $offwhite;
+}
+
+.member:before, .member:after {
+  content: " ";
+  position: absolute;
+}
+
+.matcha:before {
+  background-color: $darkmatcha;
+}
+
+.matcha:after {
+  background-color: $matcha;
+}
+
+.passion:before {
+  background-color: $passionred;
+}
+
+.passion:after {
+  background-color: $passionorange;
+}
+
+.milktea:before {
+  background-color: $taro;
+}
+
+.milktea:after {
+  background-color: $lightmilktea;
+}
+
+.darkmilktea:before {
+  background-color: $blue;
+}
+
+.darkmilktea:after {
+  background-color: $darkmilktea;
+}
+
+.grapefruit:before {
+  background-color: $grapefruitorange;
+}
+
+.grapefruit:after {
+  background-color: $grapefruit;
+}
+
+.member-img {
+  overflow: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.member h1 {
+  position: absolute;
+  z-index: 1;
+}
+
+.member h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  position: absolute;
+  z-index: 1;
 }
 
 .member h3 {
-    font-size: 30px;
+  background-color: $lightorange;
+  position: absolute;
+  z-index: 1;
 }
 
-.member h6 {
-    font-size: 16px;
+.member h3 i {
+  color: $forestgreen;
+  position: absolute;
 }
 
-.member h6 {
-    color: #9ea48c;
+.member-boba {
+  position: absolute;
+  z-index: 2;
+  background-color: $boba;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.member a {
-    text-decoration: none;
-    color: #41382C;
+.member-boba a {
+  color: $offwhite;
 }

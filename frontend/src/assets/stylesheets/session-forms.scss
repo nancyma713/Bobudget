@@ -1,37 +1,46 @@
 @import './colors.scss';
 
-.error-left {
-  background-color: rgba(158, 27, 27, .8);
-  color: $white;
-  border-radius: 5px;
-  padding: 10px;
-  box-sizing: border-box;
-  position: absolute;
-  top: 10px;
-  width: 120px;
-  right: 105%;
-  text-align: center;
-  font-size: 85%;
-  z-index: 1;
-}
-
-.error-left::after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 103%; 
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent transparent rgb(158, 27, 27);
-}
-
-// .half-width {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
 @media screen and (max-width: 400px) {
+   #signup-form-outer {
+    margin: 8vh auto;
+    width: 83vw;
+    height: 90vw;
+    border-radius: 26vw;
+  }
+
+  #signup-form-middle {
+    width: 79vw;
+    height: 86vw;
+    border-radius: 26vw;
+    top: 2.5vw;
+    left: 2vw;
+  }
+
+  #signup-form-inner {
+    width: 75vw;
+    height: 83vw;
+    border-radius: 26vw;
+    top: 1.25vw;
+    left: 2vw;
+  }
+
+  #signup-form-inner h1 {
+    margin-top: 2.5vw;
+    margin-bottom: 3vw;
+    font-size: 6vw;
+  }
+
+  #signup-form-inner form {
+    font-size: 3.5vw;
+  }
+
+  #signup-form-inner input {
+    font-size: 3.5vw;
+    padding: .6vw;
+    border-radius: 2vw;
+    margin-bottom: 1vw;
+  }
+
   #login-form-outer {
     margin: 8vh auto;
     width: 85vw;
@@ -72,11 +81,13 @@
     margin-bottom: 1.8vw;
   }
 
-  #login-form-inner input:focus {
+  #login-form-inner input:focus,
+  #signup-form-inner input:focus {
     border: 1vw solid $lightpassionseed;
   }
 
-  #login-form-inner button {
+  #login-form-inner button,
+  #signup-form-inner button {
     margin-top: 1vw;
     padding: 1vw 3vw;
     font-size: 5vw;
@@ -87,25 +98,68 @@
     margin-right: 3vw;
   }
 
-  #login-form-inner p {
+  #login-form-inner p,
+  #signup-form-inner p {
     margin-top: 1vw;
     font-size: 3.8vw;
   }
 
-  .error-right {
+  .error-right,
+  .error-left {
     display: none;
   }
 
-  .red {
-    border: 1vw solid $passionred;
+  #login-form-inner .red,
+  #signup-form-inner .red {
+    border: .8vw solid $passionred;
   }
 
   .none {
-    border: 1vw solid transparent;
+    border: .8vw solid transparent;
   }
 }
 
 @media screen and (min-width: 400px) and (max-width: 990px) {
+  #signup-form-outer {
+    margin: 9vh auto;
+    width: 62vw;
+    height: 58vw;
+    border-radius: 19vw;
+  }
+
+  #signup-form-middle {
+    width: 59vw;
+    height: 54vw;
+    border-radius: 17vw;
+    top: 2.5vw;
+    left: 1.5vw;
+  }
+
+  #signup-form-inner {
+    width: 57vw;
+    height: 51vw;
+    border-radius: 15vw;
+    top: 1.25vw;
+    left: 1vw;
+  }
+
+  #signup-form-inner h1 {
+    margin-top: .8vw;
+    margin-bottom: 1vw;
+    font-size: 4.5vw;
+  }
+
+  #signup-form-inner form {
+    font-size: 2.3vw;
+  }
+
+  #signup-form-inner input {
+    font-size: 2.2vw;
+    padding: .6vw;
+    border-radius: .8vw;
+    margin-bottom: 1.5vw;
+  }
+
   #login-form-outer {
     margin: 9vh auto;
     width: 50vw;
@@ -146,11 +200,13 @@
     margin-bottom: 1.5vw;
   }
 
-  #login-form-inner input:focus {
+  #login-form-inner input:focus,
+  #signup-form-inner input:focus {
     border: .42vw solid $lightpassionseed;
   }
 
-  #login-form-inner button {
+  #login-form-inner button,
+  #signup-form-inner button {
     padding: 1vw 2.7vw;
     font-size: 3vw;
     border-radius: 1.5vw;
@@ -160,24 +216,28 @@
     margin-right: 1.5vw;
   }
 
-  #login-form-inner p {
+  #login-form-inner p,
+  #signup-form-inner p {
     margin-top: 1.5vw;
     font-size: 2vw;
   }
 
-  .error-right {
+  .error-right,
+  .error-left {
     border-radius: .8vw;
     padding: 1.4vw;
-    top: .5vw;
-    width: 16vw;
+    top: 15%;
+    width: 18vw;
     font-size: 2vw;
   }
 
-  .error-right::after {
+  .error-right:after,
+  .error-left:after {
     border-width: .6vw;
   }
 
-  .red {
+  #login-form-inner .red,
+  #signup-form-inner .red {
     border: .42vw solid $passionred;
   }
 
@@ -187,6 +247,46 @@
 }
 
 @media screen and (min-width: 990px) and (max-width: 1350px) {
+  #signup-form-outer {
+    margin: 2.7vh auto;
+    width: 49vw;
+    height: 43vw;
+    border-radius: 13vw;
+  }
+
+  #signup-form-middle {
+    width: 46vw;
+    height: 39vw;
+    border-radius: 11vw;
+    top: 2.5vw;
+    left: 1.5vw;
+  }
+
+  #signup-form-inner {
+    width: 44vw;
+    height: 37vw;
+    border-radius: 10vw;
+    top: 1.25vw;
+    left: 1vw;
+  }
+
+  #signup-form-inner h1 {
+    margin-top: .8vw;
+    margin-bottom: .2vw;
+    font-size: 3.5vw;
+  }
+
+  #signup-form-inner form {
+    font-size: 1.5vw;
+  }
+
+  #signup-form-inner input {
+    font-size: 1.6vw;
+    padding: .6vw;
+    border-radius: .8vw;
+    margin-bottom: 1vw;
+  }
+
   #login-form-outer {
     margin: 2.5vh auto;
     width: 40vw;
@@ -227,11 +327,13 @@
     margin-bottom: 1.5vw;
   }
 
-  #login-form-inner input:focus {
+  #login-form-inner input:focus,
+  #signup-form-inner input:focus {
     border: .2vw solid $lightpassionseed;
   }
 
-  #login-form-inner button {
+  #login-form-inner button,
+  #signup-form-inner button {
     padding: .7vw 2vw;
     font-size: 2.3vw;
     border-radius: 1vw;
@@ -241,35 +343,34 @@
     margin-right: 1vw;
   }
 
-  #login-form-inner p {
+  #login-form-inner p,
+  #signup-form-inner p {
     margin-top: 1vw;
     font-size: 1.7vw;
   }
 
-  .error-right {
+  .error-right,
+  .error-left {
     border-radius: .5vw;
-    padding: 1.2vw;
-    top: .2vw;
-    width: 10vw;
-    font-size: 1.5vw;
+    padding: .8vw;
+    top: 15%;
+    width: 12vw;
+    font-size: 1.3vw;
   }
 
-  .error-right::after {
+  .error-right:after,
+  .error-left:after {
     border-width: .39vw;
   }
 
-  .red {
+  #login-form-inner .red,
+  #signup-form-inner .red {
     border: .3vw solid $passionred;
   }
 
   .none {
     border: .3vw solid transparent;
   }
-}
-.signup {
-  background-color: #fff;
-  width: 50vw;
-  font-size: 2vw;
 }
 
 @media screen and (min-width: 1350px) {
@@ -298,19 +399,19 @@
 
   #signup-form-inner h1 {
     margin-top: .8vw;
-    margin-bottom: .3vw;
+    margin-bottom: .2vw;
     font-size: 3vw;
   }
 
   #signup-form-inner form {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
   }
 
   #signup-form-inner input {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     padding: .6vw;
     border-radius: .8vw;
-    margin-bottom: 1.4vw;
+    margin-bottom: 1vw;
   }
 
   #login-form-outer {
@@ -353,11 +454,13 @@
     margin-bottom: 1.4vw;
   }
 
-  #login-form-inner input:focus {
+  #login-form-inner input:focus,
+  #signup-form-inner input:focus {
     border: .2vw solid $lightpassionseed;
   }
 
-  #login-form-inner button {
+  #login-form-inner button,
+  #signup-form-inner button {
     padding: .7vw 2vw;
     font-size: 2vw;
     border-radius: 1vw;
@@ -367,24 +470,28 @@
     margin-right: .5vw;
   }
 
-  #login-form-inner p {
+  #login-form-inner p,
+  #signup-form-inner p {
     margin-top: 1vw;
     font-size: 1.3vw;
   }
 
-  .error-right {
+  .error-right,
+  .error-left {
     border-radius: .3vw;
-    padding: 1vw;
-    top: .3vw;
-    width: 8vw;
+    padding: .8vw;
+    top: 15%;
+    width: 11vw;
     font-size: 1.2vw;
   }
 
-  .error-right {
+  .error-right:after,
+  .error-left:after {
     border-width: .38vw;
   }
 
-  #login-form-inner .red {
+  #login-form-inner .red, 
+  #signup-form-inner .red {
     border: .2vw solid $passionred;
   }
 
@@ -393,60 +500,71 @@
   }
 }
 
-#login-form-outer, #signup-form-outer {
+#login-form-outer, 
+#signup-form-outer {
   background-color: $passionred;
   position: relative;
 }
 
-#login-form-middle, #signup-form-middle {
+#login-form-middle, 
+#signup-form-middle {
   position: absolute;
   background-color: $offwhite;
 }
 
-#login-form-inner, #signup-form-inner {
+#login-form-inner, 
+#signup-form-inner {
   position: absolute;
   text-align: center;
   background-color: $passionorange;
   color: $passionseed;
 }
 
-#login-form-inner form, #signup-form-inner form {
+#login-form-inner form, 
+#signup-form-inner form {
   width: 88%;
   margin: auto;
   text-align: left;
 }
 
-#login-form-inner label, #signup-form-inner label {
+#login-form-inner label, 
+#signup-form-inner label {
   position: relative;
 }
 
-#login-form-inner input, #signup-form-inner input {
+#login-form-inner input, 
+#signup-form-inner input {
   transition: border 0.2s ease-in;
   background-color: $passionyellow;
   box-sizing: border-box;
   width: 100%;
 }
 
-#login-form-inner button {
+#login-form-inner button,
+#signup-form-inner button {
   transition: background-color .8s ease;
   background-color: $lightpassionseed;
   color: $offwhite;
   box-sizing: border-box;
 }
 
-#login-form-inner button:hover {
+#login-form-inner button:hover,
+#signup-form-inner button:hover {
   background-color: $passionseed;
 }
 
-#login-form-inner p {
+#login-form-inner p,
+#signup-form-inner p {
   text-align: center;
 }
 
-#login-form-inner p a {
+#login-form-inner p a,
+#signup-form-inner p a {
   color: $passionred;
 }
 
-#login-form-inner p a:hover {
+#login-form-inner p a:hover,
+#signup-form-inner p a:hover {
   text-decoration: underline;
 }
 
@@ -460,7 +578,7 @@
   z-index: 1;
 }
 
-.error-right::after {
+.error-right:after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -468,6 +586,26 @@
   margin-left: -10px;
   border-style: solid;
   border-color: transparent rgba(158, 27, 27, 0.8) transparent transparent;
+}
+
+.error-left {
+  background-color: rgba(158, 27, 27, .8);
+  color: $white;
+  box-sizing: border-box;
+  position: absolute;
+  right: 105%;
+  text-align: center;
+  z-index: 1;
+}
+
+.error-left:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 103%; 
+  margin-left: -5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(158, 27, 27);
 }
 
 .no-error {

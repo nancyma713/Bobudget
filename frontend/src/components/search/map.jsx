@@ -160,7 +160,7 @@ class Map extends React.Component {
           content: `<div>
               <h1>${store.name}</h1>
 
-              <a href=${url}>Get Directions!</a>
+              <a target="_blank" rel="noopener noreferrer" href=${url}>Get Directions!</a>
       </div> `
       }));
     });

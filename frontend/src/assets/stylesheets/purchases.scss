@@ -1,30 +1,70 @@
 @import './colors.scss';
 
+@media screen and (max-width: 700px) {
+  #purchase-pop-up {
+    font-size: 5vw;
+    height: 40vw;
+    width: 70vw;
+    border-radius: 3vw;
+    top: 30vh;
+    padding: 4.6vw;
+  }
+
+  #purchase-pop-up button {
+    border-radius: 2.6vw;
+    font-size: 4.8vw;
+    padding: 2vw 8vw;
+    margin-right: 1vw;
+    margin-top: 3vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #purchase-pop-up {
+    font-size: 1.7vw;
+    height: 13vw;
+    width: 30vw;
+    border-radius: 1vw;
+    top: 30vh;
+    padding: 2vw;
+  }
+
+  #purchase-pop-up button {
+    border-radius: 1vw;
+    font-size: 1.6vw;
+    padding: 1vw 3vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+  }
+}
+
 @media screen and (max-width: 1300px) {
-  .purchased-items {
+  #purchased-items {
     width: 100%;
   }
 
-  .purchase-split {
+  #purchase-split {
     flex-direction: column;
   }
 
-  .purchased-items h1 {
+  #purchased-items h1 {
     font-size: 4vw;
     margin-bottom: 2vw;
   }
 
-  .purchase-info {
-    align-items: flex-start;
+  #purchase-info {
+    align-items: start;
   }
 
-  #update-budg-form, .budget-orb {
+  #update-budg-form, 
+  .budget-orb {
     width: 33.33%;
     margin: 1vw;
     font-size: 3vw;
   }
 
-  #update-budg-form label, .budget-orb h3 {
+  #update-budg-form label, 
+  .budget-orb h3 {
     border-radius: .8vw .8vw 0 0;
     padding: .5vw;
     font-size: 3vw;
@@ -34,6 +74,12 @@
   #update-budg-form input {
     font-size: 4vw;
     height: 7vw;
+  }
+
+  #hist-budg-err {
+    padding: 1vw 5vw;
+    border-radius: 1.5vw;
+    box-shadow: 0 1vw 1.5vw rgba(0,0,0,.2);
   }
 
   .budget-orb p {
@@ -46,62 +92,79 @@
     font-size: 2vw;
   }
 
-  .b-dollar {
+  #b-dollar {
     top: 7.3vw;
     left: 2vw;
   }
 
-  .b-desc {
+  #b-desc {
     display: none;
   }
 
-  .spends {
-    margin: 2vw auto;
+  #p-add-purchase {
+    margin: 2vw;
+    border-radius: .8vw;
+    width: 93vw;
+    padding: 2vw;
+    font-size: 3vw;
+  }
+
+  #p-add-purchase button {
+    font-size: 3vw;
+    padding: 2vw;
+    border-radius: 0 .8vw .8vw 0;
+  }
+
+  #all-purchases {
+    margin: 1vw auto 10vw auto;
     border-radius: .8vw;
     width: 93vw;
     height: 65vh;
   }
 
-  .spends li {
+  #all-purchases li {
     font-size: 3vw;
     padding: 2vw;
   }
 
-  .spends button {
+  #all-purchases button {
     font-size: 3vw;
     right: 1.5vw;
   }
 
-  .p-date {
+  .purchase-date {
     width: 27vw;
   }
 
-  #purchase-price {
+  .purchase-price, 
+  .purchase-price input {
     font-size: 3vw;
   }
 }
 
 @media screen and (min-width: 1300px) {
-  .purchased-items {
+  #purchased-items {
     width: 70vw;
   }
 
-  .purchased-items h1 {
+  #purchased-items h1 {
     font-size: 2.3vw;
     margin-bottom: .8vw;
   }
 
-  .purchase-info {
+  #purchase-info {
     flex-direction: column;
   }
 
-  #update-budg-form, .budget-orb {
+  #update-budg-form, 
+  .budget-orb {
     width: 12vw;
-    margin: .7vw;
+    margin: .7vw .7vw .7vw 0;
     font-size: 1.3vw;
   }
 
-  #update-budg-form label, .budget-orb h3 {
+  #update-budg-form label, 
+  .budget-orb h3 {
     border-radius: .8vw .8vw 0 0;
     padding: .5vw;
     font-size: 1.3vw;
@@ -111,6 +174,12 @@
   #update-budg-form input {
     font-size: 1.4vw;
     height: 2.5vw;
+  }
+
+  #hist-budg-err {
+    padding: .6vw 2.7vw;
+    border-radius: .4vw;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
   }
 
   .budget-orb p {
@@ -123,81 +192,101 @@
     font-size: .9vw;
   }
 
-  .b-dollar {
+  #b-dollar {
     top: 3.38vw;
     left: 1vw;
   }
 
-  .spends {
-    margin: .7vw;
+  #p-add-purchase {
+    margin: .7vw .7vw .3vw .7vw;
     border-radius: .8vw;
-    width: 100%;
-    height: 60vh;
+    width: 99%;
+    padding: .8vw .5vw;
+    font-size: 1.2vw;
   }
 
-  .spends li {
+  #p-add-purchase button {
+    font-size: 1.2vw;
+    padding: .5vw .8vw;
+    border-radius: 0 .8vw .8vw 0;
+  }
+
+  #all-purchases {
+    margin: .3vw .7vw .7vw .7vw;
+    border-radius: .8vw;
+    width: 99%;
+    height: 57vh;
+  }
+
+  #all-purchases li {
     font-size: 1.2vw;
     padding: .5vw;
   }
 
-  .p-date {
+  .purchase-date {
     width: 10vw;
   }
 
-  .spends button {
+  #all-purchases button {
     font-size: 1.2vw;
     right: 1vw;
   }
 
-  #purchase-price {
+  .purchase-price, 
+  .purchase-price input {
     font-size: 1.2vw;
   }
 }
 
-.purchased-items {
+#purchased-items {
   margin: 0 auto;
-  background-color: $lightmatcha;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: $matcha;
   padding: 2vw;
-  height: 90vh;
+  height: 100vh;
   box-sizing: border-box;
 }
 
-.purchase-split {
+#purchase-split {
   display: flex;
+  align-items: flex-start;
 }
 
-.purchased-items h1 {
-  color: $white;
-  background-color: $darkblue;
+#purchased-items h1 {
+  color: $boba;
+  background-color: $offwhite;
   border-radius: .7vw;
   width: 100%;
   margin-top: 1vw;
 }
 
-.purchase-info {
+#purchase-info {
   display: flex;
-  justify-content: center;
   z-index: 0;
 }
 
-#update-budg-form, .budget-orb {
+#update-budg-form, 
+.budget-orb {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 }
 
-#update-budg-form label, .budget-orb h3 {
+#update-budg-form label, 
+.budget-orb h3 {
   background-color: $darkmatcha;
 }
 
 #update-budg-form input {
   text-align: center;
   width: 100%;
-  background-color: $white;
+  background-color: white;
   padding: .4vw .5vw 0vw 1.7vw;
   box-sizing: border-box;
+}
+
+#update-budg-form .red {
+  border: .3vw solid $red;
 }
 
 .budget-orb p {
@@ -205,7 +294,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: $white;
+  background-color: white;
   box-sizing: border-box;
   border-radius: 0 0 .8vw .8vw;
 }
@@ -220,41 +309,122 @@
 }
 
 #update-budg-form button:hover {
-  background-color: $matcha;
+  background-color: $boba;
 }
 
-.b-dollar {
+#b-dollar {
   position: absolute;
 }
 
-.b-desc {
+#b-desc {
   font-size: .9vw;
-  background-color: $white;
+  background-color: white;
   padding-bottom: .4vw;
   height: 2.2vw;
 }
 
-.spends {
+#p-add-purchase {
+  position: relative;
+  display: flex;
+  text-align: left;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+#p-add-purchase button {
+  transition: background-color .4s ease-in, color .4s ease-in;
+  background-color: $darkmatcha;
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+#p-add-purchase button:hover {
+  color: $offwhite;
+  background-color: $boba;
+}
+
+#all-purchases {
   overflow: scroll;
   background-color: white;
   box-sizing: border-box;
 }
 
-.spends li {
+#all-purchases li {
   display: flex;
   text-align: left;
   position: relative;
   box-sizing: border-box;
 }
 
-.spends li:nth-child(odd) {
+#all-purchases li:nth-child(odd) {
   background-color: $white;
 }
 
-.spends button {
+#all-purchases button {
   position: absolute;
 }
 
-#purchase-price {
-  color: $darkblue;
+.purchase-price, 
+.purchase-price input {
+  color: $superdarkmatcha;
+}
+
+#hist-budg-err {
+  transition: opacity .6s ease;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: -105%;
+  transform: translate(-50%, 0);
+  background-color: $red;
+  color: $offwhite;
+  white-space: nowrap;
+  opacity: .8;
+}
+
+#hist-budg-err:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent $red transparent;
+}
+
+#hist-budg-err i {
+  font-size: 70%;
+  position: absolute;
+  right: 4%;
+  top: 18%;
+  cursor: pointer;
+}
+
+#purchase-pop-up {
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  color: $black;
+  background: $white;
+}
+
+#purchase-pop-up i {
+  font-size: 70%;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  cursor: pointer;
+}
+
+#purchase-pop-up button {
+  transition: background-color .8s ease;
+  background-color: $blue;
+}
+
+#purchase-pop-up button:hover {
+  background-color: $darkmatcha;
 }

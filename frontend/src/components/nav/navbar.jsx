@@ -5,6 +5,7 @@ import "../../assets/stylesheets/navbar.scss";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
@@ -59,26 +60,27 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <div className="straw">
-          <span className="straw-title">menu</span>
+        <div id="straw">
+          <span id="straw-title">menu</span>
           {this.getLinks()}
         </div>
-        <div className="one boba" />
-        <div className="two boba" />
-        <div className="eleven boba" />
-        <div className="twelve boba" />
-        <div className="three boba">B</div>
-        <div className="four boba">O</div>
-        <div className="five boba">B</div>
-        <div className="six boba">U</div>
-        <div className="seven boba">D</div>
-        <div className="eight boba">G</div>
-        <div className="nine boba">E</div>
-        <div className="ten boba">T</div>
 
-        <div className="nav">
+        <div id="one" className="boba" />
+        <div id="two" className="boba" />
+        <div id="eleven" className="boba" />
+        <div id="twelve" className="boba" />
+        <div id="three" className="boba">B</div>
+        <div id="four" className="boba">O</div>
+        <div id="five" className="boba">B</div>
+        <div id="six" className="boba">U</div>
+        <div id="seven" className=" boba">D</div>
+        <div id="eight" className="boba">G</div>
+        <div id="nine" className="boba">E</div>
+        <div id="ten" className="boba">T</div>
+
+        <div id="nav">
           <Link to="/"><h1>BoBudget</h1></Link>
-          <div className="nav-links">
+          <div id="nav-links">
             {this.getLinks()}
           </div>
         </div>

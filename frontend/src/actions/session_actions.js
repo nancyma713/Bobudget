@@ -16,7 +16,11 @@ export const receiveUserSignIn = () => ({
   type: RECEIVE_USER_SIGN_IN,
 });
 
-export const receiveErrors = errors => ({
+export const logoutUser = () => ({
+  type: RECEIVE_USER_LOGOUT,
+});
+
+export const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors,
 });
@@ -25,29 +29,25 @@ export const clearErrors = () => ({
   type: CLEAR_ERRORS,
 });
 
-export const logoutUser = () => ({
-  type: RECEIVE_USER_LOGOUT,
-});
 
 export const signup = (user) => (dispatch) => {
-  return APIUtil.signup(user)
-    .then(() => dispatch(receiveUserSignIn()),
-    err => dispatch(receiveErrors(err.response.data))
+  return APIUtil.signup(user).then(() => 
+    dispatch(receiveUserSignIn()),
+    (err) => dispatch(receiveErrors(err.response.data))
   );
 };
 
 export const login = (user) => (dispatch) => {
-  return APIUtil.login(user)
-    .then((res) => {
-      const { token } = res.data;
-      localStorage.setItem("jwtToken", token);
-      APIUtil.setAuthToken(token);
-      const decoded = jwt_decode(token);
-      dispatch(receiveCurrentUser(decoded));
-    })
-    .catch((err) => {
-      dispatch(receiveErrors(err.response.data));
-    });
+  return APIUtil.login(user).then((res) => {
+    const { token } = res.data;
+    const decoded = jwt_decode(token);
+
+    localStorage.setItem("jwtToken", token);
+    APIUtil.setAuthToken(token);
+    dispatch(receiveCurrentUser(decoded));
+  }).catch((err) => {
+    dispatch(receiveErrors(err.response.data));
+  });
 };
 
 export const logout = () => (dispatch) => {
@@ -57,9 +57,13 @@ export const logout = () => (dispatch) => {
 };
 
 export const fetchUser = () => (dispatch) => {
-  return APIUtil.fetchUser().then((user) => dispatch(receiveCurrentUser(user)));
+  return APIUtil.fetchUser().then((user) => 
+    dispatch(receiveCurrentUser(user))
+  );
 };
 
 export const updateUser = (user) => (dispatch) => {
-  return APIUtil.updateUser(user).then((user) => dispatch(receiveCurrentUser(user)));
+  return APIUtil.updateUser(user).then((user) => 
+    dispatch(receiveCurrentUser(user))
+  );
 };

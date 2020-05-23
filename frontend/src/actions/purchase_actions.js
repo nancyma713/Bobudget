@@ -1,35 +1,38 @@
-import * as PurchaseAPIUtil from '../util/purchase_api_util';
+import * as PurchaseAPIUtil from "../util/purchase_api_util";
 
-export const RECEIVE_PURCHASES = 'RECEIVE_PURCHASES';
-export const RECEIVE_PURCHASE = 'RECEIVE_PURCHASE';
-export const DELETE_PURCHASE = 'DELETE_PURCHASE';
+export const RECEIVE_PURCHASES = "RECEIVE_PURCHASES";
+export const RECEIVE_PURCHASE = "RECEIVE_PURCHASE";
+export const DELETE_PURCHASE = "DELETE_PURCHASE";
 
-const receivePurchases = purchases => ({
+const receivePurchases = (purchases) => ({
   type: RECEIVE_PURCHASES,
-  purchases
+  purchases,
 });
 
-const receivePurchase = purchase => ({
+const receivePurchase = (purchase) => ({
   type: RECEIVE_PURCHASE,
-  purchase
+  purchase,
 });
 
-const deletePurchase = purchaseId => ({
+const deletePurchase = (purchaseId) => ({
   type: DELETE_PURCHASE,
-  purchaseId
-})
+  purchaseId,
+});
 
-export const fetchPurchases = userId => dispatch => {
-  return PurchaseAPIUtil.fetchPurchases(userId)
-    .then(purchases => dispatch(receivePurchases(purchases)))
+export const fetchPurchases = (userId) => (dispatch) => {
+  return PurchaseAPIUtil.fetchPurchases(userId).then((purchases) => 
+    dispatch(receivePurchases(purchases))
+  );
 }
 
-export const createPurchase = data => dispatch => {
-  return PurchaseAPIUtil.createPurchase(data)
-    .then(purchase => dispatch(receivePurchase(purchase)))
+export const createPurchase = (data) => (dispatch) => {
+  return PurchaseAPIUtil.createPurchase(data).then((purchase) => 
+    dispatch(receivePurchase(purchase))
+  );
 }
 
-export const removePurchase = purchaseId => dispatch => {
-  return PurchaseAPIUtil.removePurchase(purchaseId)
-    .then(() => dispatch(deletePurchase(purchaseId)))
+export const removePurchase = (purchaseId) => (dispatch) => {
+  return PurchaseAPIUtil.removePurchase(purchaseId).then(() => 
+    dispatch(deletePurchase(purchaseId))
+  );
 }

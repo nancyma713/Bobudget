@@ -14,7 +14,7 @@ const Protected = ({ component: Component, loggedIn, ...rest}) => (
   )} />
 );
 
-const mapStateToProps = state => (
+const mapStateToProps = (state) => (
   {loggedIn: state.session.isAuthenticated}
 );
 

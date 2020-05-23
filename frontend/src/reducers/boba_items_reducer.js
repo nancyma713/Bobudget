@@ -1,8 +1,4 @@
-import {
-  RECEIVE_BOBA_ITEMS,
-  RECEIVE_BOBA_ITEM,
-  SEARCH_BOBA_ITEMS,
-} from "../actions/boba_item_actions";
+import { RECEIVE_BOBA_ITEMS, RECEIVE_BOBA_ITEM, SEARCH_BOBA_ITEMS } from "../actions/boba_item_actions";
 
 const bobaItemsReducer = (state = {}, action) => {
   Object.freeze(state);

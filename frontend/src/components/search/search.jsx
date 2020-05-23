@@ -1,18 +1,18 @@
 import React from "react";
-import Map from './map';
-import '../../assets/stylesheets/search.scss';
+import Map from "./map";
+import "../../assets/stylesheets/search.scss";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       searchResult: [],
       location: "",
       name: "",
-      bobaId: ""
+      bobaId: "",
     };
 
-    this.update = this.update.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.handleAddFavorite = this.handleAddFavorite.bind(this);
     this.handleRemoveFavorite = this.handleRemoveFavorite.bind(this);
@@ -31,20 +31,20 @@ class Search extends React.Component {
   handleSearch(e) {
     e.preventDefault();
 
-    this.props.searchBobas(this.state.name)
-      .then((list) => this.setState({
-        searchResult: list
-      })
+    this.props.searchBobas(this.state.name).then((list) =>
+      this.setState({ searchResult: list })
     );
   }
 
   handleClick(id, add) {
     if (add) {
       this.setState({ bobaId: id },
-        () => this.handleAddFavorite());
+        () => this.handleAddFavorite()
+      );
     } else {
       this.setState({ bobaId: id },
-        () => this.handleRemoveFavorite());
+        () => this.handleRemoveFavorite()
+      );
     }
   }
 
@@ -54,17 +54,19 @@ class Search extends React.Component {
       bobaItemId: this.state.bobaId
     }
 
-    this.props.createFavorite(favorite)
-      .then(() => this.props.fetchFavorites(this.props.currentUser.id));
+    this.props.createFavorite(favorite).then(() => 
+      this.props.fetchFavorites(this.props.currentUser.id)
+    );
   }
 
   handleRemoveFavorite() {
-    this.props.removeFavorite(this.state.bobaId)
-      .then(() => this.props.fetchFavorites(this.props.currentUser.id));
+    this.props.removeFavorite(this.state.bobaId).then(() => 
+      this.props.fetchFavorites(this.props.currentUser.id)
+    );
   }
 
   render() {
-    const { favorites, currentUser } = this.props;
+    const { favorites } = this.props;
 
     let bobaLi;
     let storeLi = [];
@@ -95,11 +97,11 @@ class Search extends React.Component {
           <div className="search-item" key={item._id}>
             <section className="flex-row">
               <div className="search-pic">
-                <img src={item.photoUrl} />
+                <img alt={item.name} src={item.photoUrl} />
               </div>
               <div className="flex-column">
                 <h2>{item.name}</h2>
-                <a target="_blank" href={item.store.mapUrl}>{item.store.name}</a>
+                <a target="_blank" rel="noopener noreferrer" href={item.store.mapUrl}>{item.store.name}</a>
               </div>
             </section>
             {favButton}
@@ -113,24 +115,25 @@ class Search extends React.Component {
     };
 
     return (
-      <div className="search-container">
-        <div className="s-left">
-          <form className="search" onSubmit={this.handleSearch}>
+      <div id="search-container">
+        <section id="search-left">
+          <form id="search" onSubmit={this.handleSearch}>
             <input
               type="text"
               value={this.state.name}
               onChange={this.update("name")}
-              placeholder="Search Bobas..."
+              placeholder="Search for a boba... (ex. Taro Milk Tea)"
             />
+
             <button type="submit"><i className="fas fa-search-location" /></button>
           </form>
 
-          <div className="search-results">
-            <div className="results">
+          <section id="search-results">
+            <div id="results">
               {bobaLi ? bobaLi : <p>Start your search!</p>}
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <Map storeLi={storeLi} />
       </div>

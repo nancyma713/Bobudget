@@ -1,25 +1,25 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const setAuthToken = token => {
-    if (token) {
-        axios.defaults.headers.common['Authorization'] = token;
-    } else {
-        delete axios.defaults.headers.common['Authorization'];
-    }
+export const setAuthToken = (token) => {
+  if (token) {
+    axios.defaults.headers.common["Authorization"] = token;
+  } else {
+    delete axios.defaults.headers.common["Authorization"];
+  }
 };
 
 export const signup = (userData) => {
-    return axios.post('/api/users/register', userData);
+  return axios.post("/api/users/register", userData);
 };
 
 export const login = (userData) => {
-    return axios.post('/api/users/login', userData);
+  return axios.post("/api/users/login", userData);
 }
 
 export const fetchUser = () => {
-    return axios.get('/api/users/current');
+  return axios.get("/api/users/current");
 }
 
 export const updateUser = (userData) => {
-    return axios.put(`/api/users/${userData._id}`, userData);
+  return axios.put(`/api/users/${userData._id}`, userData);
 }

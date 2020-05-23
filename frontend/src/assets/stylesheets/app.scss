@@ -2,11 +2,8 @@
 @import './colors.scss';
 
 body {
-  font-family: 'Baloo Chettan 2', cursive;
-  background-color: $lightmilktea;
-  z-index: 1;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  font-family: 'Baloo Chettan 2';
+  background-color: $milktea;
 }
 
 button:hover {
@@ -30,26 +27,6 @@ button:hover {
   align-items: center;
 }
 
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.margin-auto {
-  margin: auto;
-}
-
 .center {
   text-align: center;
 }
@@ -60,4 +37,8 @@ button:hover {
 
 .width-100 {
   width: 100%;
+}
+
+.border-box {
+  box-sizing: border-box;
 }

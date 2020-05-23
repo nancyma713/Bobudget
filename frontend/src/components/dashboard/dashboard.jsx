@@ -1,22 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import "../../assets/stylesheets/dashboard.scss";
 
-// WIDGETS
-import FavoritesContainer from './widgets/favorites/favorites_container';
-import BudgetCalcContainer from './widgets/budget_calc/budget_calc_container';
-import BubblesContainer from './widgets/bubbles/bubbles_container';
+import FavoritesContainer from "./widgets/favorites/favorites_container";
+import BudgetCalcContainer from "./widgets/budget_calc/budget_calc_container";
+import BubblesContainer from "./widgets/bubbles/bubbles_container";
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: '',
-      lastName: '',
-      username: ''
-    }
-  }
-  
   componentDidMount() {
     this.props.fetchUser();
     this.props.fetchPurchases(this.props.currentUser.id);
@@ -26,22 +15,20 @@ class Dashboard extends React.Component {
   render() {
     const { purchases, currentUser } = this.props;
 
-    if (!purchases) return null;
-    if (!currentUser) return null;
+    if (!purchases || !currentUser) return null;
 
-    const firstName = currentUser.firstName;
-    let date = new Date();
-    date = date.toDateString();
+    let date = new Date().toDateString();
 
     return (
-      <div>
-        <h1 id="welcome-msg">Welcome, {firstName}</h1>
+      <>
+        <h1 id="welcome-msg">Welcome, {currentUser.firstName}</h1>
         <h1 id="date">{date}</h1>
-        <div className="dashboard-container">
-          <div className="d-left">
-            <div className="favorites-container">
+        
+        <div id="dashboard-container">
+          <section id="dash-left">
+            <div id="favorites-container">
               <i id="fav-info-i" className="fas fa-info-circle"></i>
-              <div className="fav-info">
+              <div id="fav-info">
                 How to add a Favorite: 
                 <ol>
                   <li>Search for your favorite boba drinks in the Search page</li>
@@ -64,24 +51,24 @@ class Dashboard extends React.Component {
               </div>
 
               <h3>My Favorites</h3>
-              <div className="favorites">
+              <div id="favorites">
                 <FavoritesContainer />
               </div>
             </div>
-          </div>
+          </section>
 
-          <div className="d-middle">
+          <section id="dash-middle">
             <BudgetCalcContainer />
-          </div>
+          </section>
 
-          <div className="d-right">
-            <div className="bubbles-container">
+          <section id="dash-right">
+            <div id="bubbles-container">
               <BubblesContainer />
               <p>CLICK A BOBA FOR BOBA SUGGESTION!</p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
+      </>
     );
   }
 }

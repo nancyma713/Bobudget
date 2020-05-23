@@ -6,7 +6,9 @@ class PurchaseHistory extends React.Component {
     super(props);
     this.state = {
       budget: "",
-      price: ""
+      price: "",
+      error1: false,
+      error2: false,
     };
 
     this.handleBudget = this.handleBudget.bind(this);
@@ -25,24 +27,36 @@ class PurchaseHistory extends React.Component {
   handleBudget(e) {
     e.preventDefault();
 
-    let user = this.props.currentUser;
-    user.budget = this.state.budget;
-
-    this.props.updateUser(user).then(() => 
-      this.props.fetchUser()
-    );
+    if (this.state.budget === "") {
+      this.setState({ error2: true })
+    } else {
+      let user = this.props.currentUser;
+      user.budget = this.state.budget;
+  
+      this.props.updateUser(user).then(() => 
+        this.props.fetchUser()).then(() => 
+        this.setState({ error2: false })
+      );
+    }
   }
 
   handlePurchase(e) {
     e.preventDefault();
 
-    let purchase = {
-      price: this.state.price
+    if (this.state.price === "") {
+      this.setState({ error1: true })
+    } else {
+      let purchase = {
+        price: this.state.price
+      }
+  
+      this.props.createPurchase(purchase).then(() => 
+        this.setState({ 
+          price: "",
+          error1: false,
+        })
+      );
     }
-
-    this.props.createPurchase(purchase).then(() => 
-      this.setState({ price: "" })
-    );
   }
 
   handleDelete(e) {
@@ -155,6 +169,7 @@ class PurchaseHistory extends React.Component {
               <div id="b-dollar">$</div>
 
               <input
+                className={this.state.error2 ? "red" : "none"}
                 type="number"
                 min="5.00"
                 step="0.01"
@@ -181,6 +196,10 @@ class PurchaseHistory extends React.Component {
               </div>
 
               <button>Add a Purchase</button>
+              <div id={this.state.error1 ? "hist-budg-err" : "none"}>
+                <i onClick={() => this.setState({ error1: false })} className="fas fa-times"></i>
+              Please enter a purchase!
+              </div>
             </form>
             
             <ul id="all-purchases">

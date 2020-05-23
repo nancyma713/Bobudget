@@ -7,7 +7,7 @@ class BudgetCalc extends React.Component {
     super(props);
     this.state = {
       price: "",
-      error: false
+      error: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -227,6 +227,10 @@
   box-sizing: border-box;
 }
 
+#update-budg-form .red {
+  border: .3vw solid rgba(158, 27, 27);
+}
+
 .budget-orb p {
   display: flex;
   justify-content: center;
@@ -306,4 +310,39 @@
 
 .purchase-price, .purchase-price input {
   color: $darkblue;
+}
+
+#hist-budg-err {
+  transition: opacity .6s ease;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: -105%;
+  transform: translate(-50%, 0);
+  background-color: rgba(158, 27, 27, .8);
+  color: $offwhite;
+  padding: .6vw 2.7vw;
+  border-radius: .4vw;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  white-space: nowrap;
+  opacity: 1;
+}
+
+#hist-budg-err:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(158, 27, 27, .8) transparent;
+}
+
+#hist-budg-err i {
+  font-size: 70%;
+  position: absolute;
+  right: 4%;
+  top: 18%;
+  cursor: pointer;
 }

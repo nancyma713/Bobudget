@@ -208,7 +208,7 @@ class PurchaseHistory extends React.Component {
             </form>
           </section>
 
-          <section className="flex-column width-100">
+          <section className="flex-column width-100 border-box">
             <form id="p-add-purchase" onSubmit={this.handlePurchase}>
               <span className="purchase-date">{newDate.toDateString()}</span>
               <div className="purchase-price">

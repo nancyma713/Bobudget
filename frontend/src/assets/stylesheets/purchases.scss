@@ -159,7 +159,7 @@
   #update-budg-form, 
   .budget-orb {
     width: 12vw;
-    margin: .7vw;
+    margin: .7vw .7vw .7vw 0;
     font-size: 1.3vw;
   }
 
@@ -200,7 +200,7 @@
   #p-add-purchase {
     margin: .7vw .7vw .3vw .7vw;
     border-radius: .8vw;
-    width: 100%;
+    width: 99%;
     padding: .8vw .5vw;
     font-size: 1.2vw;
   }
@@ -214,8 +214,8 @@
   #all-purchases {
     margin: .3vw .7vw .7vw .7vw;
     border-radius: .8vw;
-    width: 100%;
-    height: 60vh;
+    width: 99%;
+    height: 57vh;
   }
 
   #all-purchases li {
@@ -328,6 +328,7 @@
   display: flex;
   text-align: left;
   background-color: white;
+  box-sizing: border-box;
 }
 
 #p-add-purchase button {

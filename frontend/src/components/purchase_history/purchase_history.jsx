@@ -7,13 +7,16 @@ class PurchaseHistory extends React.Component {
     this.state = {
       budget: "",
       price: "",
+      purchaseId: "",
       error1: false,
       error2: false,
+      modal: false,
     };
 
     this.handleBudget = this.handleBudget.bind(this);
     this.handlePurchase = this.handlePurchase.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -59,19 +62,32 @@ class PurchaseHistory extends React.Component {
     }
   }
 
-  handleDelete(e) {
-    e.preventDefault();
-
-    this.props.removePurchase(e.currentTarget.value).then(() => 
-      this.props.fetchPurchases(this.props.currentUser.id)
-    );
+  handleDelete() {
+    this.props.removePurchase(this.state.purchaseId).then(() => 
+      this.props.fetchPurchases(this.props.currentUser.id)).then(() => 
+      this.setState({ modal: false }))
   }
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
+  openModal(purchaseId) {
+    this.setState({
+      modal: true,
+      purchaseId: purchaseId,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modal: false,
+      purchaseId: "",
+    });
+  }
+
   render() {
+    console.log(this.state);
     const { currentUser, purchases } = this.props;
 
     if (!purchases) return null;
@@ -140,7 +156,7 @@ class PurchaseHistory extends React.Component {
         <li key={`p-${purchase.date}-${purchase.price}`}>
           <span className="purchase-date">{newDateString}</span>
           <div className="purchase-price">${purchase.price}</div>
-          <button value={purchase.id} onClick={this.handleDelete}>
+          <button onClick={() => this.openModal(purchase.id)}>
             <i className="fas fa-times"></i>
         </button>
         </li>
@@ -149,6 +165,15 @@ class PurchaseHistory extends React.Component {
 
     return (
       <div id="purchased-items" className="center">
+        {this.state.modal ? <div className="modal-background">
+          <div id="purchase-pop-up">
+            <i onClick={this.closeModal} className="fas fa-times"></i>
+            <p>Are you sure you want to remove this purchase?</p>
+
+            <button onClick={this.handleDelete}>Yes</button>
+            <button onClick={() => this.closeModal()}>No</button>
+          </div>
+        </div> : null}
         <h1>{currentUser.firstName}'s {month} {year} Purchase History</h1>
 
         <div id="purchase-split">

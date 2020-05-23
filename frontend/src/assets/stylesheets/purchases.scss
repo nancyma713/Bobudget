@@ -1,4 +1,41 @@
 @import './colors.scss';
+@media screen and (max-width: 700px) {
+  #purchase-pop-up {
+    font-size: 5vw;
+    height: 40vw;
+    width: 70vw;
+    border-radius: 3vw;
+    top: 30vh;
+    padding: 4.6vw;
+  }
+
+  #purchase-pop-up button {
+    border-radius: 2.6vw;
+    font-size: 4.8vw;
+    padding: 2vw 8vw;
+    margin-right: 1vw;
+    margin-top: 3vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #purchase-pop-up {
+    font-size: 1.7vw;
+    height: 13vw;
+    width: 30vw;
+    border-radius: 1vw;
+    top: 30vh;
+    padding: 2vw;
+  }
+
+  #purchase-pop-up button {
+    border-radius: 1vw;
+    font-size: 1.6vw;
+    padding: 1vw 3vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+  }
+}
 
 @media screen and (max-width: 1300px) {
   #purchased-items {
@@ -36,6 +73,12 @@
     height: 7vw;
   }
 
+  #hist-budg-err {
+    padding: 1vw 5vw;
+    border-radius: 1.5vw;
+    box-shadow: 0 1vw 1.5vw rgba(0,0,0,.2);
+  }
+
   .budget-orb p {
     height: 7vw;
     font-size: 4vw;
@@ -70,7 +113,7 @@
   }
 
   #all-purchases {
-    margin: 1vw auto;
+    margin: 1vw auto 10vw auto;
     border-radius: .8vw;
     width: 93vw;
     height: 65vh;
@@ -125,6 +168,12 @@
   #update-budg-form input {
     font-size: 1.4vw;
     height: 2.5vw;
+  }
+
+  #hist-budg-err {
+    padding: .6vw 2.7vw;
+    border-radius: .4vw;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
   }
 
   .budget-orb p {
@@ -186,7 +235,7 @@
   margin: 0 auto;
   background-color: $matcha;
   padding: 2vw;
-  height: 90vh;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -308,8 +357,9 @@
   position: absolute;
 }
 
-.purchase-price, .purchase-price input {
-  color: $darkblue;
+.purchase-price, 
+.purchase-price input {
+  color: $superdarkmatcha;
 }
 
 #hist-budg-err {
@@ -321,9 +371,6 @@
   transform: translate(-50%, 0);
   background-color: rgba(158, 27, 27, .8);
   color: $offwhite;
-  padding: .6vw 2.7vw;
-  border-radius: .4vw;
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
   white-space: nowrap;
   opacity: 1;
 }
@@ -345,4 +392,29 @@
   right: 4%;
   top: 18%;
   cursor: pointer;
+}
+
+#purchase-pop-up {
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  color: $black;
+  background: $white;
+}
+
+#purchase-pop-up i {
+  font-size: 70%;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  cursor: pointer;
+}
+
+#purchase-pop-up button {
+  transition: background-color .8s ease;
+  background-color: $blue;
+}
+
+#purchase-pop-up button:hover {
+  background-color: $darkmatcha;
 }

@@ -87,7 +87,7 @@ class PurchaseHistory extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+
     const { currentUser, purchases } = this.props;
 
     if (!purchases) return null;

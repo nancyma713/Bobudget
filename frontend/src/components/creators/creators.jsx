@@ -8,6 +8,7 @@ class Creators extends React.Component {
         <div className="member darkmilktea">
           <h1>Nancy Ma</h1>
           <h2>Team Lead</h2>
+          <h3>Lychee Green Tea<i className="fas fa-heart" /></h3>
           <div className="member-straw" />
           <div className="clearfix" />
           <div className="member-img odd">
@@ -53,6 +54,7 @@ class Creators extends React.Component {
         <div className="member milktea">
           <h1>Scott Lee</h1>
           <h2>Back-end Developer</h2>
+          <h3>Brown Sugar Milk Tea<i className="fas fa-heart" /></h3>
           <div className="member-straw" />
           <div className="clearfix" />
           <div className="member-img odd">
@@ -75,6 +77,7 @@ class Creators extends React.Component {
         <div className="member grapefruit">
           <h1>David Hong</h1>
           <h2>Flex/Back-end Developer</h2>
+          <h3>Super Fruit Oolong Tea<i className="fas fa-heart" /></h3>
           <div className="member-straw" />
           <div className="clearfix" />
           <div className="member-img even">

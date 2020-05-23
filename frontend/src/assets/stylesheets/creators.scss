@@ -71,9 +71,9 @@
   .member h3 {
     height: 13vw;
     width: 37vw;
-    padding: 3vw;
+    padding: 1vw;
     border-radius: 0 0 8vw 8vw;
-    font-size: 3.5vw;
+    font-size: 3vw;
     bottom: 4%;
     left: 3.5%;
     box-sizing: border-box;
@@ -178,11 +178,11 @@
   }
 
   .member h3 {
-    width: 13vw;
+    width: 15vw;
     padding: .5vw;
     border-radius: 1vw;
     font-size: 1.2vw;
-    left: 23%;
+    left: 13%;
     bottom: 8%;
   }
 
@@ -232,15 +232,8 @@
   position: absolute;
 }
 
-.matcha:before {
-  background-color: $darkmatcha;
-}
-
-.matcha:after {
-  background-color: $matcha;
-}
-
-.passion:before {
+.passion:before,
+.passion h3 {
   background-color: $passionred;
 }
 
@@ -248,7 +241,8 @@
   background-color: $passionorange;
 }
 
-.milktea:before {
+.milktea:before,
+.milktea h3 {
   background-color: $taro;
 }
 
@@ -256,7 +250,8 @@
   background-color: $lightmilktea;
 }
 
-.darkmilktea:before {
+.darkmilktea:before,
+.darkmilktea h3 {
   background-color: $blue;
 }
 
@@ -264,7 +259,8 @@
   background-color: $darkmilktea;
 }
 
-.grapefruit:before {
+.grapefruit:before,
+.grapefruit h3 {
   background-color: $grapefruitorange;
 }
 
@@ -296,19 +292,18 @@
 }
 
 .member h3 {
-  background-color: $lightorange;
   position: absolute;
   z-index: 1;
 }
 
 .member h3 i {
-  color: $forestgreen;
+  color: $offwhite;
   position: absolute;
 }
 
 .member-boba {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   background-color: $boba;
   border-radius: 50%;
   display: flex;

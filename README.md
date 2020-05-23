@@ -1,6 +1,8 @@
 # BoBudget
 _A budgeting app for boba lovers._
 
+![alt text](frontend/src/assets/images/bobudget.gif "bobudget-gif")
+
 [BoBudget Live](https://bobudget.herokuapp.com/)
 
 ## Background and Overview
@@ -14,9 +16,9 @@ Enter **BoBudget**, a minimal viable product that gives you a simple way to trac
 
 ## Functionality and MVP
 1. User Authorization: Account Signup, Login, and Logout
-2. Purchase history renders all purchases for the month and allows for budget updates and purchase deletions
+2. Purchase history renders all purchases for the month and allows for budget updates and purchase updates
 3. Dashboard of widgets includes:
-    - Favorites list: favorites can be deleted
+    - Favorites list: favorites can be viewed and deleted
     - Budget calculator: purchases can be added and budgeting will be calculated
     - Boba randomizer: click a boba to generate a drink
 4. Search functionality returns stores where drinks can be found and directions via Google Maps. 
@@ -35,34 +37,64 @@ Search Sample Layout:
 - Back-end: MongoDB, Express
 - Cloud: Heroku, AWS
 
-Rendering and handling favorites on the dashboard:
+Handling favorites on the search page:
 ```javascript
-handleDelete(id) {
-    this.setState({ bobaId: id },
-      () => this.handleFavorite());
+handleClick(id, add) {
+    if (add) {
+      this.setState({ bobaId: id },
+        () => this.handleAddFavorite()
+      );
+    } else {
+      this.setState({ bobaId: id },
+        () => this.handleRemoveFavorite()
+      );
+    }
   }
 
-handleFavorite() {
-    this.props.removeFavorite(this.state.bobaId)
-        .then(() => window.location.reload());
-}
+  handleAddFavorite() {
+    let favorite = {
+      userId: this.props.currentUser.id,
+      bobaItemId: this.state.bobaId
+    }
 
+    this.props.createFavorite(favorite).then(() => 
+      this.props.fetchFavorites(this.props.currentUser.id)
+    );
+  }
+
+  handleRemoveFavorite() {
+    this.props.removeFavorite(this.state.bobaId).then(() => 
+      this.props.fetchFavorites(this.props.currentUser.id)
+    );
+  }
+```
+
+Rendering favorites on the dashboard:
+```javascript
 render() {
-    const favoritesList = favorites.map(fav => {
-        if (bobas.data) {
-            for (let i = 0; i < bobas.data.length; i++) {
-                let boba = bobas.data[i];
-                if (fav.bobaItemId === boba._id) {
-                    return <li key={`fav-${boba._id}`}>
-                    {boba.name}
-                    <button onClick={() => 
-                        this.handleDelete(fav._id)}>
-                        <i className="far fa-heart" />
-                    </button>
-                    </li>
-                }
-            }
+    const { favorites, bobas } = this.props;
+
+    if (!favorites || !bobas.data) return null;
+
+    const favoritesList = favorites.map((fav) => {
+      if (bobas.data) {
+        for (let i = 0; i < bobas.data.length; i++) {
+          let boba = bobas.data[i];
+
+          if (fav.bobaItemId === boba._id) {
+            return (
+              <li className="fav" key={`fav-${boba._id}-${fav._id}`}>
+                {boba.name}
+                <button onClick={() => this.openModal(boba.name, fav._id)}>
+                  <i className="fas fa-heart" />
+                </button>
+              </li>
+            );
+          } 
         }
+      }
+
+      return null;
     });
 }
 ```

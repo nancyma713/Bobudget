@@ -4,9 +4,6 @@
 body {
   font-family: 'Baloo Chettan 2';
   background-color: $milktea;
-  z-index: 1;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 button:hover {
@@ -28,26 +25,6 @@ button:hover {
 
 .align-center {
   align-items: center;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.margin-auto {
-  margin: auto;
 }
 
 .center {

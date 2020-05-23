@@ -569,13 +569,15 @@
 }
 
 .error-right {
-  background-color: rgba(158, 27, 27, .8);
+  transition: opacity 1s ease;
+  background-color: $red;
   color: $white;
   box-sizing: border-box;
   position: absolute;
   left: 105%;
   text-align: center;
   z-index: 1;
+  opacity: .8;
 }
 
 .error-right:after {
@@ -585,17 +587,19 @@
   right: 100%; 
   margin-left: -10px;
   border-style: solid;
-  border-color: transparent rgba(158, 27, 27, 0.8) transparent transparent;
+  border-color: transparent $red transparent transparent;
 }
 
 .error-left {
-  background-color: rgba(158, 27, 27, .8);
+  transition: opacity 1s ease;
+  background-color: $red;
   color: $white;
   box-sizing: border-box;
   position: absolute;
   right: 105%;
   text-align: center;
   z-index: 1;
+  opacity: .8;
 }
 
 .error-left:after {
@@ -605,7 +609,7 @@
   left: 103%; 
   margin-left: -5px;
   border-style: solid;
-  border-color: transparent transparent transparent rgb(158, 27, 27);
+  border-color: transparent transparent transparent $red;
 }
 
 .no-error {

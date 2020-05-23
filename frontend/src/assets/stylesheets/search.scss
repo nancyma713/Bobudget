@@ -1,17 +1,17 @@
 @import './colors.scss';
 
-// WHEN SCREEN IS LESS THAN 900PX
 @media screen and (max-width: 900px) {
   #search-container {
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     height: 100%;
     top: 2vh;
     padding: 3vw;
     overflow: scroll;
   }
 
-  #search-left , #map{
+  #search-left, 
+  #map {
     width: 100%;
   }
 
@@ -73,7 +73,6 @@
   }
 }
 
-// SCREEN @ FULL WIDTH
 @media screen and (min-width: 900px) {
   #search-container {
     flex-direction: row;
@@ -86,9 +85,11 @@
     margin-right: 2vw;
   }
 
-  #search-left, #map {
+  #search-left,
+  #map {
     width: 70%;
   }
+
   #search input {
     padding: .8vw;
     border-radius: .8vw;

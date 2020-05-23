@@ -1,4 +1,5 @@
 @import './colors.scss';
+
 @media screen and (max-width: 700px) {
   #purchase-pop-up {
     font-size: 5vw;
@@ -55,13 +56,15 @@
     align-items: start;
   }
 
-  #update-budg-form, .budget-orb {
+  #update-budg-form, 
+  .budget-orb {
     width: 33.33%;
     margin: 1vw;
     font-size: 3vw;
   }
 
-  #update-budg-form label, .budget-orb h3 {
+  #update-budg-form label, 
+  .budget-orb h3 {
     border-radius: .8vw .8vw 0 0;
     padding: .5vw;
     font-size: 3vw;
@@ -133,7 +136,8 @@
     width: 27vw;
   }
 
-  .purchase-price, .purchase-price input {
+  .purchase-price, 
+  .purchase-price input {
     font-size: 3vw;
   }
 }
@@ -152,13 +156,15 @@
     flex-direction: column;
   }
 
-  #update-budg-form, .budget-orb {
+  #update-budg-form, 
+  .budget-orb {
     width: 12vw;
     margin: .7vw;
     font-size: 1.3vw;
   }
 
-  #update-budg-form label, .budget-orb h3 {
+  #update-budg-form label, 
+  .budget-orb h3 {
     border-radius: .8vw .8vw 0 0;
     padding: .5vw;
     font-size: 1.3vw;
@@ -226,7 +232,8 @@
     right: 1vw;
   }
 
-  .purchase-price, .purchase-price input {
+  .purchase-price, 
+  .purchase-price input {
     font-size: 1.2vw;
   }
 }
@@ -257,14 +264,16 @@
   z-index: 0;
 }
 
-#update-budg-form, .budget-orb {
+#update-budg-form, 
+.budget-orb {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 }
 
-#update-budg-form label, .budget-orb h3 {
+#update-budg-form label, 
+.budget-orb h3 {
   background-color: $darkmatcha;
 }
 
@@ -277,7 +286,7 @@
 }
 
 #update-budg-form .red {
-  border: .3vw solid rgba(158, 27, 27);
+  border: .3vw solid $red;
 }
 
 .budget-orb p {
@@ -369,10 +378,10 @@
   left: 50%;
   bottom: -105%;
   transform: translate(-50%, 0);
-  background-color: rgba(158, 27, 27, .8);
+  background-color: $red;
   color: $offwhite;
   white-space: nowrap;
-  opacity: 1;
+  opacity: .8;
 }
 
 #hist-budg-err:after {
@@ -383,7 +392,7 @@
   margin-left: -5px;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent transparent rgba(158, 27, 27, .8) transparent;
+  border-color: transparent transparent $red transparent;
 }
 
 #hist-budg-err i {

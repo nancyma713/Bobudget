@@ -1,7 +1,6 @@
 import React from "react";
 import "../../assets/stylesheets/dashboard.scss";
 
-// WIDGETS
 import FavoritesContainer from "./widgets/favorites/favorites_container";
 import BudgetCalcContainer from "./widgets/budget_calc/budget_calc_container";
 import BubblesContainer from "./widgets/bubbles/bubbles_container";

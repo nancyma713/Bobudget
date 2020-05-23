@@ -6,7 +6,6 @@ import Search from "./search";
 const mapStateToProps = (state) => ({
   currentUser: state.session.user,
   bobas: state.entities.bobaItems,
-  // stores: state.entities.stores,
   favorites: state.entities.favorites.data,
 });
 

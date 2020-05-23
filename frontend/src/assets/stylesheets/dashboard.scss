@@ -1,6 +1,5 @@
 @import './colors.scss';
 
-// WHEN SCREEN IS LESS THAN 800PX
 @media screen and (max-width: 800px) {
   #dashboard-container {
     display: flex;
@@ -20,12 +19,12 @@
 
   #bubbles-container,
   #favorites-container,
-  .budget,
+  #budget,
   #calculator {
     width: 100%;
   }
 
-  .button {
+  #calculator .button {
     display: none;
   }
 
@@ -174,7 +173,6 @@
     color: $red;
   }
 
-
   #budget .green {
     color: $green;
   }
@@ -233,13 +231,12 @@
   }
 }
 
-// SCREEN @ FULL WIDTH
 @media screen and (min-width: 800px) {
   #welcome-msg {
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: #57524E;
+    background-color: $mutedpassionseed;
     display: inline-block;
     border-radius: 1.8vw;
     color: $white;
@@ -249,7 +246,7 @@
     font-size: 2.5vw;
     margin: .6vw;
     padding: .3vw .7vw;
-    background-color: #57524E;
+    background-color: $mutedpassionseed;
     display: inline-block;
     position: absolute;
     right: 0;
@@ -642,10 +639,10 @@
   z-index: 2;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: rgba(158, 27, 27, .8);
+  background-color: $red;
   color: $offwhite;
   white-space: nowrap;
-  opacity: 1;
+  opacity: .8;
 }
 
 #dash-budg-err:after {
@@ -656,7 +653,7 @@
   margin-left: -5px;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent transparent rgba(158, 27, 27, .8) transparent;
+  border-color: transparent transparent $red transparent;
 }
 
 #dash-budg-err i {

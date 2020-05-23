@@ -227,7 +227,8 @@
   background-color: $offwhite;
 }
 
-.member:before, .member:after {
+.member:before, 
+.member:after {
   content: " ";
   position: absolute;
 }
@@ -272,7 +273,7 @@
   overflow: hidden;
 }
 
-.clearfix::after {
+.clearfix:after {
   content: "";
   clear: both;
   display: table;

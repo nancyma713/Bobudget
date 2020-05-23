@@ -185,7 +185,7 @@ class PurchaseHistory extends React.Component {
             </div>
 
             <div className="budget-orb">
-              <h3>Monthly Spend: </h3>
+              <h3>{month} Spend: </h3>
               <p>$ {totalSpend}</p>
             </div>
 

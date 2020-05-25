@@ -89,7 +89,7 @@ class SignupForm extends React.Component {
                     className={this.props.errors["lastName"] ? "red" : "none"}
                     type="text"
                     value={this.state.lasttName}
-                    onChange={this.update("lasttName")}
+                    onChange={this.update("lastName")}
                     placeholder="Last Name"
                   />
 
@@ -130,7 +130,7 @@ class SignupForm extends React.Component {
                   Password
                   <input
                     className={this.props.errors["password"] ? "red" : "none"}
-                    type="text"
+                    type="password"
                     value={this.state.password}
                     onChange={this.update("password")}
                     placeholder="Password"
@@ -143,7 +143,7 @@ class SignupForm extends React.Component {
                   Confirm Password
                   <input
                     className={this.props.errors["password2"] ? "red" : "none"}
-                    type="text"
+                    type="password"
                     value={this.state.password2}
                     onChange={this.update("password2")}
                     placeholder="Confirm password"

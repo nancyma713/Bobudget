@@ -68,6 +68,8 @@ class BudgetCalc extends React.Component {
               <input
                 type="number"
                 step="0.01"
+                min="0.01"
+                max="499"
                 onChange={this.update("price")}
                 value={this.state.price}
               />

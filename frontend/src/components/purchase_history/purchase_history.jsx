@@ -215,6 +215,8 @@ class PurchaseHistory extends React.Component {
                 $ <input
                 type="number"
                 step="0.01"
+                min="0.01"
+                max="499"
                 value={this.state.price}
                 onChange={this.update("price")}
                 />
